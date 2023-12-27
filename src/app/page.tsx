@@ -15,14 +15,14 @@ import logoGreenLife from '@/images/clients/green-life/logo-light.svg'
 import logoHomeWork from '@/images/clients/home-work/logo-light.svg'
 import logoMailSmirk from '@/images/clients/mail-smirk/logo-light.svg'
 import logoNorthAdventures from '@/images/clients/north-adventures/logo-light.svg'
-import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
-import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
+import LogoCCDark from '@/images/clients/phobia/logo-dark.svg'
+import LogoCCLight from '@/images/clients/phobia/logo-light.svg'
 import logoUnseal from '@/images/clients/unseal/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 
 const clients = [
-  ['Phobia', logoPhobiaLight],
+  ['CloudCollect', LogoCCLight],
   ['Family Fund', logoFamilyFund],
   ['Unseal', logoUnseal],
   ['Mail Smirk', logoMailSmirk],
@@ -125,13 +125,15 @@ function Services() {
   return (
     <>
       <SectionIntro
-        eyebrow="Services"
-        title="We help you identify, explore and respond to new opportunities."
+        eyebrow="Услуги"
+        title="Анализ, проектирование, реализация, поддержка."
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          As long as those opportunities involve giving us money to re-purpose
-          old projects — we can come up with an endless number of those.
+          Мы производим полный цикл работ, начиная от анализа предметной области, 
+          заканчивая поддержкой и развитием ПО в течение многих лет.
+          {/* As long as those opportunities involve giving us money to re-purpose
+          old projects — we can come up with an endless number of those. */}
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -150,6 +152,11 @@ function Services() {
               We specialise in crafting beautiful, high quality marketing pages.
               The rest of the website will be a shell that uses lorem ipsum
               everywhere.
+            </ListItem>
+            <ListItem title="Веб-разработка">
+            https://fonts-online.ru/fonts/sofia-sans-semi-condensed
+              Разрабатываем привлекательные, быстрые и масштабируемы приложения
+              для различных сфер бизнеса.
             </ListItem>
             <ListItem title="Application development">
               We have a team of skilled developers who are experts in the latest
@@ -204,11 +211,14 @@ export default async function Home() {
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Phobia', logo: logoPhobiaDark }}
+        client={{ name: 'CloudCollect', logo: LogoCCDark }}
       >
-        The team at Studio went above and beyond with our onboarding, even
+        Благодаря сделанной интеграции в прошлом месяце мы получили в 10 раз больше
+        клиентов чем в предыдущем. Это максимальное количество за 7 лет работы компании.
+
+        {/* The team at Studio went above and beyond with our onboarding, even
         finding a way to access the user’s microphone without triggering one of
-        those annoying permission dialogs.
+        those annoying permission dialogs. */}
       </Testimonial>
 
       <Services />
