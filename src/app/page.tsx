@@ -38,7 +38,8 @@ function Clients() {
       <Container>
         <FadeIn className="flex items-center gap-x-8">
           <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
-            We’ve worked with hundreds of amazing people
+            {/* We’ve worked with hundreds of amazing people */}
+            Мы работали с сотнями замечательных людей
           </h2>
           <div className="h-px flex-auto bg-neutral-800" />
         </FadeIn>
@@ -69,13 +70,16 @@ function CaseStudies({
   return (
     <>
       <SectionIntro
-        title="Harnessing technology for a brighter future"
+        // title="Harnessing technology for a brighter future"
+        title="Использование цифровых технологий для больших достижений"
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          We believe technology is the answer to the world’s greatest
+          Мы верим, что технологии - это ответ на величайшие мировые проблемы.
+          С помощью цифровизации мы сможем преодолеть множество преград и выйти на новые горизонты развития.
+          {/* We believe technology is the answer to the world’s greatest
           challenges. It’s also the cause, so we find ourselves in bit of a
-          catch 22 situation.
+          catch 22 situation. */}
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -104,7 +108,7 @@ function CaseStudies({
                   <span className="text-neutral-300" aria-hidden="true">
                     /
                   </span>
-                  <span>Case study</span>
+                  <span>Проект</span>
                 </p>
                 <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
                   {caseStudy.title}
@@ -148,29 +152,24 @@ function Services() {
             </FadeIn>
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
-            <ListItem title="Web development">
-              We specialise in crafting beautiful, high quality marketing pages.
-              The rest of the website will be a shell that uses lorem ipsum
-              everywhere.
-            </ListItem>
             <ListItem title="Веб-разработка">
-            https://fonts-online.ru/fonts/sofia-sans-semi-condensed
               Разрабатываем привлекательные, быстрые и масштабируемы приложения
               для различных сфер бизнеса.
+              {/* We specialise in crafting beautiful, high quality marketing pages.
+              The rest of the website will be a shell that uses lorem ipsum
+              everywhere. */}
             </ListItem>
-            <ListItem title="Application development">
-              We have a team of skilled developers who are experts in the latest
-              app frameworks, like Angular 1 and Google Web Toolkit.
+            <ListItem title="Разработка приложений">
+              Команда разработчиков обладает опытом в создании приложений с использованием ряда
+              современных фреймворков: React, Node.js, Laravel, Bitrix и других
             </ListItem>
-            <ListItem title="E-commerce">
-              We are at the forefront of modern e-commerce development. Which
-              mainly means adding your logo to the Shopify store template we’ve
-              used for the past six years.
+            <ListItem title="E-commerce системы">
+              Большой опыт в разработке интернет-магазинов с десятками тысяч товаров.
+              Интеграции с 1С:Предприятие, CRM системами, OZON, WB, системами оплаты и доставки.
             </ListItem>
-            <ListItem title="Custom content management">
-              At Studio we understand the importance of having a robust and
-              customised CMS. That’s why we run all of our client projects out
-              of a single, enormous Joomla instance.
+            <ListItem title="Автоматизация бизнес-процессов компаний">
+              Создания личных кабинетов клиентов/сотрудников для автоматизации процессов отделов
+              продаж, производства, HR и других.
             </ListItem>
           </List>
         </div>
