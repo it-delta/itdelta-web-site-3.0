@@ -30,7 +30,7 @@ function CaseStudies({
     <Container className="mt-40">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-neutral-950">
-          Case studies
+          Проекты
         </h2>
       </FadeIn>
       <div className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
@@ -75,7 +75,7 @@ function CaseStudies({
                       href={caseStudy.href}
                       aria-label={`Read case study: ${caseStudy.client}`}
                     >
-                      Read case study
+                      Подробнее...
                     </Button>
                   </div>
                   {caseStudy.testimonial && (
@@ -112,7 +112,7 @@ function Clients() {
     <Container className="mt-24 sm:mt-32 lg:mt-40">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-neutral-950">
-          You’re in good company
+          Вы в хорошей компании
         </h2>
       </FadeIn>
       <FadeInStagger className="mt-10" faster>
@@ -137,9 +137,10 @@ function Clients() {
 }
 
 export const metadata: Metadata = {
-  title: 'Our Work',
+  title: 'Наши работы',
   description:
-    'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
+    'Мы верим в эффективность и максимальное использование наших ресурсов, чтобы обеспечить максимальную ценность для наших клиентов.',
+    // 'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
 }
 
 export default async function Work() {
@@ -148,13 +149,17 @@ export default async function Work() {
   return (
     <>
       <PageIntro
-        eyebrow="Our work"
-        title="Proven solutions for real-world problems."
+        eyebrow="Наши работы"
+        title="Проверенные решения реальных проблем."
       >
         <p>
-          We believe in efficiency and maximizing our resources to provide the
+        Мы верим в эффективность и максимальное использование наших ресурсов, 
+        чтобы обеспечить максимальную ценность для наших клиентов. 
+        Основной способ сделать это — повторно использовать те знания и опыт, 
+        которые мы получили в течение последнего десятилетия.
+          {/* We believe in efficiency and maximizing our resources to provide the
           best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+          the same five projects we’ve been developing for the past decade. */}
         </p>
       </PageIntro>
 
@@ -162,10 +167,12 @@ export default async function Work() {
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
+        client={{ name: 'Дмитрий Дибров', logo: logoMailSmirk }}
       >
-        We approached <em>Studio</em> because we loved their past work. They
-        delivered something remarkably similar in record time.
+        Мы обратились в <em>IT-DELTA</em>, потому что нам понравились их прошлые работы. 
+        Они создали для нас похожий проект в рекордно короткие сроки.
+        {/* We approached <em>Studio</em> because we loved their past work. They
+        delivered something remarkably similar in record time. */}
       </Testimonial>
 
       <Clients />
