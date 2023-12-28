@@ -22,11 +22,16 @@ export default {
         '4xl': '2.5rem',
       },
       fontFamily: {
-        sans: ['Mona Sans', ...defaultTheme.fontFamily.sans],
+        sans: ['Roboto', ...defaultTheme.fontFamily.sans],
         display: [
-          ['Mona Sans', ...defaultTheme.fontFamily.sans],
+          ['Roboto', ...defaultTheme.fontFamily.sans],
           { fontVariationSettings: '"wdth" 125' },
         ],
+        // sans: ['Mona Sans', ...defaultTheme.fontFamily.sans],
+        // display: [
+        //   ['Mona Sans', ...defaultTheme.fontFamily.sans],
+        //   { fontVariationSettings: '"wdth" 125' },
+        // ],
       },
     },
   },
