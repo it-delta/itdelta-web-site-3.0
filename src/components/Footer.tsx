@@ -7,11 +7,11 @@ import { socialMediaProfiles } from '@/components/SocialMedia'
 
 const navigation = [
   {
-    title: 'Работа',
+    title: 'Проекты',
     links: [
-      { title: 'CloudCollect', href: '/work/family-fund' },
-      { title: 'Cultbooking', href: '/work/unseal' },
-      { title: 'Мониторинг', href: '/work/phobia' },
+      { title: 'Мониторинг', href: '/work/v-monitor' },
+      { title: 'CloudCollect', href: '/work/cloudcollect' },
+      { title: 'Cultbooking', href: '/work/cultbooking' },
       {
         title: (
           <>

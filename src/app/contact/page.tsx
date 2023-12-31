@@ -97,15 +97,16 @@ function ContactDetails() {
   return (
     <FadeIn>
       <h2 className="font-display text-base font-semibold text-neutral-950">
-        Наши офисы
+        Контакты
       </h2>
       <p className="mt-6 text-base text-neutral-600">
-        Вы можете посетить наш офис чтобы пообщаться лично с ответственным менеджером.
+        Вы можете встретится с нами с помощью телеконференции (Zoom, Yandex и пр.),
+        либо посетить наш офис чтобы пообщаться лично с ответственным менеджером.
       </p>
 
       <Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />
 
-      <Border className="mt-16 pt-16">
+{/*      <Border className="mt-16 pt-16">
         <h2 className="font-display text-base font-semibold text-neutral-950">
           Напишите нам
         </h2>
@@ -127,7 +128,7 @@ function ContactDetails() {
             </div>
           ))}
         </dl>
-      </Border>
+      </Border>*/}
 
       <Border className="mt-16 pt-16">
         <h2 className="font-display text-base font-semibold text-neutral-950">
@@ -140,8 +141,8 @@ function ContactDetails() {
 }
 
 export const metadata: Metadata = {
-  title: 'Напишите нам',
-  description: 'Let’s work together. We can’t wait to hear from you.',
+  title: 'Контакты',
+  description: 'Оставьте заявку на разработку.',
 }
 
 export default function Contact() {

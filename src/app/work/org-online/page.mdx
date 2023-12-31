@@ -1,27 +1,26 @@
-import logo from '@/images/clients/cloud-collect/logo_dark.jpeg'
-import imageHero from './hero.jpg'
-import imageTobenS from './torben-s.jpeg'
+import logo from '@/images/clients/org-online/logomark-dark.svg'
+import imageHero from './hero.png'
 
 export const caseStudy = {
-  client: 'Clоud Cоllect',
-  title: 'Онлайн сервис для взыскания задолженности',
+  client: 'Оргполитика',
+  title: 'Оргполитика',
   description:
-    'ClоudCоllect - проект коллекторской компания из Дании. Позволяет пользователям автоматизировать работу с просроченной с дебиторской задолженностью.',
-    // 'FamilyFund is a crowdfunding platform for friends and family. Allowing users to take personal loans from their network without a traditional financial institution.',
+    'Оргполитика - приложение для цифровизации бизнес процессов компании. Включает в себя Учебный центр организации, Систему Регламентов, Оргструктуру, Статистики и прочее.',
   summary: [
-    'ClоudCоllect - проект коллекторской компания из Дании. Позволяет пользователям автоматизировать работу с просроченной с дебиторской задолженностью.',
-    'Мы разработали приложение, интегрированное с системами бухгалтерского учета (Microsoft Dynamics, Dinero, E-conomics, Billy и др.). Приложение автоматически контролирует отгрузки и оплаты клиентов и запускает, в случае необходимости, многоступенчатый процесс взыскания задолженности.'
-    // 'We developed a custom CMS to power their blog with and optimised their site to rank higher for the keywords “Gary Vee” and “Tony Robbins”.',
+    'Оргполитика - приложение для цифровизации некоторых бизнес процессов компании. Включает в себя Учебный центр организации, Систему Регламентов, Оргструктуру, Статистики и прочее.',
+    'Прилжение позволяет ускорить обучение сотрудников, распространение приказов и регламентов и другое.'
   ],
   logo,
   image: { src: imageHero },
-  date: '2023-06',
-  service: 'Веб-разработка, CMS',
+  date: '2023-10',
+  service: 'Веб-разработка, LMS',
+/*
   testimonial: {
     author: { name: 'Torben S.', role: 'Руководитель отдела продаж' },
     content:
       'Работая со IT-DELTA, мы почувствовали себя скорее партнером, чем заказчиком. Они действительно погружаются в наши проблемы и предлагают оригинальные и эффективные решения.',
   },
+*/
 }
 
 export const metadata = {
@@ -62,20 +61,30 @@ To optimise their search traffic we used an innovative technique. Every post has
   <TagListItem>Microsoft Dynamics integration</TagListItem>
 </TagList>
 
-<Blockquote
-  author={{ name: 'Torben S.', role: 'Руководитель отдела продаж' }}
-  image={{ src: imageTobenS }}
->
-  Работая со IT-DELTA, мы почувствовали себя скорее партнером, чем заказчиком. 
-  Они действительно погружаются в наши проблемы и 
-  предлагают оригинальные и эффективные решения.
-</Blockquote>
+[comment]: <> (<Blockquote)
 
-<StatList>
+[comment]: <> (  author={{ name: 'Torben S.', role: 'Руководитель отдела продаж' }})
 
-[comment]: <> (<StatListItem value="25%" label="Less traffic" />)
-  <StatListItem value="10x" label="Больше клиентов" />
-  <StatListItem value="30%" label="Сокращение времени на обработку обращений клиентов" />
+[comment]: <> (  image={{ src: imageTobenS }})
 
-[comment]: <> (<StatListItem value="$1.2M" label="Legal fees" />)
-</StatList>
+[comment]: <> (>)
+
+[comment]: <> (  Работая со IT-DELTA, мы почувствовали себя скорее партнером, чем заказчиком. )
+
+[comment]: <> (  Они действительно погружаются в наши проблемы и )
+
+[comment]: <> (  предлагают оригинальные и эффективные решения.)
+
+[comment]: <> (</Blockquote>)
+
+[comment]: <> (<StatList>)
+
+[comment]: <> (  <StatListItem value="25%" label="Less traffic" />)
+
+[comment]: <> (  <StatListItem value="10x" label="Page load times" />)
+
+[comment]: <> (  <StatListItem value="15%" label="Higher infra costs" />)
+
+[comment]: <> (  <StatListItem value="$1.2M" label="Legal fees" />)
+
+[comment]: <> (</StatList>)

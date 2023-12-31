@@ -34,7 +34,7 @@ function CaseStudies({
         </h2>
       </FadeIn>
       <div className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
-        {caseStudies.map((caseStudy) => (
+        {caseStudies.filter((caseStudy) => caseStudy.active !== false).map((caseStudy) => (
           <FadeIn key={caseStudy.client}>
             <article>
               <Border className="grid grid-cols-3 gap-x-8 gap-y-8 pt-16">
@@ -137,7 +137,7 @@ function Clients() {
 }
 
 export const metadata: Metadata = {
-  title: 'Наши работы',
+  title: 'Проекты',
   description:
     'Мы верим в эффективность и максимальное использование наших ресурсов, чтобы обеспечить максимальную ценность для наших клиентов.',
     // 'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
@@ -149,12 +149,12 @@ export default async function Work() {
   return (
     <>
       <PageIntro
-        eyebrow="Наши работы"
+        eyebrow="Проекты"
         title="Проверенные решения реальных проблем."
       >
         <p>
         Мы верим в эффективность и максимальное использование наших ресурсов, 
-        чтобы обеспечить максимальную ценность для наших клиентов. 
+        чтобы обеспечить наивысшую ценность для наших клиентов.
         Основной способ сделать это — повторно использовать те знания и опыт, 
         которые мы получили в течение последнего десятилетия.
           {/* We believe in efficiency and maximizing our resources to provide the
