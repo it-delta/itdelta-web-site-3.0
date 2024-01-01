@@ -212,7 +212,7 @@ export default async function Home() {
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'CloudCollect', logo: LogoCCDark }}
       >
-        Благодаря сделанной интеграции в прошлом месяце мы получили в 10 раз больше
+        После запуска интеграции с учетными системами, в прошлом месяце мы получили в 10 раз больше
         клиентов чем в предыдущем. Это максимальное количество за 7 лет работы компании.
 
         {/* The team at Studio went above and beyond with our onboarding, even
