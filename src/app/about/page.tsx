@@ -225,7 +225,7 @@ export default async function About() {
       <Container className="mt-16">
         <StatList>
           <StatListItem value="35" label="Сотрудников" />
-          <StatListItem value="52" label="Довольных клиентов" />
+          <StatListItem value="56" label="Довольных клиентов" />
           <StatListItem value="$2M" label="Оплаченных счетов" />
         </StatList>
       </Container>

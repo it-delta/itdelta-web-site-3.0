@@ -148,8 +148,8 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <>
-      <PageIntro eyebrow="Напишите нам" title="Давайте работать вместе!">
-        <p>Ждем с нетерпением Ваши вопросы.</p>
+      <PageIntro eyebrow="Напишите нам" title="Решаем Ваши бизнес-задачи!">
+        <p>Оставьте заявку, мы проконсультируем и оценим проект.</p>
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
