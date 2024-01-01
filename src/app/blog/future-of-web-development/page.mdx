@@ -1,12 +1,12 @@
 import imageChelseaHagon from '@/images/team/chelsea-hagon.jpg'
 
 export const article = {
-  date: '2023-04-06',
-  title: 'The Future of Web Development: Our Predictions for 2023',
+  date: '2023-12-06',
+  title: 'Будущее Веб-разработки: наши прогнозы на 2024 год',
   description:
-    'Let’s explore the latest trends in web development, and regurgitate some predictions we read on Twitter for how they will shape the industry in the coming year.',
+    'Давайте рассмотрим последние тенденции в веб-разработке и повторим некоторые прогнозы, которые мы прочитали в Твиттере, о том, как они будут формировать отрасль в наступающем году.',
   author: {
-    name: 'Chelsea Hagon',
+    name: 'Anna G',
     role: 'Senior Developer',
     image: { src: imageChelseaHagon },
   },
@@ -17,32 +17,54 @@ export const metadata = {
   description: article.description,
 }
 
-## 1. AI Assisted Development
+## 1. Разработка с помощью искусственного интеллекта
 
-With the launch of Github Copilot in 2022 the industry got its first glimpse at what it would look like to have Stack Overflow plumbed straight into your IDE. Copilot has given thousands of developers what they always longed for: plausible deniability over the bugs they write.
+С запуском Github Copilot в 2022 году индустрия впервые получила представление о том, как будет выглядеть внедрение Stack Overflow прямо в вашу IDE.
+Copilot дал тысячам разработчиков то, чего они всегда жаждали: правдоподобное отрицание ошибок, которые они пишут.
 
 ![](./pilot.jpg)
 
-In 2023 we can expect these assistants to become more sophisticated and for that to have ripple effects throughout the industry.
+В 2023 году мы можем ожидать, что эти помощники станут более совершенными, и это окажет волновое воздействие на всю отрасль.
 
-We predict that traffic to MDN will decline precipitously as developers realise they no longer need to look up JS array methods. We also expect Stack Overflow’s sister site, Prompt Overflow, to become one of the most popular sites on the internet in a matter of months.
+Мы прогнозируем, что трафик на MDN резко сократится, поскольку разработчики поймут, что им больше не нужно искать методы массивов JS.
+Мы также ожидаем, что дочерний сайт Stack Overflow, Prompt Overflow, станет одним из самых популярных сайтов в Интернете в течение нескольких месяцев.
 
-## 2. Rendering Patterns
+[comment]: <> (In 2023 we can expect these assistants to become more sophisticated and for that to have ripple effects throughout the industry.)
 
-To server render or not to server render? In 2022 the owners of the internet, Vercel, decided that instead of making this choice once for your whole application, now you will need to decide every time you write a new component.
+[comment]: <> (We predict that traffic to MDN will decline precipitously as developers realise they no longer need to look up JS array methods. We also expect Stack Overflow’s sister site, Prompt Overflow, to become one of the most popular sites on the internet in a matter of months.)
 
-Because front-end development was becoming too easy, the same people who write CSS will now need to know how Streaming SSR and Progressive Hydration work.
+## 2. Шаблоны рендеринга
+
+Рендерить на сервере или нет? В 2022 году владельцы интернета (Vercel) решили, что вместо того, чтобы делать этот выбор один раз для всего приложения,
+теперь вам нужно будет принимать решение каждый раз, когда вы пишете новый компонент.
+
+Поскольку разработка внешнего интерфейса становилась слишком простой, тем же людям, которые пишут CSS, теперь нужно будет знать, как работают
+Streaming SSR и Progressive Hydration.
+
+[comment]: <> (To server render or not to server render? In 2022 the owners of the internet, Vercel, decided that instead of making this choice once for your whole application, now you will need to decide every time you write a new component.)
+
+[comment]: <> (Because front-end development was becoming too easy, the same people who write CSS will now need to know how Streaming SSR and Progressive Hydration work.)
 
 ![](./server.jpg)
 
-In 2023 we can expect frameworks to adopt increasingly granular rendering patterns culminating in per-line rendering (PLR) later this year. We can also expect job postings for Rendering Reliability Engineers to reach an all time high.
+В 2023 году мы можем ожидать, что фреймворки будут использовать все более детальные шаблоны рендеринга,
+кульминацией которых станет построчный рендеринг (PLR) позднее в этом году. Мы также можем ожидать,
+что количество вакансий для инженеров по надежности рендеринга достигнет рекордно высокого уровня.
+
+[comment]: <> (In 2023 we can expect frameworks to adopt increasingly granular rendering patterns culminating in per-line rendering &#40;PLR&#41; later this year. We can also expect job postings for Rendering Reliability Engineers to reach an all time high.)
 
 ## 3. JS Runtimes
 
-Because choosing a JS runtime was one of the only areas where a developer wasn’t paralysed with choice, in early 2020, the creator of Node gave us something new to agonise over. The launch of Deno and Bun heralded the final mutation of JavaScript into a language that can truly run anywhere it wasn’t intended to.
+Поскольку выбор среды выполнения JS был одной из немногих областей, где разработчик не был парализован выбором, в начале 2020 года создатель Node дал нам что-то новое, над чем можно было мучиться. Запуск Deno и Bun ознаменовал окончательную мутацию JavaScript в язык, который действительно может работать там, где он не предназначен.
 
-These new JS runtimes mean we can now serve HTML faster than ever before. For example, we’ve reduced the Time to First Byte (TTFB) of this blog to -0.4s. That means it actually loaded before you clicked the link.
+Эти новые среды выполнения JS означают, что теперь мы можем обслуживать HTML быстрее, чем когда-либо прежде. Например, мы сократили время до первого байта (TTFB) этого блога до -0,4 с. Это означает, что он фактически загрузился до того, как вы нажали ссылку.
+
+[comment]: <> (Because choosing a JS runtime was one of the only areas where a developer wasn’t paralysed with choice, in early 2020, the creator of Node gave us something new to agonise over. The launch of Deno and Bun heralded the final mutation of JavaScript into a language that can truly run anywhere it wasn’t intended to.)
+
+[comment]: <> (These new JS runtimes mean we can now serve HTML faster than ever before. For example, we’ve reduced the Time to First Byte &#40;TTFB&#41; of this blog to -0.4s. That means it actually loaded before you clicked the link.)
 
 ![](./laptop.jpg)
 
-In 2023 we can expect even faster and more specialised JS runtimes to launch, including the promising Boil, a runtime specifically designed to reduce cold boot times on WiFi enabled kettles. All of these advancements promise to make the future of botnets a truly exciting one.
+В 2023 году мы можем ожидать запуска еще более быстрых и специализированных сред выполнения JS, в том числе многообещающей среды выполнения Boil, специально разработанной для сокращения времени холодной загрузки чайников с поддержкой Wi-Fi. Все эти достижения обещают сделать будущее ботнетов по-настоящему захватывающим.
+
+[comment]: <> (In 2023 we can expect even faster and more specialised JS runtimes to launch, including the promising Boil, a runtime specifically designed to reduce cold boot times on WiFi enabled kettles. All of these advancements promise to make the future of botnets a truly exciting one.)

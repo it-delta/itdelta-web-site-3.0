@@ -12,9 +12,9 @@ import { formatDate } from '@/lib/formatDate'
 import { loadArticles } from '@/lib/mdx'
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: 'Блог',
   description:
-    'Stay up-to-date with the latest industry news as our marketing teams finds new ways to re-purpose old CSS tricks articles.',
+    'Будьте в курсе последних новостей отрасли.',
 }
 
 export default async function Blog() {
@@ -22,10 +22,13 @@ export default async function Blog() {
 
   return (
     <>
-      <PageIntro eyebrow="Blog" title="The latest articles and news">
+      <PageIntro eyebrow="Блог" title="Последние новости и статьи">
         <p>
+          Будьте в курсе последних новостей, поскольку наши специалисты постоянно находят новые темы чтобы поделиться с Вами.
+{/*
           Stay up-to-date with the latest industry news as our marketing teams
           finds new ways to re-purpose old CSS tricks articles.
+*/}
         </p>
       </PageIntro>
 
@@ -47,7 +50,7 @@ export default async function Blog() {
                             {formatDate(article.date)}
                           </time>
                         </dd>
-                        <dt className="sr-only">Author</dt>
+                        <dt className="sr-only">Автор</dt>
                         <dd className="mt-6 flex gap-x-4">
                           <div className="flex-none overflow-hidden rounded-xl bg-neutral-100">
                             <Image
@@ -72,7 +75,7 @@ export default async function Blog() {
                         aria-label={`Read more: ${article.title}`}
                         className="mt-8"
                       >
-                        Read more
+                        Читать
                       </Button>
                     </div>
                   </div>
