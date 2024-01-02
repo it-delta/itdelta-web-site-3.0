@@ -10,7 +10,7 @@ export function ContactSection() {
         <div className="mx-auto max-w-4xl">
           <div className="max-w-xl">
             <Button invert href="/contact">
-              <h2 className="font-display text-3xl font-medium [text-wrap:balance] sm:text-4xl">
+              <h2 className="font-display text-2xl font-medium [text-wrap:balance] sm:text-4xl xs:text-3xl">
                 {/* Tell us about your project */}
                 Оставить заявку
               </h2>

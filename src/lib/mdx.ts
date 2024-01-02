@@ -20,7 +20,9 @@ async function loadEntries<T extends { date: string }>(
         },
       ),
     )
-  ).sort((a, b) => b.date.localeCompare(a.date))
+  )
+  .filter(e => e.active !== false)
+  .sort((a, b) => b.date.localeCompare(a.date))
 }
 
 type ImagePropsWithOptionalAlt = Omit<ImageProps, 'alt'> & { alt?: string }
@@ -28,6 +30,7 @@ type ImagePropsWithOptionalAlt = Omit<ImageProps, 'alt'> & { alt?: string }
 export type MDXEntry<T> = T & { href: string; metadata: T }
 
 export interface Article {
+  active?: boolean,
   date: string
   title: string
   description: string

@@ -122,7 +122,7 @@ function Build() {
         </p>
         <p>
           Каждому клиенту назначается менеджер по работе с ключевыми клиентами, который поддерживает каналы связи открытыми и скрывает фактический ход проекта.
-          Они выступают в качестве буфера между непрекращающимся ворчанием клиента и командой разработчиков, которая усердно
+          Он выступают в качестве буфера между непрекращающимся ворчанием клиента и командой разработчиков, которая усердно
           работает над поиском кода для повторного использования в проектах с открытым исходным кодом.
         </p>
         <p>
@@ -154,7 +154,7 @@ function Build() {
         author={{ name: 'Антон Петровский', role: 'CEO of Unseal' }}
         className="mt-12"
       >
-        Studio так регулярно публиковала обновления о ходе работы, что мы начали думать, что они автоматизированы!
+        Они так регулярно публиковали обновления о ходе работы, что мы начали думать, что они автоматизированы!
         {/*Studio were so regular with their progress updates we almost began to*/}
         {/*think they were automated!*/}
       </Blockquote>
@@ -257,7 +257,7 @@ function Values() {
       >
         <p>
           Мы стремимся быть в авангарде новых тенденций и технологий,
-          полностью игнорируя их и создавая тот старый проект PHP, который нам удобно использовать.
+          полностью игнорируя их и клонируя тот старый проект PHP, который нам удобно использовать.
           Мы придерживаемся наших основных ценностей, чтобы оправдать это решение.
 {/*
           We strive to stay at the forefront of emerging trends and
@@ -272,7 +272,7 @@ function Values() {
         <GridList>
           <GridListItem title="Внимание к деталям">
             Первая часть любого партнерства — заставить нашего дизайнера разместить ваш логотип в нашем шаблоне.
-            Второй шаг — заставить их раскрасить цвета.
+            Второй шаг — заставить его раскрасить цвета.
 {/*
             The first part of any partnership is getting our designer to put
             your logo in our template. The second step is getting them to do the
@@ -286,12 +286,16 @@ function Values() {
             most of the work was done years ago.*/}
           </GridListItem>
           <GridListItem title="Гибкость">
-            Every business has unique needs and our greatest challenge is
-            shoe-horning those needs into something we already built.
-          </GridListItem>
-          <GridListItem title="Честность">
             У каждого бизнеса есть уникальные потребности, и наша самая большая задача —
             воплотить эти потребности во что-то, что мы уже создали.
+{/*
+            Every business has unique needs and our greatest challenge is
+            shoe-horning those needs into something we already built.
+*/}
+          </GridListItem>
+          <GridListItem title="Честность">
+            Мы прозрачны во всех наших процессах, полагаясь на тот простой факт,
+            что наши клиенты никогда ничего не читают.
             {/*We are transparent about all of our processes, banking on the simple
             fact our clients never actually read anything.*/}
           </GridListItem>

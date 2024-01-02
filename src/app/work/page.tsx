@@ -34,7 +34,7 @@ function CaseStudies({
         </h2>
       </FadeIn>
       <div className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
-        {caseStudies.filter((caseStudy) => caseStudy.active !== false).map((caseStudy) => (
+        {caseStudies.map((caseStudy) => (
           <FadeIn key={caseStudy.client}>
             <article>
               <Border className="grid grid-cols-3 gap-x-8 gap-y-8 pt-16">
