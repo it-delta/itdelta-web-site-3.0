@@ -27,7 +27,7 @@ const navigation = [
     links: [
       { title: 'О нас', href: '/about' },
       { title: 'Процессы', href: '/process' },
-      { title: 'Блог', href: '/blog' },
+      // { title: 'Блог', href: '/blog' },
       { title: 'Контакты', href: '/contact' },
     ],
   },
