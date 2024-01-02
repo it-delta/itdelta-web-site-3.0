@@ -13,6 +13,7 @@ async function loadEntries<T extends { date: string }>(
             metaName
           ] as T
           return {
+            active: undefined,
             ...metadata,
             metadata,
             href: `/${directory}/${filename.replace(/\/page\.mdx$/, '')}`,
@@ -21,7 +22,7 @@ async function loadEntries<T extends { date: string }>(
       ),
     )
   )
-  .filter(e => e.active !== false)
+  .filter((a) => a.active == true)
   .sort((a, b) => b.date.localeCompare(a.date))
 }
 
@@ -30,7 +31,7 @@ type ImagePropsWithOptionalAlt = Omit<ImageProps, 'alt'> & { alt?: string }
 export type MDXEntry<T> = T & { href: string; metadata: T }
 
 export interface Article {
-  active?: boolean,
+  active?: boolean
   date: string
   title: string
   description: string
@@ -42,7 +43,7 @@ export interface Article {
 }
 
 export interface CaseStudy {
-  active?: boolean,
+  active?: boolean
   date: string
   client: string
   title: string
