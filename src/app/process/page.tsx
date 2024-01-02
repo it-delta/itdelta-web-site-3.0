@@ -55,15 +55,26 @@ function Section({
 
 function Discover() {
   return (
-    <Section title="Discover" image={{ src: imageWhiteboard }}>
+    <Section title="Аналитика" image={{ src: imageWhiteboard }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          We work closely with our clients to understand their{' '}
-          <strong className="font-semibold text-neutral-950">needs</strong> and
-          goals, embedding ourselves in their every day operations to understand
-          what makes their business tick.
+          Мы тесно сотрудничаем с нашими клиентами, чтобы понять их{' '}
+          <strong className="font-semibold text-neutral-950">потребности</strong> и цели,
+          погружаясь в их повседневную деятельность, чтобы понять, что движет их бизнесом.
+
+          {/*We work closely with our clients to understand their{' '}*/}
+          {/*<strong className="font-semibold text-neutral-950">needs</strong> and*/}
+          {/*goals, embedding ourselves in their every day operations to understand*/}
+          {/*what makes their business tick.*/}
         </p>
         <p>
+          Наша команда аналитиков-детективов в течение нескольких недель следит за руководителями компании,
+          в то время как наши клиентские менеджеры сосредоточены на разборке их мусора.
+          Затем наши эксперты по безопасности с помощью социальной инженерии выполняют взломы,
+          чтобы получить доступ к их{' '}
+          <strong className="font-semibold text-neutral-950">бизнес</strong>-аккаунтам,
+          передавая эту информацию нашей команде судебно-бухгалтерского учета.
+{/*
           Our team of private investigators shadow the company director’s for
           several weeks while our account managers focus on going through their
           trash. Our senior security experts then perform social engineering
@@ -71,24 +82,30 @@ function Discover() {
           <strong className="font-semibold text-neutral-950">business</strong>{' '}
           accounts — handing that information over to our forensic accounting
           team.
+*/}
         </p>
         <p>
+          После завершения полного аудита мы предоставляем подробный{' '}
+          <strong className="font-semibold text-neutral-950">план</strong> и, что более важно, бюджет.
+{/*
           Once the full audit is complete, we report back with a comprehensive{' '}
           <strong className="font-semibold text-neutral-950">plan</strong> and,
           more importantly, a budget.
+*/}
         </p>
       </div>
 
       <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
-        Included in this phase
+        Включено в этап
+        {/*Included in this phase*/}
       </h3>
       <TagList className="mt-4">
-        <TagListItem>In-depth questionnaires</TagListItem>
-        <TagListItem>Feasibility studies</TagListItem>
-        <TagListItem>Blood samples</TagListItem>
-        <TagListItem>Employee surveys</TagListItem>
-        <TagListItem>Proofs-of-concept</TagListItem>
-        <TagListItem>Forensic audit</TagListItem>
+        <TagListItem>Сбор требований</TagListItem>
+        <TagListItem>Анкетирование</TagListItem>
+        <TagListItem>Опросы сотрудников</TagListItem>
+        <TagListItem>Документирование</TagListItem>
+        <TagListItem>Согласование концепции</TagListItem>
+        {/*<TagListItem>Forensic audit</TagListItem>*/}
       </TagList>
     </Section>
   )
@@ -96,9 +113,22 @@ function Discover() {
 
 function Build() {
   return (
-    <Section title="Build" image={{ src: imageLaptop, shape: 1 }}>
+    <Section title="Разработка" image={{ src: imageLaptop, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
+          На этапе Аналитики мы разрабатываем комплексную дорожную карту для каждого продукта и начинаем работать над его доставкой.
+          Дорожная карта — это запутанная путаница технической чепухи, призванная затянуть проект как можно дольше.
+        </p>
+        <p>
+          Каждому клиенту назначается менеджер по работе с ключевыми клиентами, который поддерживает открытые каналы связи и скрывает фактический ход проекта.
+          Они выступают в качестве буфера между непрекращающимся ворчанием клиента и командой разработчиков, которая усердно
+          работает над поиском кода для повторного использования в проектах с открытым исходным кодом.
+        </p>
+        <p>
+          Наши менеджеры по работе с клиентами обучены отвечать на электронные письма клиентов только после 21:00, через несколько дней после первого письма.
+          Это усиливает общее впечатление, что мы очень заняты, и отговаривает клиентов просить об изменениях.
+        </p>
+{/*        <p>
           Based off of the discovery phase, we develop a comprehensive roadmap
           for each product and start working towards delivery. The roadmap is an
           intricately tangled mess of technical nonsense designed to drag the
@@ -116,15 +146,16 @@ function Build() {
           9pm, several days after the initial email. This reinforces the general
           aura that we are very busy and dissuades clients from asking for
           changes.
-        </p>
+        </p>*/}
       </div>
 
       <Blockquote
-        author={{ name: 'Debra Fiscal', role: 'CEO of Unseal' }}
+        author={{ name: 'Антон Петровский', role: 'CEO of Unseal' }}
         className="mt-12"
       >
-        Studio were so regular with their progress updates we almost began to
-        think they were automated!
+        Studio так регулярно публиковала обновления о ходе работы, что мы начали думать, что они автоматизированы!
+        {/*Studio were so regular with their progress updates we almost began to*/}
+        {/*think they were automated!*/}
       </Blockquote>
     </Section>
   )
@@ -132,25 +163,44 @@ function Build() {
 
 function Deliver() {
   return (
-    <Section title="Deliver" image={{ src: imageMeeting, shape: 2 }}>
+    <Section title="Запуск" image={{ src: imageMeeting, shape: 2 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          About halfway through the Build phase, we push each project out by 6
+          Примерно в середине этапа Разработки мы отодвигаем каждый проект на 6 недель из-за изменения {' '}
+          <strong className="font-semibold text-neutral-950">
+            требований
+          </strong>.
+          Это позволяет нам увеличить бюджет в последний раз перед запуском.
+{/*          About halfway through the Build phase, we push each project out by 6
           weeks due to a change in{' '}
           <strong className="font-semibold text-neutral-950">
             requirements
           </strong>
-          . This allows us to increase the budget a final time before launch.
+          . This allows us to increase the budget a final time before launch.*/}
         </p>
         <p>
-          Despite largely using pre-built components, most of the{' '}
+          Несмотря на то, что в основном используются готовые компоненты, большая часть{' '}
+          <strong className="font-semibold text-neutral-950">прогресса</strong>{' '}
+          проекта происходит в последние 24 часа.
+          Время разработки, отведенное каждому клиенту, фактически тратится на создание демо-версий дополненной реальности, которые становятся вирусными в Твиттере.
+
+{/*          Despite largely using pre-built components, most of the{' '}
           <strong className="font-semibold text-neutral-950">progress</strong>{' '}
           on each project takes place in the final 24 hours. The development
           time allocated to each client is actually spent making augmented
-          reality demos that go viral on Twitter.
+          reality demos that go viral on Twitter.*/}
         </p>
         <p>
-          We ensure that the main pages of the site are{' '}
+          Мы гарантируем, что основные страницы сайта будут{' '}
+          <strong className="font-semibold text-neutral-950">
+            полностью функциональны
+          </strong>{' '} при запуске — вспомогательные страницы, конечно же, будут оболочками lorem ipusm,
+          которые будут обновляться в рамках нашего непомерного гонорара за{' '}
+          <strong className="font-semibold text-neutral-950">
+            техническую поддержку
+          </strong>.
+
+{/*          We ensure that the main pages of the site are{' '}
           <strong className="font-semibold text-neutral-950">
             fully functional
           </strong>{' '}
@@ -159,25 +209,31 @@ function Deliver() {
           <strong className="font-semibold text-neutral-950">
             maintenance
           </strong>{' '}
-          retainer.
+          retainer.*/}
         </p>
       </div>
 
       <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
-        Included in this phase
+        Включено в этап
       </h3>
       <List className="mt-8">
-        <ListItem title="Testing">
-          Our projects always have 100% test coverage, which would be impressive
-          if our tests weren’t as porous as a sieve.
+        <ListItem title="Тестирование">
+          Наши проекты всегда имеют 100%-ное покрытие тестами, и это было бы впечатляюще,
+          если бы наши тесты не были такими пористыми, как сито.
+          {/*Our projects always have 100% test coverage, which would be impressive*/}
+          {/*if our tests weren’t as porous as a sieve.*/}
         </ListItem>
-        <ListItem title="Infrastructure">
-          To ensure reliability we only use the best Digital Ocean droplets that
-          $4 a month can buy.
+        <ListItem title="Инфраструктура">
+          Чтобы обеспечить надежность, мы используем только лучшие дроплеты Digital Ocean,
+          которые можно купить за 4 доллара в месяц.
+          {/*To ensure reliability we only use the best Digital Ocean droplets that*/}
+          {/*$4 a month can buy.*/}
         </ListItem>
-        <ListItem title="Support">
-          Because we hold the API keys for every critical service your business
-          uses, you can expect a lifetime of support, and invoices, from us.
+        <ListItem title="Поддержка">
+          Поскольку мы храним ключи API для каждой важной услуги, которую использует ваш бизнес,
+          вы можете рассчитывать на пожизненную поддержку и счета от нас.
+          {/*Because we hold the API keys for every critical service your business*/}
+          {/*uses, you can expect a lifetime of support, and invoices, from us.*/}
         </ListItem>
       </List>
     </Section>
@@ -248,11 +304,13 @@ export const metadata: Metadata = {
 export default function Process() {
   return (
     <>
-      <PageIntro eyebrow="Our process" title="How we work">
+      <PageIntro eyebrow="Процессы" title="Как мы работаем">
         <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+          Мы верим в эффективность и максимальное использование наших ресурсов, чтобы обеспечить максимальную ценность для наших клиентов.
+          Основной способ сделать это — использовать опыт тех проектов, которые мы разрабатывали в течение последнего десятилетия.
+          {/*We believe in efficiency and maximizing our resources to provide the*/}
+          {/*best value to our clients. The primary way we do that is by re-using*/}
+          {/*the same five projects we’ve been developing for the past decade.*/}
         </p>
       </PageIntro>
 
