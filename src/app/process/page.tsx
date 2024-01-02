@@ -116,11 +116,11 @@ function Build() {
     <Section title="Разработка" image={{ src: imageLaptop, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          На этапе Аналитики мы разрабатываем комплексную дорожную карту для каждого продукта и начинаем работать над его доставкой.
+          На этапе Аналитики мы разрабатываем комплексную дорожную карту для проекта и начинаем работать над её детализацией.
           Дорожная карта — это запутанная путаница технической чепухи, призванная затянуть проект как можно дольше.
         </p>
         <p>
-          Каждому клиенту назначается менеджер по работе с ключевыми клиентами, который поддерживает открытые каналы связи и скрывает фактический ход проекта.
+          Каждому клиенту назначается менеджер по работе с ключевыми клиентами, который поддерживает каналы связи открытыми и скрывает фактический ход проекта.
           Они выступают в качестве буфера между непрекращающимся ворчанием клиента и командой разработчиков, которая усердно
           работает над поиском кода для повторного использования в проектах с открытым исходным кодом.
         </p>
@@ -219,7 +219,7 @@ function Deliver() {
       <List className="mt-8">
         <ListItem title="Тестирование">
           Наши проекты всегда имеют 100%-ное покрытие тестами, и это было бы впечатляюще,
-          если бы наши тесты не были такими пористыми, как сито.
+          если бы наши тесты не были такими дырявыми, как сито.
           {/*Our projects always have 100% test coverage, which would be impressive*/}
           {/*if our tests weren’t as porous as a sieve.*/}
         </ListItem>
@@ -230,8 +230,8 @@ function Deliver() {
           {/*$4 a month can buy.*/}
         </ListItem>
         <ListItem title="Поддержка">
-          Поскольку мы храним ключи API для каждой важной услуги, которую использует ваш бизнес,
-          вы можете рассчитывать на пожизненную поддержку и счета от нас.
+          Поскольку мы храним ключи API для каждого критически важного сервиса вашего бизнеса,
+          вы можете рассчитывать на пожизненные поддержку и счета на оплату от нас.
           {/*Because we hold the API keys for every critical service your business*/}
           {/*uses, you can expect a lifetime of support, and invoices, from us.*/}
         </ListItem>
@@ -251,43 +251,60 @@ function Values() {
       </div>
 
       <SectionIntro
-        eyebrow="Our values"
-        title="Balancing reliability and innovation"
+        eyebrow="Ценности"
+        title="Баланс между надежностью и инновациями"
       >
         <p>
+          Мы стремимся быть в авангарде новых тенденций и технологий,
+          полностью игнорируя их и создавая тот старый проект PHP, который нам удобно использовать.
+          Мы придерживаемся наших основных ценностей, чтобы оправдать это решение.
+{/*
           We strive to stay at the forefront of emerging trends and
           technologies, while completely ignoring them and forking that old
           Rails project we feel comfortable using. We stand by our core values
           to justify that decision.
+*/}
         </p>
       </SectionIntro>
 
       <Container className="mt-24">
         <GridList>
-          <GridListItem title="Meticulous">
+          <GridListItem title="Внимание к деталям">
+            Первая часть любого партнерства — заставить нашего дизайнера разместить ваш логотип в нашем шаблоне.
+            Второй шаг — заставить их раскрасить цвета.
+{/*
             The first part of any partnership is getting our designer to put
             your logo in our template. The second step is getting them to do the
             colors.
+*/}
           </GridListItem>
-          <GridListItem title="Efficient">
-            We pride ourselves on never missing a deadline which is easy because
-            most of the work was done years ago.
+          <GridListItem title="Эффективность">
+            Мы гордимся тем, что никогда не пропускаем сроки, что легко,
+            поскольку большая часть работы была выполнена много лет назад.
+{/*            We pride ourselves on never missing a deadline which is easy because
+            most of the work was done years ago.*/}
           </GridListItem>
-          <GridListItem title="Adaptable">
+          <GridListItem title="Гибкость">
             Every business has unique needs and our greatest challenge is
             shoe-horning those needs into something we already built.
           </GridListItem>
-          <GridListItem title="Honest">
-            We are transparent about all of our processes, banking on the simple
-            fact our clients never actually read anything.
+          <GridListItem title="Честность">
+            У каждого бизнеса есть уникальные потребности, и наша самая большая задача —
+            воплотить эти потребности во что-то, что мы уже создали.
+            {/*We are transparent about all of our processes, banking on the simple
+            fact our clients never actually read anything.*/}
           </GridListItem>
-          <GridListItem title="Loyal">
-            We foster long-term relationships with our clients that go beyond
-            just delivering a product, allowing us to invoice them for decades.
+          <GridListItem title="Преданность">
+            Мы развиваем долгосрочные отношения с нашими клиентами, которые выходят за рамки
+            простой разработки продукта и позволяют нам выставлять им счета на протяжении десятилетий.
+            {/*We foster long-term relationships with our clients that go beyond
+            just delivering a product, allowing us to invoice them for decades.*/}
           </GridListItem>
-          <GridListItem title="Innovative">
-            The technological landscape is always evolving and so are we. We are
-            constantly on the lookout for new open source projects to clone.
+          <GridListItem title="Инновационность">
+            Технологический ландшафт постоянно развивается, и мы тоже.
+            Мы постоянно ищем новые проекты с открытым исходным кодом для клонирования.
+            {/*The technological landscape is always evolving and so are we. We are
+            constantly on the lookout for new open source projects to clone.*/}
           </GridListItem>
         </GridList>
       </Container>
