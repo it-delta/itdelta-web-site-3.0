@@ -100,7 +100,7 @@ export function ContactForm() {
     setLoading(true);
 
     const data1 = {
-        name: `Заявка itdelta.ru: ${data.name} ${data.budget} ${data.company} ${data.message}`,
+        name: data.name && `Заявка itdelta.ru: ${data.name} ${data.budget} ${data.company} ${data.message}`,
         email: data.email,
         phone: data.phone
     };
