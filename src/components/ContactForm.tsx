@@ -12,7 +12,12 @@ function TextInput({
     errorText,
     clearErrors,
     ...props
-    }: React.ComponentPropsWithoutRef<'input'> & { label: string })
+    }: React.ComponentPropsWithoutRef<'input'> & {
+        label: string,
+        setValue: any,
+        errorText?: string,
+        clearErrors?: any
+    })
 {
   let id = useId()
 
@@ -36,7 +41,6 @@ function TextInput({
                       className="pointer-events-none absolute left-6 top-1/2 -mt-3 origin-left text-base/6 text-neutral-500 transition-all duration-200 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-neutral-950 peer-[:not(:placeholder-shown)]:-translate-y-4 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:text-neutral-950"
                   >
                       {label}
-                      {/*<OptionItemErrorText errorText={errorText}/>*/}
                   </label>
                   <div className="px-6 pt-0 text-sm font-medium text-red-500 text-red-600">{errorText}</div>
               </div>
@@ -49,28 +53,23 @@ function RadioInput({
     label,
     setValue,
     ...props
-  }: React.ComponentPropsWithoutRef<'input'> & { label: string }) {
+  }: React.ComponentPropsWithoutRef<'input'> & { label: string, setValue: any }) {
   return (
       <label className="flex gap-x-3">
         <input
             type="radio"
             {...props}
             className="h-6 w-6 flex-none appearance-none rounded-full border border-neutral-950/20 outline-none checked:border-[0.5rem] checked:border-neutral-950 focus-visible:ring-1 focus-visible:ring-neutral-950 focus-visible:ring-offset-2"
-            onChange={(e) => setValue(e.target.value)}
+            onChange={(e: any) => setValue(e.target.value)}
         />
         <span className="text-base/6 text-neutral-950">{label}</span>
       </label>
   )
 }
 
-export const OptionItemErrorText = ({ errorText }) => {
-    return (
-        <>{errorText && <div className="pt-0 text-sm font-medium text-red-500 text-red-600 col-end-3">{errorText}</div>}</>
-    );
-};
 
 export function ContactForm() {
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<any>({});
   const [message, setMessage] = useState<string>();
   const [messageColor, setMessageColor] = useState<string>('text-green-500');
   const [loading, setLoading] = useState(false);
@@ -90,7 +89,7 @@ export function ContactForm() {
     setMessage("Заявка успешно отправлена, мы свяжемся с вами в ближайшее время!");
   }
 
-  const setErrorMessage = (e) => {
+  const setErrorMessage = (e: string) => {
     setMessageColor('text-red-500');
     setMessage("Во время отправки произошла ошибка: " + e);
   }
@@ -106,8 +105,8 @@ export function ContactForm() {
         phone: data.phone
     };
 
-    const url = process.env.NEXT_PUBLIC_ORDER_FORM_URL;
-    fetch(url, {
+    const url = process.env.NEXT_PUBLIC_ORDER_FORM_URL ?? '';
+    window.fetch(url, {
       method: "POST",
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
       body: JSON.stringify(data1),
@@ -138,7 +137,7 @@ export function ContactForm() {
           <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
             <TextInput label="Имя *" name="name" autoComplete="name"
                value={data.name}
-               setValue={(e)=>setData({...data, name: e})}
+               setValue={(e:string)=>setData({...data, name: e})}
                errorText={errors.name}
                clearErrors={clearErrors}
             />
@@ -148,7 +147,7 @@ export function ContactForm() {
                 name="email"
                 autoComplete="email"
                 value={data.email}
-                setValue={(e)=>setData({...data, email: e})}
+                setValue={(e:string)=>setData({...data, email: e})}
                 errorText={errors.email}
                 clearErrors={clearErrors}
             />
@@ -157,26 +156,26 @@ export function ContactForm() {
                 name="company"
                 autoComplete="organization"
                 value={data.company}
-                setValue={(e)=>setData({...data, company: e})}
+                setValue={(e:string)=>setData({...data, company: e})}
             />
             <TextInput label="Телефон *" type="tel" name="phone" autoComplete="tel"
                value={data.phone}
-               setValue={(e)=>setData({...data, phone: e})}
+               setValue={(e:string)=>setData({...data, phone: e})}
                errorText={errors.phone}
                clearErrors={clearErrors}
             />
             <TextInput label="Сообщение" name="message"
                value={data.message}
-               setValue={(e)=>setData({...data, message: e})}
+               setValue={(e:string)=>setData({...data, message: e})}
             />
             <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
               <fieldset>
                 <legend className="text-base/6 text-neutral-500">Бюджет</legend>
                 <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
-                  <RadioInput label="500K – 1000K" name="budget" value="0.5-1" setValue={(e)=>setData({...data, budget: e})}/>
-                  <RadioInput label="1М – 3М" name="budget" value="1-3" setValue={(e)=>setData({...data, budget: e})}/>
-                  <RadioInput label="3М – 10М" name="budget" value="3-10" setValue={(e)=>setData({...data, budget: e})}/>
-                  <RadioInput label="более 10М" name="budget" value=">10" setValue={(e)=>setData({...data, budget: e})}/>
+                  <RadioInput label="500K – 1000K" name="budget" value="0.5-1" setValue={(e:string)=>setData({...data, budget: e})}/>
+                  <RadioInput label="1М – 3М" name="budget" value="1-3" setValue={(e:string)=>setData({...data, budget: e})}/>
+                  <RadioInput label="3М – 10М" name="budget" value="3-10" setValue={(e:string)=>setData({...data, budget: e})}/>
+                  <RadioInput label="более 10М" name="budget" value=">10" setValue={(e:string)=>setData({...data, budget: e})}/>
                 </div>
               </fieldset>
             </div>
