@@ -1,8 +1,11 @@
 import Link from 'next/link'
 import clsx from 'clsx'
+import { Ring } from 'react-spinners-css';
 
 type ButtonProps = {
   invert?: boolean
+  loading?: boolean,
+  disabled?: boolean
 } & (
   | React.ComponentPropsWithoutRef<typeof Link>
   | (React.ComponentPropsWithoutRef<'button'> & { href?: undefined })
@@ -10,6 +13,8 @@ type ButtonProps = {
 
 export function Button({
   invert = false,
+  loading,
+  disabled,
   className,
   children,
   ...props
@@ -26,8 +31,12 @@ export function Button({
 
   if (typeof props.href === 'undefined') {
     return (
-      <button className={className} {...props}>
-        {inner}
+      <button
+          className={className}
+          disabled={disabled}
+          {...props}
+      >
+        {inner} {loading && <Ring className="ml-2 top-px" color={'white'} size={20} /> }
       </button>
     )
   }
