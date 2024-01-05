@@ -94,7 +94,8 @@ export function ContactForm() {
     setMessage("Во время отправки произошла ошибка: " + e);
   }
 
-  const onSubmit = () => {
+  const onSubmit = (e: any) => {
+    e.preventDefault();
     setMessage('');
     setErrors({})
     setLoading(true);
@@ -130,12 +131,12 @@ export function ContactForm() {
   return (
     <FadeIn className="lg:order-last">
       <GoogleRecapthaForm>
-        <form>
+        <form onSubmit={onSubmit}>
           <h2 className="font-display text-base font-semibold text-neutral-950">
             Оставить заявку
           </h2>
           <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
-            <TextInput label="Имя *" name="name" autoComplete="name"
+            <TextInput label="Имя *" name="name" autoComplete="name" required
                value={data.name}
                setValue={(e:string)=>setData({...data, name: e})}
                errorText={errors.name}
@@ -146,6 +147,7 @@ export function ContactForm() {
                 type="email"
                 name="email"
                 autoComplete="email"
+                required
                 value={data.email}
                 setValue={(e:string)=>setData({...data, email: e})}
                 errorText={errors.email}
@@ -158,7 +160,7 @@ export function ContactForm() {
                 value={data.company}
                 setValue={(e:string)=>setData({...data, company: e})}
             />
-            <TextInput label="Телефон *" type="tel" name="phone" autoComplete="tel"
+            <TextInput label="Телефон *" type="tel" name="phone" autoComplete="tel" required
                value={data.phone}
                setValue={(e:string)=>setData({...data, phone: e})}
                errorText={errors.phone}
@@ -189,7 +191,6 @@ export function ContactForm() {
                 className="mt-10"
                 loading={loading}
                 disabled={loading}
-                onClick={onSubmit}
           >
             Отправить
           </Button>
