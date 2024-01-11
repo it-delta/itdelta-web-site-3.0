@@ -135,7 +135,7 @@ function Services() {
       >
         <p>
           Мы производим полный цикл работ, начиная от анализа предметной области, 
-          заканчивая поддержкой и развитием ПО в течение многих лет.
+          заканчивая поддержкой и развитием проекта в течение многих лет.
           {/* As long as those opportunities involve giving us money to re-purpose
           old projects — we can come up with an endless number of those. */}
         </p>
@@ -153,7 +153,7 @@ function Services() {
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
             <ListItem title="Веб-разработка">
-              Разрабатываем привлекательные, быстрые и масштабируемы приложения
+              Разрабатываем привлекательные, быстрые и масштабируемые приложения
               для различных сфер бизнеса.
               {/* We specialise in crafting beautiful, high quality marketing pages.
               The rest of the website will be a shell that uses lorem ipsum
