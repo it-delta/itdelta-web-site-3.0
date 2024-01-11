@@ -194,9 +194,8 @@ export default async function Home() {
             Цифровизация Вашего бизнеса.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            Разрабатываем программное обеспечение для цифровизации бизнес-
-            процессов компаний/корпораций. Личные кабинеты, CRM системы, 
-            сложные интеграции. Десктопные, мобильные и веб-приложения.
+            Разрабатываем программное обеспечение для цифровизации бизнес-процессов компаний/корпораций.
+            Личные кабинеты, CRM системы, сложные интеграции. Десктопные, мобильные и веб-приложения.
             {/* We are a development studio working at the intersection of design
             and technology. It’s a really busy intersection though — a lot of
             our staff have been involved in hit and runs. */}
