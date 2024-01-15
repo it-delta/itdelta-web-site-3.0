@@ -105,7 +105,7 @@ function CaseStudies({
                   >
                     {caseStudy.date.split('-')[0]}
                   </time>
-                  <span className="text-neutral-300" aria-hidden="true">
+                  <span className="text-logoRed " aria-hidden="true">
                     /
                   </span>
                   <span>Проект</span>
