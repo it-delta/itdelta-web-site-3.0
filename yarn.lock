@@ -9161,6 +9161,11 @@ next-tick@^1.1.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.1.0.tgz#1836ee30ad56d67ef281b22bd199f709449b35eb"
   integrity sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==
 
+next-yandex-metrica@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/next-yandex-metrica/-/next-yandex-metrica-1.1.1.tgz#0b6922544fbe831e36d322651aeef52006abeef7"
+  integrity sha512-ih3S24GU/zUJaa75FvgflaUJrV/ST1BuhIyFT7AYT8oJg+Fs8bXjaWJAUuf+YFENRP0gJXVPT5i2gHX/0J7RWw==
+
 next@13.4.16:
   version "13.4.16"
   resolved "https://registry.yarnpkg.com/next/-/next-13.4.16.tgz#327ef6885b22161ed001cd5943c20b5e409a9406"
