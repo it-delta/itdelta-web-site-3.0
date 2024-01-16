@@ -1,6 +1,6 @@
 "use client";
 import { YandexMetricaProvider } from 'next-yandex-metrica';
 
-export const Analytics = ({ children }) => (
-    <YandexMetricaProvider>{children}</YandexMetricaProvider>
+export const Analytics = (props: any) => (
+    <YandexMetricaProvider {...props}>{props.children}</YandexMetricaProvider>
 );
