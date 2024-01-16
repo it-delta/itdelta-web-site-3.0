@@ -17,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en" className="h-full bg-neutral-950 text-base antialiased">
       <body className="flex min-h-full flex-col">
       <Analytics
-          tagID={12345678}
+          tagID={96145741}
           initParameters={{ clickmap: true, trackLinks: true, accurateTrackBounce: true }}
       >
           <RootLayout>{children}</RootLayout>
