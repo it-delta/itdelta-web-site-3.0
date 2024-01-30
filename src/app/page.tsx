@@ -44,7 +44,7 @@ function Clients() {
         <FadeIn className="flex items-center gap-x-8">
           <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
             {/* We’ve worked with hundreds of amazing people */}
-            Мы работали с сотнями замечательных людей
+            Мы работаем с множеством замечательных людей
           </h2>
           <div className="h-px flex-auto bg-neutral-800" />
         </FadeIn>
