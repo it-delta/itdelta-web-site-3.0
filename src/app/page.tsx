@@ -11,29 +11,30 @@ import { StylizedImage } from '@/components/StylizedImage'
 import { Testimonial } from '@/components/Testimonial'
 import LogoCCDark from '@/images/clients/cloud-collect/logo-dark.svg'
 import LogoCCLight from '@/images/clients/cloud-collect/logo-light.svg'
-import LogoOrgOnlineDark from '@/images/clients/org-online/logo-dark.svg'
 import LogoOrgOnlineLight from '@/images/clients/org-online/logo-light.svg'
+import logoVMonitor from '@/images/clients/v-monitor/logo-light.svg'
+import logoCultBooking from '@/images/clients/cultbooking/logo-light.svg'
 
-import logoBrightPath from '@/images/clients/bright-path/logo-light.svg'
-import logoFamilyFund from '@/images/clients/family-fund/logo-light.svg'
-import logoGreenLife from '@/images/clients/green-life/logo-light.svg'
-import logoHomeWork from '@/images/clients/home-work/logo-light.svg'
-import logoMailSmirk from '@/images/clients/mail-smirk/logo-light.svg'
-import logoNorthAdventures from '@/images/clients/north-adventures/logo-light.svg'
-import logoUnseal from '@/images/clients/unseal/logo-light.svg'
+// import logoBrightPath from '@/images/clients/bright-path/logo-light.svg'
+// import logoFamilyFund from '@/images/clients/family-fund/logo-light.svg'
+// import logoGreenLife from '@/images/clients/green-life/logo-light.svg'
+// import logoHomeWork from '@/images/clients/home-work/logo-light.svg'
+// import logoMailSmirk from '@/images/clients/mail-smirk/logo-light.svg'
+// import logoNorthAdventures from '@/images/clients/north-adventures/logo-light.svg'
+// import logoUnseal from '@/images/clients/unseal/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 
 const clients = [
   ['CloudCollect', LogoCCLight],
   ['OrgOnline', LogoOrgOnlineLight],
-  ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
-  ['North Adventures', logoNorthAdventures],
+  ['V-Monitor', logoVMonitor],
+  ['CultBooking', logoCultBooking],
+  // ['Mail Smirk', logoMailSmirk],
+  // ['Home Work', logoHomeWork],
+  // ['Green Life', logoGreenLife],
+  // ['Bright Path', logoBrightPath],
+  // ['North Adventures', logoNorthAdventures],
 ]
 
 function Clients() {
