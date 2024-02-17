@@ -101,9 +101,15 @@ export function ContactForm() {
     setLoading(true);
 
     const data1 = {
-        name: data.name && `Заявка itdelta.ru: ${data.name} ${data.budget} ${data.company} ${data.message}`,
+        title: 'itdelta.ru: Заявка со страницы контакты',
+        firstName: data.name,
         email: data.email,
-        phone: data.phone
+        phone: data.phone,
+        message: data.message,
+        data: {
+            budget: `Бюджет: ${data.budget}`,
+            company: `Компания: ${data.company}`
+        }
     };
 
     const url = process.env.NEXT_PUBLIC_ORDER_FORM_URL ?? '';
