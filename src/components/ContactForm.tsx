@@ -114,24 +114,25 @@ export function ContactForm() {
 
     const url = process.env.NEXT_PUBLIC_ORDER_FORM_URL ?? '';
     window.fetch(url, {
-      method: "POST",
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-      body: JSON.stringify(data1),
-    }).then(res => res.json())
-      .then(res => {
-        setLoading(false)
-        if (res.ok) {
-          setSuccessMessage();
-        } else
-          if (res.errors)
-            setErrors(res.errors)
-        else
-          setErrorMessage('неизвестная ошибка!');
-      })
-      .catch((e) => {
-        setLoading(false);
-        setErrorMessage(e.message);
-      });
+          method: "POST",
+          headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+          body: JSON.stringify(data1),
+        })
+        .then(res => {
+            if (res.ok || res.status === 422) return res.json();
+            throw new Error(res.status + ' ' + res.statusText);
+        })
+        .then(res => {
+            res.errors?.recaptcha && setErrorMessage(res.errors.recaptcha);
+            res.errors && setErrors(res.errors);
+            !res.errors && setSuccessMessage();
+        })
+        .catch((e) => {
+            setErrorMessage(e.message);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
   };
 
   return (
