@@ -10,18 +10,24 @@ import { PageIntro } from '@/components/PageIntro'
 import { PageLinks } from '@/components/PageLinks'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StatList, StatListItem } from '@/components/StatList'
-import imageAngelaFisher from '@/images/team/angela-fisher.jpg'
-import imageBenjaminRussel from '@/images/team/benjamin-russel.jpg'
+// import imageAngelaFisher from '@/images/team/angela-fisher.jpg'
+// import imageBenjaminRussel from '@/images/team/benjamin-ruseesel.jpg'
 import imageBlakeReid from '@/images/team/blake-reid.jpg'
 import imageChelseaHagon from '@/images/team/chelsea-hagon.jpg'
-import imageDriesVincent from '@/images/team/dries-vincent.jpg'
-import imageEmmaDorsey from '@/images/team/emma-dorsey.jpg'
-import imageJeffreyWebb from '@/images/team/jeffrey-webb.jpg'
+// import imageDriesVincent from '@/images/team/dries-vincent.jpg'
+// import imageEmmaDorsey from '@/images/team/emma-dorsey.jpg'
+// import imageJeffreyWebb from '@/images/team/jeffrey-webb.jpg'
 import imageKathrynMurphy from '@/images/team/kathryn-murphy.jpg'
 import imageLeonardKrasner from '@/images/team/leonard-krasner.jpg'
-import imageLeslieAlexander from '@/images/team/leslie-alexander.jpg'
-import imageMichaelFoster from '@/images/team/michael-foster.jpg'
-import imageWhitneyFrancis from '@/images/team/whitney-francis.jpg'
+// import imageLeslieAlexander from '@/images/team/leslie-alexander.jpg'
+// import imageMichaelFoster from '@/images/team/michael-foster.jpg'
+// import imageWhitneyFrancis from '@/images/team/whitney-francis.jpg'
+// import imageTeam1 from '@/images/team/vladimir.svg'
+import imageTeam2 from '@/images/team/lev.jpg'
+import imageTeam3 from '@/images/team/maria.jpg'
+// import imageTeam4 from '@/images/team/nik.svg'
+import imageTeam5 from '@/images/team/vladimir.jpg'
+// import imageTeam6 from '@/images/team/vladimir.svg'
 import { loadArticles } from '@/lib/mdx'
 import { formatDate } from '@/lib/formatDate'
 
@@ -86,7 +92,7 @@ const team = [
       {
         name: 'Лев',
         role: 'Account Manager',
-        image: { src: imageDriesVincent },
+        image: { src: imageTeam2 },
         // image: { src: imageEmmaDorsey },
       },
       {
@@ -97,12 +103,13 @@ const team = [
       {
         name: 'Никита',
         role: 'Team Lead',
+        // image: { src: imageTeam4 },
         image: { src: imageBlakeReid },
       },
       {
         name: 'Владимир',
         role: 'Team Lead',
-        image: { src: imageJeffreyWebb },
+        image: { src: imageTeam5 },
       },
       {
         name: 'София',
