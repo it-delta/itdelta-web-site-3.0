@@ -22,12 +22,11 @@ import imageLeonardKrasner from '@/images/team/leonard-krasner.jpg'
 // import imageLeslieAlexander from '@/images/team/leslie-alexander.jpg'
 // import imageMichaelFoster from '@/images/team/michael-foster.jpg'
 // import imageWhitneyFrancis from '@/images/team/whitney-francis.jpg'
-// import imageTeam1 from '@/images/team/vladimir.svg'
 import imageTeam2 from '@/images/team/lev.jpg'
 import imageTeam3 from '@/images/team/maria.jpg'
-// import imageTeam4 from '@/images/team/nik.svg'
+import imageTeam4 from '@/images/team/nik.jpg'
 import imageTeam5 from '@/images/team/vladimir.jpg'
-// import imageTeam6 from '@/images/team/vladimir.svg'
+import imageTeam6 from '@/images/team/sofa.jpeg'
 import { loadArticles } from '@/lib/mdx'
 import { formatDate } from '@/lib/formatDate'
 
@@ -98,13 +97,14 @@ const team = [
       {
         name: 'Мария',
         role: 'Project Manager',
+        // image: { src: imageTeam3 },
         image: { src: imageChelseaHagon },
       },
       {
         name: 'Никита',
         role: 'Team Lead',
-        // image: { src: imageTeam4 },
-        image: { src: imageBlakeReid },
+        image: { src: imageTeam4 },
+        // image: { src: imageBlakeReid },
       },
       {
         name: 'Владимир',
@@ -114,8 +114,8 @@ const team = [
       {
         name: 'София',
         role: 'HR',
-        image: { src: imageKathrynMurphy },
-        // image: { src: imageWhitneyFrancis },
+        image: { src: imageTeam6 },
+        // image: { src: imageKathrynMurphy },
       },
 /*      {
         name: 'Jeffrey Webb',
