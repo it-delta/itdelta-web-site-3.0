@@ -24,6 +24,9 @@ import logoCultBooking from '@/images/clients/cultbooking/logo-light.svg'
 // import logoUnseal from '@/images/clients/unseal/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
+import { InboxIcon, UsersIcon,  AcademicCapIcon, BanknotesIcon,
+    BookOpenIcon, DocumentIcon, GlobeAltIcon, ReceiptPercentIcon, StarIcon
+  } from '@heroicons/react/24/outline'
 
 const clients = [
   ['CloudCollect', LogoCCLight],
@@ -36,6 +39,103 @@ const clients = [
   // ['Bright Path', logoBrightPath],
   // ['North Adventures', logoNorthAdventures],
 ]
+
+const features = [
+  {
+    name: 'Разработка личных кабинетов',
+    description:
+      'Партнерские порталы, кабинеты для дилеров, системы лояльности - всё что позволит улучшить удобство работы ваших клиентов.',
+    href: '#',
+    icon: InboxIcon,
+  },
+  {
+    name: 'CRM система',
+    description:
+      'Прием заявок из различных каналов, стадии обработки сделки, учёт коммуникаций, система задач, уведомлений и прочие инструменты автоматизации отдела продаж.',
+    href: '#',
+    icon: UsersIcon,
+  },
+  {
+    name: 'Учебный портал (LMS)',
+    description:
+      'Корпоративная система обучения, автоматизация учебных центров. Потоки, группы обучающихся, курсы, уроки. Возможность автоматической и ручной проверки заданий, система рейтингов.',
+    href: '#',
+    icon: AcademicCapIcon,
+  },
+  {
+    name: 'Интернет-магазин',
+    description:
+      'Создание интернет-магазинов со сложными интеграциями с 1С, системами оплаты и доставки. Работа с дилерами, системы лояльности.',
+    href: '#',
+    icon: BanknotesIcon,
+  },
+  {
+    name: 'Система бронирования',
+    description:
+      'Создание системы бронирования для гостиниц, клиник, спортивных и учебных центров. Интеграция с системами лояльности.',
+    href: '#',
+    icon: BookOpenIcon,
+  },
+  {
+    name: 'Документооборот',
+    description:
+      'Уменьшите нагрузку на менеджеров, создав кабинет клиента с отображением счетов, оплат, актов, накладных, претензий и прочих необходимых документов. ',
+    href: '#',
+    icon: DocumentIcon,
+  },
+  {
+    name: 'Маркетплейсы и агрегаторы',
+    description:
+      'Системы, объединяющие продавцов и покупателей. В настоящее время актуален в узких нишах.',
+    href: '#',
+    icon: GlobeAltIcon,
+  },
+  {
+    name: 'Системы лояльности',
+    description:
+      'Система маркетинговых инструментов для увеличения повторных продаж, дополнительные и перекрестные продажи (Up-sell, Cross-sell).',
+    href: '#',
+    icon: ReceiptPercentIcon,
+  },
+  {
+    name: 'MVP для стартапов',
+    description:
+      'MVP (minimum viable product) — это минимально жизнеспособный продукт, который позволяет понять насколько интересен пользователям продукт и готовы ли они за него платить.',
+    href: '#',
+    icon: StarIcon,
+  },
+]
+
+function Features() {
+  return (
+    <>
+      <Container className="mt-32">
+        <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {features.map((feature) => (
+            <FadeIn key={feature.name} className="flex">
+                            <div key={feature.name} className="flex flex-col">
+                <dt className="text-base font-display font-semibold leading-7 text-gray-900">
+                  <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-200">
+                    <feature.icon className="h-6 w-6 text-logoRed" aria-hidden="true" />
+                  </div>
+                  {feature.name}
+                </dt>
+                <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                  <p className="flex-auto">{feature.description}</p>
+                  <p className="mt-6">
+                    {/* <a href={feature.href} className="text-sm leading-6">
+                      Подробнее <span aria-hidden="true">→</span>
+                    </a> */}
+                  </p>
+                </dd>
+              </div>
+            </FadeIn>
+          ))}
+        </FadeInStagger>
+      </Container>
+    </>
+  )
+}
 
 function Clients() {
   return (
@@ -207,6 +307,8 @@ export default async function Home() {
           </p>
         </FadeIn>
       </Container>
+
+      <Features />
 
       <Clients />
 

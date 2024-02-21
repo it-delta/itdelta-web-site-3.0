@@ -31,14 +31,9 @@ export default {
       fontFamily: {
         sans: ['Calibri Light', ...defaultTheme.fontFamily.sans],
         display: [
-          ['Calibri', ...defaultTheme.fontFamily.sans],
+          ['Roboto', ...defaultTheme.fontFamily.sans],
           { fontVariationSettings: '"wdth" 125' },
         ],
-        // sans: ['Mona Sans', ...defaultTheme.fontFamily.sans],
-        // display: [
-        //   ['Mona Sans', ...defaultTheme.fontFamily.sans],
-        //   { fontVariationSettings: '"wdth" 125' },
-        // ],
       },
     },
   },
