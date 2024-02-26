@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     template: '%s - ITDELTA',
     default: 'ITDELTA - Разработка программного обеспечения, IT консалтинг',
   },
+  other: {
+    'yandex-verification': '68030eb015a67d08',
+  }
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
