@@ -15,6 +15,8 @@ import LogoOrgOnlineLight from '@/images/clients/org-online/logo-light.svg'
 import logoVMonitor from '@/images/clients/v-monitor/logo-light.svg'
 import logoCultBooking from '@/images/clients/cultbooking/logo-light.svg'
 
+import logoInspire from '@/images/inspire.jpg'
+
 // import logoBrightPath from '@/images/clients/bright-path/logo-light.svg'
 // import logoFamilyFund from '@/images/clients/family-fund/logo-light.svg'
 // import logoGreenLife from '@/images/clients/green-life/logo-light.svg'
@@ -25,7 +27,7 @@ import logoCultBooking from '@/images/clients/cultbooking/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 import { InboxIcon, UsersIcon,  AcademicCapIcon, BanknotesIcon,
-    BookOpenIcon, DocumentIcon, GlobeAltIcon, ReceiptPercentIcon, StarIcon
+    BookOpenIcon, DocumentIcon, GlobeAltIcon, ReceiptPercentIcon, StarIcon, ArrowRightIcon
   } from '@heroicons/react/24/outline'
 
 const clients = [
@@ -294,17 +296,32 @@ export default async function Home() {
   return (
     <>
       <Container className="mt-24 sm:mt-32 md:mt-56">
-        <FadeIn className="max-w-3xl">
+        <FadeIn className="max-w-4xl">
+          {/* <Image
+                src={logoInspire}
+                alt="Logo Inspire You"
+                className="h-80 w-80 flex-none"
+                unoptimized
+              /> */}
+
           <h1 className="font-display text-4xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] xs:text-5xl sm:text-7xl">
             Цифровизация Вашего бизнеса.
           </h1>
-          <p className="mt-6 text-xl text-neutral-600">
-            Разрабатываем программное обеспечение для цифровизации бизнес-процессов компаний/корпораций.
-            Личные кабинеты, CRM системы, сложные интеграции. Десктопные, мобильные и веб-приложения.
-            {/* We are a development studio working at the intersection of design
-            and technology. It’s a really busy intersection though — a lot of
-            our staff have been involved in hit and runs. */}
-          </p>
+          <div className="mt-6 text-lg text-neutral-600 text font-display">
+            <div className='flex content-center '>
+              {/* <ArrowRightIcon className="h-4 w-4 text-logoRed" aria-hidden="true"/> */}
+              <p>Разрабатываем программное обеспечение для цифровизации бизнес-процессов компаний/корпораций.</p>
+            </div>
+            <p className="mt-1">
+              {/* <ArrowRightIcon className="h-4 w-4 text-logoRed" aria-hidden="true"/> */}
+              Личные кабинеты, CRM системы, сложные интеграции.
+            </p>
+            <p className="mt-1">
+              {/* <ArrowRightIcon className="h-4 w-4 text-logoRed" aria-hidden="true"/> */}
+              Десктопные, мобильные и веб-приложения.
+            </p>
+          </div>
+
         </FadeIn>
       </Container>
 
