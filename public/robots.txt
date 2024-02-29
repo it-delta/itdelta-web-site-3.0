@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://itdelta.ru
+
+# Sitemaps
+Sitemap: https://itdelta.ru/sitemap.xml
