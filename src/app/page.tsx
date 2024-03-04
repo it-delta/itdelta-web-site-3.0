@@ -296,32 +296,32 @@ export default async function Home() {
   return (
     <>
       <Container className="mt-24 sm:mt-32 md:mt-56">
-        <FadeIn className="max-w-4xl">
-          {/* <Image
-                src={logoInspire}
-                alt="Logo Inspire You"
-                className="h-80 w-80 flex-none"
-                unoptimized
-              /> */}
-
-          <h1 className="font-display text-4xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] xs:text-5xl sm:text-7xl">
-            Цифровизация Вашего бизнеса.
-          </h1>
-          <div className="mt-6 text-lg text-neutral-600 text font-display">
-            <div className='flex content-center '>
-              {/* <ArrowRightIcon className="h-4 w-4 text-logoRed" aria-hidden="true"/> */}
-              <p>Разрабатываем программное обеспечение для цифровизации бизнес-процессов компаний/корпораций.</p>
+        <FadeIn className="flex justify-between max-w-4xl">
+          <div>
+            <h1 className="font-display text-4xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] xs:text-5xl sm:text-7xl">
+              Цифровизация Вашего бизнеса.
+            </h1>
+            <div className="mt-6 text-lg text-neutral-600 text font-display">
+              <p className='mt-1 flex items-center gap-4'>
+                <ArrowRightIcon className="h-4 w-4 text-logoRed" aria-hidden="true"/>
+                Разрабатываем программное обеспечение для цифровизации бизнес-процессов компаний корпораций.
+              </p>
+              <p className="mt-1 flex items-center gap-4">
+                <ArrowRightIcon className="h-4 w-4 text-logoRed" aria-hidden="true"/>
+                Личные кабинеты, CRM системы, сложные интеграции.
+              </p>
+              <p className="mt-1 flex items-center gap-4">
+                <ArrowRightIcon className="h-4 w-4 text-logoRed" aria-hidden="true"/>
+                Десктопные, мобильные и веб-приложения.
+              </p>
             </div>
-            <p className="mt-1">
-              {/* <ArrowRightIcon className="h-4 w-4 text-logoRed" aria-hidden="true"/> */}
-              Личные кабинеты, CRM системы, сложные интеграции.
-            </p>
-            <p className="mt-1">
-              {/* <ArrowRightIcon className="h-4 w-4 text-logoRed" aria-hidden="true"/> */}
-              Десктопные, мобильные и веб-приложения.
-            </p>
           </div>
-
+          {/*<Image*/}
+          {/*    src={logoInspire}*/}
+          {/*    alt="Logo Inspire You"*/}
+          {/*    className="shrink-0 w-[550px]"*/}
+          {/*    unoptimized*/}
+          {/*/>*/}
         </FadeIn>
       </Container>
 
@@ -343,9 +343,9 @@ export default async function Home() {
         those annoying permission dialogs. */}
       </Testimonial>
 
-      <Services />
+      <Services/>
 
-      <ContactSection />
+      <ContactSection/>
     </>
   )
 }
