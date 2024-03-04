@@ -303,15 +303,15 @@ export default async function Home() {
             </h1>
             <div className="mt-6 text-lg text-neutral-600 text font-display">
               <p className='mt-1 flex items-center gap-4'>
-                <ArrowRightIcon className="h-4 w-4 text-logoRed" aria-hidden="true"/>
+                <ArrowRightIcon className="h-4 w-4 text-logoRed shrink-0" aria-hidden="true"/>
                 Разрабатываем программное обеспечение для цифровизации бизнес-процессов компаний корпораций.
               </p>
               <p className="mt-1 flex items-center gap-4">
-                <ArrowRightIcon className="h-4 w-4 text-logoRed" aria-hidden="true"/>
+                <ArrowRightIcon className="h-4 w-4 text-logoRed shrink-0" aria-hidden="true"/>
                 Личные кабинеты, CRM системы, сложные интеграции.
               </p>
               <p className="mt-1 flex items-center gap-4">
-                <ArrowRightIcon className="h-4 w-4 text-logoRed" aria-hidden="true"/>
+                <ArrowRightIcon className="h-4 w-4 text-logoRed shrink-0" aria-hidden="true"/>
                 Десктопные, мобильные и веб-приложения.
               </p>
             </div>
