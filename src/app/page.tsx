@@ -15,7 +15,7 @@ import LogoOrgOnlineLight from '@/images/clients/org-online/logo-light.svg'
 import logoVMonitor from '@/images/clients/v-monitor/logo-light.svg'
 import logoCultBooking from '@/images/clients/cultbooking/logo-light.svg'
 
-import logoInspire from '@/images/inspire.jpg'
+import logoInspire from '@/images/inspire.png'
 
 // import logoBrightPath from '@/images/clients/bright-path/logo-light.svg'
 // import logoFamilyFund from '@/images/clients/family-fund/logo-light.svg'
@@ -295,9 +295,9 @@ export default async function Home() {
 
   return (
     <>
-      <Container className="mt-24 sm:mt-32 md:mt-56">
-        <FadeIn className="flex justify-between max-w-4xl">
-          <div>
+      <Container className="mt-24 sm:mt-32 md:mt-56 xl:mt-44">
+        <FadeIn className="flex justify-between">
+          <div className="flex flex-col justify-center">
             <h1 className="font-display text-4xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] xs:text-5xl sm:text-7xl">
               Цифровизация Вашего бизнеса.
             </h1>
@@ -316,12 +316,12 @@ export default async function Home() {
               </p>
             </div>
           </div>
-          {/*<Image*/}
-          {/*    src={logoInspire}*/}
-          {/*    alt="Logo Inspire You"*/}
-          {/*    className="shrink-0 w-[550px]"*/}
-          {/*    unoptimized*/}
-          {/*/>*/}
+          <Image
+              src={logoInspire}
+              alt="Logo Inspire You"
+              className="shrink-0 w-[550px] hidden xl:flex"
+              unoptimized
+          />
         </FadeIn>
       </Container>
 
