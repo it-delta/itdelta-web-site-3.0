@@ -319,7 +319,7 @@ export default async function Home() {
           <Image
               src={logoInspire}
               alt="Logo Inspire You"
-              className="shrink-0 w-[550px] hidden xl:flex"
+              className="shrink-0 hidden xl:flex"
               unoptimized
           />
         </FadeIn>
