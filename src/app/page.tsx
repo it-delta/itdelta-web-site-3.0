@@ -298,13 +298,13 @@ export default async function Home() {
       <Container className="mt-24 sm:mt-32 md:mt-56 xl:mt-44">
         <FadeIn className="flex justify-between">
           <div className="flex flex-col justify-center">
-            <h1 className="font-display text-4xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] xs:text-5xl sm:text-7xl">
+            <h1 className="font-display text-4xl font-medium tracking-tight text-neutral-950 text-balance xs:text-5xl sm:text-7xl">
               Цифровизация Вашего бизнеса.
             </h1>
-            <div className="mt-6 text-lg text-neutral-600 text font-display">
+            <div className="mt-6 text-lg text-neutral-600 text font-display text-pretty">
               <p className='mt-1 flex items-center gap-4'>
                 <ArrowRightIcon className="h-4 w-4 text-logoRed shrink-0" aria-hidden="true"/>
-                Разрабатываем программное обеспечение для цифровизации бизнес-процессов компаний корпораций.
+                Разрабатываем программное обеспечение для цифровизации бизнес-процессов компаний.
               </p>
               <p className="mt-1 flex items-center gap-4">
                 <ArrowRightIcon className="h-4 w-4 text-logoRed shrink-0" aria-hidden="true"/>
