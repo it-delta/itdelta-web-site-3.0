@@ -295,7 +295,7 @@ export default async function Home() {
 
   return (
     <>
-      <Container className="mt-24 sm:mt-32 md:mt-56 xl:mt-44">
+      <Container className="mt-24 sm:mt-32">
         <FadeIn className="flex justify-between">
           <div className="flex flex-col justify-center">
             <h1 className="font-display text-4xl font-medium tracking-tight text-neutral-950 text-balance xs:text-5xl sm:text-7xl">
