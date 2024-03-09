@@ -2,8 +2,7 @@
 import {useCallback, useId, useState} from "react";
 import {Button} from '@/components/Button'
 import {FadeIn} from '@/components/FadeIn'
-import {GoogleRecapthaForm} from "@/components/GoogleRecapthaForm";
-
+import {useGoogleReCaptcha} from 'react-google-recaptcha-v3';
 
 function TextInput({
     label,
@@ -81,6 +80,7 @@ export function ContactForm() {
     message: '',
     budget: '',
   });
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const clearErrors = useCallback(()=>setErrors({}), []);
 
@@ -94,7 +94,7 @@ export function ContactForm() {
     setMessage("Во время отправки произошла ошибка: " + e);
   }
 
-  const onSubmit = (e: any) => {
+  const onSubmit = async (e: any) => {
     e.preventDefault();
     setMessage('');
     setErrors({})
@@ -112,6 +112,7 @@ export function ContactForm() {
         }
     };
 
+    data1.token = await handleReCaptchaVerify();
     const url = process.env.NEXT_PUBLIC_ORDER_FORM_URL ?? '';
     window.fetch(url, {
           method: "POST",
@@ -135,9 +136,22 @@ export function ContactForm() {
         });
   };
 
+    const handleReCaptchaVerify = useCallback(async () => {
+        if (!executeRecaptcha) {
+            console.log('Execute recaptcha not yet available');
+            return;
+        }
+        try {
+            const token = await executeRecaptcha('sendForm');
+            console.log('handleReCaptchaVerify: ', token && 'OK');
+            return token;
+        } catch (error) {
+            console.error('recaptcha token error', error);
+        }
+    }, [executeRecaptcha]);
+
   return (
     <FadeIn className="lg:order-last">
-      <GoogleRecapthaForm>
         <form onSubmit={onSubmit}>
           <h2 className="font-display text-base font-semibold text-neutral-950">
             Оставить заявку
@@ -202,7 +216,6 @@ export function ContactForm() {
             Отправить
           </Button>
         </form>
-        </GoogleRecapthaForm>
-    </FadeIn>
+     </FadeIn>
   )
 }

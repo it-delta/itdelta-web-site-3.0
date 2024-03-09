@@ -1,5 +1,6 @@
 import {useId } from 'react'
 import { type Metadata } from 'next'
+import {GoogleRecapthaForm} from "@/components/GoogleRecapthaForm";
 import { ContactForm } from '@/components/ContactForm'
 // import Link from 'next/link'
 
@@ -66,6 +67,7 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <>
+    <GoogleRecapthaForm>
       <PageIntro eyebrow="Напишите нам" title="Решаем Ваши бизнес-задачи!">
         <p>Оставьте заявку, мы проконсультируем и оценим проект.</p>
       </PageIntro>
@@ -76,6 +78,7 @@ export default function Contact() {
           <ContactDetails />
         </div>
       </Container>
+    </GoogleRecapthaForm>
     </>
   )
 }
