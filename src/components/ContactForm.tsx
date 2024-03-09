@@ -140,7 +140,7 @@ export function ContactForm() {
     const handleReCaptchaVerify = useCallback(async () => {
         if (!executeRecaptcha) {
             console.log('Execute recaptcha not yet available');
-            return;
+            return '';
         }
         try {
             const token = await executeRecaptcha('sendForm');
