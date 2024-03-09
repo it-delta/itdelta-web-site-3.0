@@ -109,7 +109,8 @@ export function ContactForm() {
         data: {
             budget: `Бюджет: ${data.budget}`,
             company: `Компания: ${data.company}`
-        }
+        },
+        token: ''
     };
 
     data1.token = await handleReCaptchaVerify();
