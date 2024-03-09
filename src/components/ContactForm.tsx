@@ -110,7 +110,7 @@ export function ContactForm() {
             budget: `Бюджет: ${data.budget}`,
             company: `Компания: ${data.company}`
         },
-        token: string|undefined
+        token: ''
     };
 
     data1.token = await handleReCaptchaVerify();
@@ -140,7 +140,7 @@ export function ContactForm() {
     const handleReCaptchaVerify = useCallback(async () => {
         if (!executeRecaptcha) {
             console.log('Execute recaptcha not yet available');
-            return;
+            return '';
         }
         try {
             const token = await executeRecaptcha('sendForm');
@@ -149,6 +149,7 @@ export function ContactForm() {
         } catch (error) {
             console.error('recaptcha token error', error);
         }
+        return '';
     }, [executeRecaptcha]);
 
   return (
