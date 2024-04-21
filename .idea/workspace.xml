@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d240011-3954-4b89-a613-abca9192c6c8" name="Changes" comment="service page">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/itdelta-web-site-3.0.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service/wrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/wrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeaturesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeaturesList.tsx" afterDir="false" />
+    <list default="true" id="2d240011-3954-4b89-a613-abca9192c6c8" name="Changes" comment="robots.txt">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/robots.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +57,7 @@
       <recent name="$PROJECT_DIR$/src/components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/components/ content" />
     </key>
@@ -95,7 +89,7 @@
       <workItem from="1712395905494" duration="1474000" />
       <workItem from="1713093917159" duration="6145000" />
       <workItem from="1713109336885" duration="15000" />
-      <workItem from="1713616079817" duration="17799000" />
+      <workItem from="1713616079817" duration="20666000" />
     </task>
     <task id="LOCAL-00001" summary="cases">
       <created>1704008424663</created>
@@ -321,7 +315,28 @@
       <option name="project" value="LOCAL" />
       <updated>1713691986759</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="service page 1">
+      <created>1713695382811</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1713695382811</updated>
+    </task>
+    <task id="LOCAL-00034" summary="robots.txt">
+      <created>1713712279577</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1713712279577</updated>
+    </task>
+    <task id="LOCAL-00035" summary="robots.txt">
+      <created>1713715384211</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1713715384211</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,8 +355,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Blog hidden" />
-    <MESSAGE value="Process" />
     <MESSAGE value="fixes" />
     <MESSAGE value="Contact form" />
     <MESSAGE value="Contact form1" />
@@ -365,7 +378,9 @@
     <MESSAGE value="build bug fixed2" />
     <MESSAGE value="build bug fixed3" />
     <MESSAGE value="service page" />
-    <option name="LAST_COMMIT_MESSAGE" value="service page" />
+    <MESSAGE value="service page 1" />
+    <MESSAGE value="robots.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="robots.txt" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
