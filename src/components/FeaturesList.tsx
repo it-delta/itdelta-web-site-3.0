@@ -1,5 +1,5 @@
 import {FadeIn, FadeInStagger} from '@/components/FadeIn'
-import Image from "next/image";
+import Image, {ImageProps} from "next/image";
 
 export function FeaturesList({
                                  title,
@@ -31,8 +31,8 @@ export function FeatureListItem({
                                     className,
                                 }: {
     title: string
-    icon?: React.ReactNode
-    image?:string
+    icon?: React.ComponentType<{ className?: string }>
+    image?: ImageProps
     children: React.ReactNode
     href?: string
     className?: string
@@ -42,7 +42,6 @@ export function FeatureListItem({
             <div className="mb-2 mr-3 flex h-8 w-16 items-center justify-center rounded-lg">
                 {image && (
                     <Image
-                        alt=""
                         {...image}
                         className="h-6 w-6 w-full object-cover transition duration-500 motion-safe:group-hover:scale-105"
                     />
