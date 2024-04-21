@@ -1,6 +1,7 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /service
 
 # Host
 Host: https://itdelta.ru
