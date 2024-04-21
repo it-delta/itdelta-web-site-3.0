@@ -42,6 +42,18 @@ export interface Article {
   }
 }
 
+export interface Service {
+  active?: boolean
+  date: string
+  title: string
+  description: string
+  author: {
+    name: string
+    role: string
+    image: ImagePropsWithOptionalAlt
+  }
+}
+
 export interface CaseStudy {
   active?: boolean
   date: string
@@ -67,4 +79,8 @@ export function loadArticles() {
 
 export function loadCaseStudies() {
   return loadEntries<CaseStudy>('work', 'caseStudy')
+}
+
+export function loadServices() {
+  return loadEntries<Service>('service', 'service')
 }
