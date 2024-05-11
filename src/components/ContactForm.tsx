@@ -113,6 +113,8 @@ export function ContactForm() {
         token: ''
     };
 
+    console.log(data1);
+
     data1.token = await handleReCaptchaVerify();
     const url = process.env.NEXT_PUBLIC_ORDER_FORM_URL ?? '';
     window.fetch(url, {
