@@ -1,5 +1,6 @@
 import {FadeIn, FadeInStagger} from '@/components/FadeIn'
 import Image, {ImageProps} from "next/image";
+import { twMerge } from 'tailwind-merge'
 
 export function FeaturesList({
                                  title,
@@ -15,7 +16,7 @@ export function FeaturesList({
             <h2>
                 <span className="mt-16 mb-8 block font-display tracking-tight text-xl text-neutral-950">{title}</span>
             </h2>
-            <FadeInStagger className="mb-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
+            <FadeInStagger className={twMerge("mb-16 grid grid-cols-1 gap-8 lg:grid-cols-3", className)}>
                 {children}
             </FadeInStagger>
         </>
