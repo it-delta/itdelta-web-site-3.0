@@ -22,22 +22,22 @@ function ArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 interface Page {
   href: string
-  date: string
+  date?: string
   title: string
   description: string
 }
 
-function PageLink({ page, showDate }: { page: Page, showDate?: boolean }) {
+function PageLink({ page }: { page: Page }) {
   return (
     <article key={page.href}>
       <Border
         position="left"
         className="relative flex flex-col items-start pl-8"
       >
-        <h3 className={clsx("text-base font-semibold text-neutral-950", showDate ? "mt-6" : "")}>
+        <h3 className={clsx("text-base font-semibold text-neutral-950", page.date ? "mt-6" : "")}>
           {page.title}
         </h3>
-          {showDate &&
+          {page.date &&
               <time
                   dateTime={page.date}
                   className="order-first text-sm text-neutral-600"
@@ -65,13 +65,11 @@ export function PageLinks({
   pages,
   intro,
   className,
-  showDate = true
 }: {
   title: string
   pages: Array<Page>
   intro?: string
   className?: string
-  showDate?: boolean
 }) {
   return (
     <div className={clsx('relative pt-24 sm:pt-32 lg:pt-40', className)}>
@@ -90,7 +88,7 @@ export function PageLinks({
         <FadeInStagger className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
           {pages.map((page) => (
             <FadeIn key={page.href}>
-              <PageLink page={page} showDate={showDate} />
+              <PageLink page={page} />
             </FadeIn>
           ))}
         </FadeInStagger>

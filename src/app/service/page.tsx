@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Services() {
-  let services = (await loadServices()).sort((a,b) => a.sort - b.sort)
+  let services = await loadServices()
 
   return (
     <>

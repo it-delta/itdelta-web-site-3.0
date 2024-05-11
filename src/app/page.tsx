@@ -52,6 +52,7 @@ const clients = [
     // ['North Adventures', logoNorthAdventures],
 ]
 
+/*
 const features = [
     {
         name: 'Разработка личных кабинетов',
@@ -117,9 +118,10 @@ const features = [
         icon: StarIcon,
     },
 ]
+*/
 
 async function Features() {
-    let services = (await loadServices()).sort((a, b) => a.sort - b.sort)
+    let services = await loadServices()
 
     return (
         <>
@@ -133,7 +135,7 @@ async function Features() {
                                         className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-200">
                                         <feature.icon className="h-6 w-6 text-logoRed" aria-hidden="true"/>
                                     </div>
-                                    {feature.title}
+                                    <Link href={feature.href}>{feature.title}</Link>
                                 </dt>
                                 <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
                                     <p className="flex-auto">{feature.description}</p>

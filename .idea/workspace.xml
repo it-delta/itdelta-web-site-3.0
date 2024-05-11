@@ -2,52 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d240011-3954-4b89-a613-abca9192c6c8" name="Changes" comment="services added">
-      <change afterPath="$PROJECT_DIR$/src/app/service/booking-system-development/laptop.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/booking-system-development/page.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/booking-system-development/pilot.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/booking-system-development/server.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/crm-system-development/laptop.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/crm-system-development/page.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/crm-system-development/pilot.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/crm-system-development/server.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/document-flow-system-development/laptop.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/document-flow-system-development/page.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/document-flow-system-development/pilot.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/document-flow-system-development/server.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/ecommerce-development/laptop.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/ecommerce-development/page.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/ecommerce-development/pilot.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/ecommerce-development/server.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/lms-system-development/laptop.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/lms-system-development/page.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/lms-system-development/pilot.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/lms-system-development/server.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/loyalty-system-development/laptop.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/loyalty-system-development/page.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/loyalty-system-development/pilot.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/loyalty-system-development/server.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/marketplace-development/laptop.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/marketplace-development/page.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/marketplace-development/pilot.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/marketplace-development/server.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/mvp-development/laptop.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/mvp-development/page.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/mvp-development/pilot.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/mvp-development/server.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/blog/wrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/blog/wrapper.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/process/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/process/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service/booking-system-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/booking-system-development/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service/crm-system-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/crm-system-development/page.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/service/development-of-personal-accounts/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/development-of-personal-accounts/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service/document-flow-system-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/document-flow-system-development/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service/ecommerce-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/ecommerce-development/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service/lms-system-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/lms-system-development/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service/loyalty-system-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/loyalty-system-development/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service/marketplace-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/marketplace-development/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service/mvp-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/mvp-development/page.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/service/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/service/wrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/wrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PageLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageLinks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RootLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RootLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/formatDate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/formatDate.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/mdx.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/mdx.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -382,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713715384211</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="services added">
+      <created>1715435579124</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1715435579124</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

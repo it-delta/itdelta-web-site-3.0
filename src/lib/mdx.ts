@@ -1,7 +1,8 @@
 import { type ImageProps } from 'next/image'
 import glob from 'fast-glob'
 
-async function loadEntries<T extends { date: string }>(
+// async function loadEntries<T extends { date: string }>(
+async function loadEntries<T>(
   directory: string,
   metaName: string,
 ): Promise<Array<MDXEntry<T>>> {
@@ -23,7 +24,6 @@ async function loadEntries<T extends { date: string }>(
     )
   )
   .filter((a) => a.active == true)
-  .sort((a, b) => b.date.localeCompare(a.date))
 }
 
 type ImagePropsWithOptionalAlt = Omit<ImageProps, 'alt'> & { alt?: string }
@@ -44,16 +44,11 @@ export interface Article {
 
 export interface Service {
   active?: boolean
-  date: string
+  sort: number
   title: string
+  subtitle?: string
   description: string
   icon: React.ForwardRefExoticComponent<React.PropsWithoutRef<React.SVGProps<SVGSVGElement>> & { title?: string, titleId?: string } & React.RefAttributes<SVGSVGElement>>;
-  sort: number
-  author: {
-    name: string
-    role: string
-    image: ImagePropsWithOptionalAlt
-  }
 }
 
 export interface CaseStudy {
@@ -77,12 +72,15 @@ export interface CaseStudy {
 
 export function loadArticles() {
   return loadEntries<Article>('blog', 'article')
+      .then(res => res.sort((a, b) => b.date.localeCompare(a.date)))
 }
 
 export function loadCaseStudies() {
   return loadEntries<CaseStudy>('work', 'caseStudy')
+      .then(res => res.sort((a, b) => b.date.localeCompare(a.date)))
 }
 
 export function loadServices() {
   return loadEntries<Service>('service', 'service')
+      .then(res => res.sort((a, b) => a.sort - b.sort))
 }
