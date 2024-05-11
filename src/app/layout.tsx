@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 export default function Layout({children}: { children: React.ReactNode }) {
     const prod = process.env.NODE_ENV === 'production';
     return (
-        <html lang="en" className="h-full bg-neutral-950 text-base antialiased">
-        <Script src="https://code.jivo.ru/widget/PWVDc47MVr"/>
+        <html lang="ru" className="h-full bg-neutral-950 text-base antialiased">
+        {prod && <Script src="https://code.jivo.ru/widget/PWVDc47MVr"/>}
         <body className="flex min-h-full flex-col">
         {prod ?
             <Analytics
