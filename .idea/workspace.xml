@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d240011-3954-4b89-a613-abca9192c6c8" name="Changes" comment="services added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service/booking-system-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/booking-system-development/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service/crm-system-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/crm-system-development/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service/development-of-personal-accounts/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/development-of-personal-accounts/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service/document-flow-system-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/document-flow-system-development/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service/ecommerce-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/ecommerce-development/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service/lms-system-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/lms-system-development/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service/loyalty-system-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/loyalty-system-development/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service/marketplace-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/marketplace-development/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service/mvp-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/mvp-development/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service/wrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/wrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PageLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageLinks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/formatDate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/formatDate.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/mdx.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/mdx.ts" afterDir="false" />
-    </list>
+    <list default="true" id="2d240011-3954-4b89-a613-abca9192c6c8" name="Changes" comment="services updated" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -359,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715435579124</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="services updated">
+      <created>1715438710343</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1715438710343</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +368,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Contact form" />
     <MESSAGE value="Contact form1" />
     <MESSAGE value="Contact form fixed" />
     <MESSAGE value="Contact form fixed1" />
@@ -403,7 +392,8 @@
     <MESSAGE value="service page 1" />
     <MESSAGE value="robots.txt" />
     <MESSAGE value="services added" />
-    <option name="LAST_COMMIT_MESSAGE" value="services added" />
+    <MESSAGE value="services updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="services updated" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
