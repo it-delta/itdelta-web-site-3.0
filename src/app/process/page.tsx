@@ -62,43 +62,22 @@ function Discover() {
           Мы тесно сотрудничаем с нашими клиентами, чтобы понять их{' '}
           <strong className="font-semibold text-neutral-950">потребности</strong> и цели,
           погружаясь в их повседневную деятельность, чтобы понять, что движет их бизнесом.
-
-          {/*We work closely with our clients to understand their{' '}*/}
-          {/*<strong className="font-semibold text-neutral-950">needs</strong> and*/}
-          {/*goals, embedding ourselves in their every day operations to understand*/}
-          {/*what makes their business tick.*/}
         </p>
         <p>
-          Наша команда аналитиков-детективов в течение нескольких недель следит за руководителями компании,
-          в то время как наши клиентские менеджеры сосредоточены на разборке их мусора.
-          Затем наши эксперты по безопасности с помощью социальной инженерии выполняют взломы,
-          чтобы получить доступ к их{' '}
-          <strong className="font-semibold text-neutral-950">бизнес</strong>-аккаунтам,
-          передавая эту информацию нашей команде судебно-бухгалтерского учета.
-{/*
-          Our team of private investigators shadow the company director’s for
-          several weeks while our account managers focus on going through their
-          trash. Our senior security experts then perform social engineering
-          hacks to gain access to their{' '}
-          <strong className="font-semibold text-neutral-950">business</strong>{' '}
-          accounts — handing that information over to our forensic accounting
-          team.
-*/}
+          Наша команда аналитиков в течение нескольких недель изучает{' '}
+          <strong className="font-black text-neutral-950">бизнес-процессы</strong> компании совместно с руководителями
+          и отвественными сотрудниками. На основе полученной информации составляется карта бизнес-процессов,
+          пользовательские сценарии и схемы взаимодействия подсистем компании.
+          Собранная информация позволяет подготовить список задач для реализации и оценить сроки и стоимость проекта.
         </p>
         <p>
           После завершения полного аудита мы предоставляем подробный{' '}
-          <strong className="font-semibold text-neutral-950">план</strong> и, что более важно, бюджет.
-{/*
-          Once the full audit is complete, we report back with a comprehensive{' '}
-          <strong className="font-semibold text-neutral-950">plan</strong> and,
-          more importantly, a budget.
-*/}
+          <strong className="font-semibold text-neutral-950">план</strong>, сроки и стоимость проекта.
         </p>
       </div>
 
       <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
         Включено в этап
-        {/*Included in this phase*/}
       </h3>
       <TagList className="mt-4">
         <TagListItem>Сбор требований</TagListItem>
@@ -106,7 +85,6 @@ function Discover() {
         <TagListItem>Опросы сотрудников</TagListItem>
         <TagListItem>Документирование</TagListItem>
         <TagListItem>Согласование концепции</TagListItem>
-        {/*<TagListItem>Forensic audit</TagListItem>*/}
       </TagList>
     </Section>
   )
@@ -117,46 +95,25 @@ function Build() {
     <Section title="Разработка" image={{ src: imageLaptop, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          На этапе Аналитики мы разрабатываем комплексную дорожную карту для проекта и начинаем работать над её детализацией.
-          Дорожная карта — это запутанная путаница технической чепухи, призванная затянуть проект как можно дольше.
+          На этапе Разработки мы воплощаем подготовленный план проекта в реальных структурах баз данных, страницах
+          приложения, push- и почтовых уведомлениях, отчетах, систамах хранения и прочих элентах современного
+          технологического стека веб-разработки.
         </p>
         <p>
-          Каждому клиенту назначается менеджер по работе с ключевыми клиентами, который поддерживает каналы связи открытыми и скрывает фактический ход проекта.
-          Он выступает в качестве буфера между непрекращающимся ворчанием клиента и командой разработчиков, которая усердно
-          работает над поиском кода для повторного использования в open-source проектах.
+          Для реализации проекта создается команда специалистов, состоящая из менеджера проекта, клиентского менеджера,
+          разработчиков фронт- и бэк, дизайнер, DevOps инженера, дизайнера, верстальщика, тестировщиков.
         </p>
         <p>
-          Наши менеджеры по работе с клиентами обучены отвечать на электронные письма клиентов только после 21:00, через несколько дней после первого письма.
-          Это усиливает общее впечатление, что мы очень заняты, и отговаривает клиентов просить об изменениях.
+          Обычно мы работаем по Agile методологии, поэтому ежедневно контактируем, а также регулярно проводим
+          конференции со специалистами клинента для уточнения планов, детализации задач и сдачи этапов работ.
         </p>
-{/*        <p>
-          Based off of the discovery phase, we develop a comprehensive roadmap
-          for each product and start working towards delivery. The roadmap is an
-          intricately tangled mess of technical nonsense designed to drag the
-          project out as long as possible.
-        </p>
-        <p>
-          Each client is assigned a key account manager to keep lines of
-          communication open and obscure the actual progress of the project.
-          They act as a buffer between the client’s incessant nagging and the
-          development team who are hard at work scouring open source projects
-          for code to re-purpose.
-        </p>
-        <p>
-          Our account managers are trained to only reply to client emails after
-          9pm, several days after the initial email. This reinforces the general
-          aura that we are very busy and dissuades clients from asking for
-          changes.
-        </p>*/}
       </div>
 
       <Blockquote
         author={{ name: 'Антон Петровский', role: 'CEO of Unseal' }}
         className="mt-12"
       >
-        Они так регулярно публиковали обновления о ходе работы, что мы начали думать, что они автоматизированы!
-        {/*Studio were so regular with their progress updates we almost began to*/}
-        {/*think they were automated!*/}
+        Они так регулярно публиковали обновления о ходе работы, что мы начали думать, что они автоматизированы! :)
       </Blockquote>
     </Section>
   )
@@ -167,50 +124,19 @@ function Deliver() {
     <Section title="Запуск" image={{ src: imageMeeting, shape: 2 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          Примерно в середине этапа Разработки мы отодвигаем каждый проект на 6 недель из-за изменения {' '}
-          <strong className="font-semibold text-neutral-950">
-            требований
-          </strong>.
-          Это позволяет нам увеличить бюджет в последний раз перед запуском.
-{/*          About halfway through the Build phase, we push each project out by 6
-          weeks due to a change in{' '}
-          <strong className="font-semibold text-neutral-950">
-            requirements
-          </strong>
-          . This allows us to increase the budget a final time before launch.*/}
+          При приближении к окончанию этапа Разработки мы начинаем пилотное {' '}
+          <strong className="font-semibold text-neutral-950">тестирование</strong> проекта с привлечение специалистов клиента.
+          Параллельно создаётся система автоматизированых сквозных (end-to-end) тестов для комплексного тестирования приложения.
         </p>
         <p>
-          Несмотря на то, что в основном используются готовые компоненты, большая часть{' '}
-          <strong className="font-semibold text-neutral-950">прогресса</strong>{' '}
-          проекта происходит в последние 24 часа.
-          Время разработки, отведенное каждому клиенту, фактически тратится на создание демо-версий дополненной реальности, которые становятся вирусными в Твиттере.
-
-{/*          Despite largely using pre-built components, most of the{' '}
-          <strong className="font-semibold text-neutral-950">progress</strong>{' '}
-          on each project takes place in the final 24 hours. The development
-          time allocated to each client is actually spent making augmented
-          reality demos that go viral on Twitter.*/}
+          Также происходит развертывание приложения на боевых серверах, а также нагрузочное тестирование, в зависимости от планируемой нагрузки.
+          Подготовливается система{' '}<strong className="font-semibold text-neutral-950">резервного копирования</strong>,
+          проверяется{' '}<strong className="font-semibold text-neutral-950">информационная безопасность</strong>.
         </p>
-        <p>
-          Мы гарантируем, что основные страницы сайта будут{' '}
-          <strong className="font-semibold text-neutral-950">
-            полностью функциональны
-          </strong>{' '} при запуске — вспомогательные страницы, конечно же, будут оболочками lorem ipusm,
-          которые будут обновляться в рамках нашего непомерного гонорара за{' '}
-          <strong className="font-semibold text-neutral-950">
-            техническую поддержку
-          </strong>.
-
-{/*          We ensure that the main pages of the site are{' '}
-          <strong className="font-semibold text-neutral-950">
-            fully functional
-          </strong>{' '}
-          at launch — the auxiliary pages will, of course, be lorem ipusm shells
-          which get updated as part of our exorbitant{' '}
-          <strong className="font-semibold text-neutral-950">
-            maintenance
-          </strong>{' '}
-          retainer.*/}
+      <p>
+        После запуска проекта в боевой режим, мы продолжаем контролировать работу приложения с помощью специальных
+        систем{' '}<strong className="font-semibold text-neutral-950">логирования</strong> и анализа действий пользователей,
+        чтобы оперативно выявить и устранить возможные проблемы.
         </p>
       </div>
 
@@ -219,22 +145,14 @@ function Deliver() {
       </h3>
       <List className="mt-8">
         <ListItem title="Тестирование">
-          Наши проекты всегда имеют 100%-ное покрытие тестами, и это было бы впечатляюще,
-          если бы наши тесты не были такими дырявыми как сито.
-          {/*Our projects always have 100% test coverage, which would be impressive*/}
-          {/*if our tests weren’t as porous as a sieve.*/}
+          Ручное и автоматизированное тестировани приложения, включая unit, integrity и end-to end тесты.
         </ListItem>
         <ListItem title="Инфраструктура">
-          Чтобы обеспечить надежность, мы используем только лучшие дроплеты Digital Ocean,
-          которые можно купить за 4 доллара в месяц.
-          {/*To ensure reliability we only use the best Digital Ocean droplets that*/}
-          {/*$4 a month can buy.*/}
+          Размещение приложения как на серверах клиента, так и на надежных облачных серверах.
         </ListItem>
         <ListItem title="Поддержка">
-          Поскольку мы храним ключи API для каждого критически важного сервиса вашего бизнеса,
-          вы можете рассчитывать на пожизненные поддержку и счета на оплату от нас.
-          {/*Because we hold the API keys for every critical service your business*/}
-          {/*uses, you can expect a lifetime of support, and invoices, from us.*/}
+          Контроль работы приложения, анализ лог файлов для выявления ошибок и оперативного утранения. Устранение
+          узких мест производительности.
         </ListItem>
       </List>
     </Section>
@@ -257,59 +175,33 @@ function Values() {
       >
         <p>
           Мы стремимся быть в авангарде новых тенденций и технологий,
-          полностью игнорируя их и клонируя тот старый проект PHP, который нам удобно использовать.
-          Мы придерживаемся наших основных ценностей, чтобы оправдать это решение.
-{/*
-          We strive to stay at the forefront of emerging trends and
-          technologies, while completely ignoring them and forking that old
-          Rails project we feel comfortable using. We stand by our core values
-          to justify that decision.
-*/}
+          используя как зарекомендовавшие себя решения, проверенные на множестве проектов, так и инновационные решения,
+          позволяющие совершить прорыв в эффективности разработки.
         </p>
       </SectionIntro>
 
       <Container className="mt-24">
         <GridList>
           <GridListItem title="Внимание к деталям">
-            Первая часть любого партнерства — заставить нашего дизайнера разместить ваш логотип в нашем шаблоне.
-            Второй шаг — заставить его раскрасить цвета.
-{/*
-            The first part of any partnership is getting our designer to put
-            your logo in our template. The second step is getting them to do the
-            colors.
-*/}
+            Подробный и тщательный анализ автоматизируемых процессов для нахождения максимально удобного для пользователей варианта реализации.
           </GridListItem>
           <GridListItem title="Эффективность">
-            Мы гордимся тем, что никогда не пропускаем сроки, что легко,
-            поскольку большая часть работы была выполнена много лет назад.
-{/*            We pride ourselves on never missing a deadline which is easy because
-            most of the work was done years ago.*/}
+            Выбор оптимальных решений для сокращения затрат на реализацию, в том числе повторное использование кода и экспертиза прошлых проектов.
           </GridListItem>
           <GridListItem title="Гибкость">
             У каждого бизнеса есть уникальные потребности, и наша самая большая задача —
-            воплотить эти потребности во что-то, что мы уже создали.
-{/*
-            Every business has unique needs and our greatest challenge is
-            shoe-horning those needs into something we already built.
-*/}
+            воплотить эти потребности используя наши компетенции и экспертизу.
           </GridListItem>
           <GridListItem title="Честность">
-            Мы прозрачны во всех наших процессах, полагаясь на тот простой факт,
-            что наши клиенты никогда ничего не читают.
-            {/*We are transparent about all of our processes, banking on the simple
-            fact our clients never actually read anything.*/}
+            Мы прозрачны во всех наших процессах, предоставляя подробные отчеты, а также систему визуального контроля работы специалистов.
           </GridListItem>
           <GridListItem title="Преданность">
             Мы развиваем долгосрочные отношения с нашими клиентами, которые выходят за рамки
-            простой разработки продукта и позволяют нам выставлять им счета на протяжении десятилетий.
-            {/*We foster long-term relationships with our clients that go beyond
-            just delivering a product, allowing us to invoice them for decades.*/}
+            простой разработки продукта и позволяют сотрудничать на протяжении десятилетий.
           </GridListItem>
           <GridListItem title="Инновационность">
             Технологический ландшафт постоянно развивается, и мы тоже.
-            Мы постоянно ищем новые проекты с открытым исходным кодом для клонирования.
-            {/*The technological landscape is always evolving and so are we. We are
-            constantly on the lookout for new open source projects to clone.*/}
+            Мы постоянно ищем новые технологии для использования в проектах.
           </GridListItem>
         </GridList>
       </Container>
