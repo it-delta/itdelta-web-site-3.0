@@ -30,10 +30,10 @@ export default async function ServiceArticleWrapper({
               dateTime={service.date}
               className="order-first text-sm text-neutral-950"
             >
-              {formatDate(service.date)}
+              {/*{formatDate(service.date)}*/}
             </time>
             <p className="mt-6 text-sm font-semibold text-neutral-950">
-              {service.author.name}, {service.author.role}
+              {/*{service.author.name}, {service.author.role}*/}
             </p>
           </header>
         </FadeIn>
@@ -48,8 +48,9 @@ export default async function ServiceArticleWrapper({
       {moreArticles.length > 0 && (
         <PageLinks
           className="mt-24 sm:mt-32 lg:mt-40"
-          title="More articles"
+          title="Другие услуги"
           pages={moreArticles}
+          showDate={false}
         />
       )}
 

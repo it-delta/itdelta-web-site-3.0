@@ -144,9 +144,10 @@ function Navigation() {
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
         <NavigationItem href="/work">Проекты</NavigationItem>
-        <NavigationItem href="/process">Процессы</NavigationItem>
+        <NavigationItem href="/service">Услуги</NavigationItem>
       </NavigationRow>
       <NavigationRow>
+        <NavigationItem href="/process">Процессы</NavigationItem>
         <NavigationItem href="/about">О нас</NavigationItem>
         {/*<NavigationItem href="/blog">Блог</NavigationItem>*/}
       </NavigationRow>

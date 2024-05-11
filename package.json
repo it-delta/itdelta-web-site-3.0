@@ -27,7 +27,7 @@
     "escape-string-regexp": "^5.0.0",
     "fast-glob": "^3.2.12",
     "framer-motion": "^10.15.2",
-    "next": "13.4.16",
+    "next": "^14.2.3",
     "next-sitemap": "^4.2.3",
     "next-yandex-metrica": "^1.1.1",
     "react": "18.2.0",

@@ -19,7 +19,8 @@ import {
   ReceiptPercentIcon,
   ServerStackIcon,
   ShoppingCartIcon,
-  TicketIcon
+  TicketIcon,
+    InboxIcon
 } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Services() {
-  let services = await loadServices()
+  let services = (await loadServices()).sort((a,b) => a.sort - b.sort)
 
   return (
     <>
@@ -57,7 +58,9 @@ export default async function Services() {
                       <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/12 lg:px-4">
                         {/* <dt className="sr-only">Published</dt> */}
                         <dd className="absolute left-0 top-0 text-sm text-neutral-950 lg:static">
-                          <AcademicCapIcon className="h-8 w-8 text-logoRed"/>
+                            <service.icon className="h-8 w-8 text-logoRed"/>
+
+                          {/*<AcademicCapIcon className="h-8 w-8 text-logoRed"/>*/}
                           {/* <time dateTime={service.date}>
                             {formatDate(service.date)}
                           </time> */}

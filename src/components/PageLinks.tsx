@@ -27,22 +27,24 @@ interface Page {
   description: string
 }
 
-function PageLink({ page }: { page: Page }) {
+function PageLink({ page, showDate }: { page: Page, showDate?: boolean }) {
   return (
     <article key={page.href}>
       <Border
         position="left"
         className="relative flex flex-col items-start pl-8"
       >
-        <h3 className="mt-6 text-base font-semibold text-neutral-950">
+        <h3 className={clsx("text-base font-semibold text-neutral-950", showDate ? "mt-6" : "")}>
           {page.title}
         </h3>
-        <time
-          dateTime={page.date}
-          className="order-first text-sm text-neutral-600"
-        >
-          {formatDate(page.date)}
-        </time>
+          {showDate &&
+              <time
+                  dateTime={page.date}
+                  className="order-first text-sm text-neutral-600"
+              >
+                  {formatDate(page.date)}
+              </time>
+          }
         <p className="mt-2.5 text-base text-neutral-600">{page.description}</p>
         <Link
           href={page.href}
@@ -63,11 +65,13 @@ export function PageLinks({
   pages,
   intro,
   className,
+  showDate = true
 }: {
   title: string
   pages: Array<Page>
   intro?: string
   className?: string
+  showDate?: boolean
 }) {
   return (
     <div className={clsx('relative pt-24 sm:pt-32 lg:pt-40', className)}>
@@ -86,7 +90,7 @@ export function PageLinks({
         <FadeInStagger className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
           {pages.map((page) => (
             <FadeIn key={page.href}>
-              <PageLink page={page} />
+              <PageLink page={page} showDate={showDate} />
             </FadeIn>
           ))}
         </FadeInStagger>
