@@ -8,7 +8,7 @@ import '@/styles/tailwind.css'
 export const metadata: Metadata = {
     title: {
         template: '%s - ITDELTA',
-        default: 'ITDELTA - Разработка программного обеспечения, IT консалтинг',
+        default: 'ITDELTA - Разработка программного обеспечения, web-приложений, IT консалтинг',
     },
     other: {
         'yandex-verification': '68030eb015a67d08',
