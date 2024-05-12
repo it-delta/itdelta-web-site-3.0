@@ -8,7 +8,7 @@ module.exports = {
             { 
                 userAgent: '*', 
                 allow: '/',
-                disallow: '/service'
+                disallow: '/*etext=2202'
             },
         ]
     }
