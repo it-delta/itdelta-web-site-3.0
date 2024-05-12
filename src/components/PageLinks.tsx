@@ -52,7 +52,7 @@ function PageLink({ page }: { page: Page }) {
           aria-label={`Read more: ${page.title}`}
         >
           Подробнее
-          <ArrowIcon className="w-6 flex-none fill-current" />
+          <ArrowIcon className="w-6 flex-none fill-current text-logoRed" />
           <span className="absolute inset-0" />
         </Link>
       </Border>

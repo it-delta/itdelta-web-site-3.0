@@ -1,21 +1,22 @@
 @tailwind base;
 
-/* @font-face {
-  font-family: 'Calibri';
-  font-weight: 200 900;
-  font-display: block;
-  font-style: normal;
-  font-stretch: 75% 125%;
-  src: url('../fonts/Calibri.woff2') format('woff2');
-} */
+/* @font-face {*/
+/*  font-family: 'Calibri';*/
+/*  font-weight: 200 900;*/
+/*  font-display: block;*/
+/*  font-style: normal;*/
+/*  font-stretch: 75% 125%;*/
+/*  src: url('../fonts/Calibri.woff2') format('woff2');*/
+/*}*/
 
 @font-face {
   font-family: 'Calibri Light';
-  font-weight: 200 900;
+  font-weight: 200;
   font-display: block;
   font-style: normal;
   font-stretch: 75% 125%;
-  src: url('../fonts/Calibri-Light.woff2') format('woff2');
+  src: local('Calibri Light'),
+    url('../fonts/Calibri-Light.woff2') format('woff2');
 }
 
  @font-face {
