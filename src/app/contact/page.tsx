@@ -2,7 +2,7 @@ import {useId } from 'react'
 import { type Metadata } from 'next'
 import {GoogleRecapthaForm} from "@/components/GoogleRecapthaForm";
 import { ContactForm } from '@/components/ContactForm'
-// import Link from 'next/link'
+import Link from 'next/link'
 
 import { Border } from '@/components/Border'
 // import { Button } from '@/components/Button'
@@ -25,7 +25,40 @@ function ContactDetails() {
 
       <Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />
 
-{/*      <Border className="mt-16 pt-16">
+      <Border className="mt-16 pt-16">
+        <h2 className="font-display text-base font-semibold text-neutral-950">
+          Реквизиты
+        </h2>
+
+        <div className='mt-5 text-neutral-600 font-normal'>
+          <p className="font-semibold"> ООО "Дельта софт сервис" </p>
+          <p className="">ИНН/КПП: 6166046226/616601001 </p>
+          <p className="">Юр.адрес: Ростов-на-Дону, ул. Штахановского 21/2 - 12 </p>
+          <p className="">Почт.адрес: 344003, Ростов-на-Дону, а/я 71 </p>
+          <p className="">р/с 40702810615100016856,ОАО АКБ "АВАНГАРД", г. МОСКВА к/с 30101810000000000201, БИК 044525201</p>
+        </div>
+        
+        {/* <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
+          {[
+            ['Карьера', 'delta@it-delta.ru'],
+            ['Прочее', 'delta@it-delta.ru'],
+          ].map(([label, email]) => (
+            <div key={email}>
+              <dt className="font-semibold text-neutral-950">{label}</dt>
+              <dd>
+                <Link
+                  href={`mailto:${email}`}
+                  className="text-neutral-600 hover:text-neutral-950"
+                >
+                  {email}
+                </Link>
+              </dd>
+            </div>
+          ))}
+        </dl> */}
+      </Border>
+
+     {/* <Border className="mt-16 pt-16">
         <h2 className="font-display text-base font-semibold text-neutral-950">
           Напишите нам
         </h2>
@@ -47,7 +80,7 @@ function ContactDetails() {
             </div>
           ))}
         </dl>
-      </Border>*/}
+      </Border> */}
 
       <Border className="mt-16 pt-16">
         <h2 className="font-display text-base font-semibold text-neutral-950">
