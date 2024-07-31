@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d240011-3954-4b89-a613-abca9192c6c8" name="Changes" comment="services updated" />
+    <list default="true" id="2d240011-3954-4b89-a613-abca9192c6c8" name="Changes" comment="services updated">
+      <change afterPath="$PROJECT_DIR$/src/app/work/bak2.me/hero.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/work/bak2.me/i1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/work/bak2.me/i2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/work/bak2.me/page.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/clients/bak2.me/bak2me-logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +31,13 @@
     <bower-package value="" />
     <bower.json value="" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
   <component name="ProjectId" id="2aFr8Z6nuXlCcDLOCtUxKkBNE0S" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -28,32 +46,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/service" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.standard" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.standard" value="" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "git-widget-placeholder": "add-bak2me-case",
+    "last_opened_file_path": "/home/prog/projects/itdelta-web-site-3.0/src/app/work/bak2.me",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "/home/prog/Documents/PhpStorm-2021.2.2/PhpStorm-212.5284.49/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/work/bak2.me" />
+      <recent name="$PROJECT_DIR$/src/images/clients/bak2.me" />
+      <recent name="$PROJECT_DIR$/src/app/work" />
       <recent name="$PROJECT_DIR$/src/app/service" />
       <recent name="$PROJECT_DIR$/src/app/process" />
-      <recent name="$PROJECT_DIR$/src/components/ content" />
-      <recent name="$PROJECT_DIR$/src/app/service/development of personal accounts" />
-      <recent name="$PROJECT_DIR$/src/app/services" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/work/bak2.me" />
       <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/components/ content" />
@@ -89,6 +107,7 @@
       <workItem from="1713616079817" duration="21380000" />
       <workItem from="1715412385008" duration="860000" />
       <workItem from="1715413259635" duration="4324000" />
+      <workItem from="1722414388534" duration="2293000" />
     </task>
     <task id="LOCAL-00001" summary="cases">
       <created>1704008424663</created>
@@ -365,7 +384,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Contact form1" />
