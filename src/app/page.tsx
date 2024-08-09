@@ -1,6 +1,8 @@
 import {type Metadata} from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import {getCases} from "@/lib/getCases";
+
 import {loadServices} from '@/lib/mdx'
 
 import {ContactSection} from '@/components/ContactSection'
@@ -307,7 +309,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
     let caseStudies = (await loadCaseStudies()).slice(0, 3)
-
+    getCases();
     return (
         <>
             <Container className="mt-24 sm:mt-32">
