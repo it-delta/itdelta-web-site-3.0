@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d240011-3954-4b89-a613-abca9192c6c8" name="Changes" comment="services updated">
-      <change afterPath="$PROJECT_DIR$/src/app/work/bak2.me/hero.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/work/bak2.me/i1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/work/bak2.me/i2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/work/bak2.me/page.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/clients/bak2.me/bak2me-logo.svg" afterDir="false" />
+    <list default="true" id="2d240011-3954-4b89-a613-abca9192c6c8" name="Changes" comment="FireCMS added">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/getCases.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/getCases.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,9 +34,6 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
   <component name="ProjectId" id="2aFr8Z6nuXlCcDLOCtUxKkBNE0S" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -46,22 +42,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "true",
-    "git-widget-placeholder": "add-bak2me-case",
-    "last_opened_file_path": "/home/prog/projects/itdelta-web-site-3.0/src/app/work/bak2.me",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "/home/prog/Documents/PhpStorm-2021.2.2/PhpStorm-212.5284.49/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/work/bak2.me" />
@@ -108,6 +95,7 @@
       <workItem from="1715412385008" duration="860000" />
       <workItem from="1715413259635" duration="4324000" />
       <workItem from="1722414388534" duration="2293000" />
+      <workItem from="1723289104819" duration="2369000" />
     </task>
     <task id="LOCAL-00001" summary="cases">
       <created>1704008424663</created>
@@ -384,9 +372,9 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Contact form1" />
     <MESSAGE value="Contact form fixed" />
     <MESSAGE value="Contact form fixed1" />
     <MESSAGE value="Contact form fixed2" />
@@ -411,7 +399,8 @@
     <MESSAGE value="robots.txt" />
     <MESSAGE value="services added" />
     <MESSAGE value="services updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="services updated" />
+    <MESSAGE value="FireCMS added" />
+    <option name="LAST_COMMIT_MESSAGE" value="FireCMS added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

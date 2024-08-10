@@ -308,8 +308,10 @@ export const metadata: Metadata = {
 }
 
 export default async function Home() {
+    console.log('Get data...');
     let caseStudies = (await loadCaseStudies()).slice(0, 3)
     getCases();
+    console.log('Rendering...');
     return (
         <>
             <Container className="mt-24 sm:mt-32">

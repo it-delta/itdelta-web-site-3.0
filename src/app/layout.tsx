@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 
 export default function Layout({children}: { children: React.ReactNode }) {
     const prod = process.env.NODE_ENV === 'production';
+    console.log(`Start app... (${process.env.NODE_ENV} mode)`);
     return (
         <html lang="ru" className="h-full bg-neutral-950 text-base antialiased">
         {prod && <Script src="https://code.jivo.ru/widget/PWVDc47MVr"/>}
