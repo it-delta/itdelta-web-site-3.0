@@ -1,12 +1,29 @@
 import {collection, doc, getDocs} from "firebase/firestore";
 import {getAuth, signInWithEmailAndPassword, UserCredential} from "firebase/auth";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
-import {db} from "./fairbase";
+import {db} from "./firebase";
+const storage = getStorage();
+export interface Cases {
+    status?: string,
+    publish_date?: {} | string,
+    created_on?: {},
+    content?: [
+        {
+            value: string,
+            type: string
+        }
+    ],
+    header_image: string,
+    tags: [],
+    name: string
+}
 
-export const getCases = async () => {
 
-    const email:string = process.env.NEXT_FAIRBASE_EMAIL ?? '';
-    const password:string = process.env.NEXT_FAIRBASE_PASSWORD ?? '';
+export const getCases = async ():Promise<Cases[] | undefined> => {
+
+    const email:string = process.env.NEXT_FIREBASE_EMAIL ?? '';
+    const password:string = process.env.NEXT_FIREBASE_PASSWORD ?? '';
 
     const auth = getAuth();
     try {
@@ -16,11 +33,18 @@ export const getCases = async () => {
 
         const casesRef = collection(db, "cases");
         const casesSnap = await getDocs(casesRef);
-        const result =  casesSnap.docs.map((doc: any) => doc.data())
+        let url:string | undefined;
+        const result:Cases[] =  await Promise.all(casesSnap.docs.map(async (doc: any) => {
+            if(doc.data().header_image) {
+                url = await getDownloadURL(ref(storage, doc.data().header_image));
+            }
+            return {
+                ...doc.data(),
+                header_image: url,
+            }
+        }))
 
-        // console.log(result);
-
-        // console.log(result);
+        return result;
     }  catch(error: any) {
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -28,4 +52,3 @@ export const getCases = async () => {
     }
 
 }
-
