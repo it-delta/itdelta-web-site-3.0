@@ -217,15 +217,15 @@ function CaseStudies({
                                 <h3>
                                     <Link href="/">
                                         <span className="absolute inset-0 rounded-3xl"/>
-                                        <div className="relative h-40">
+                                        {caseEl.header_image && <div className="relative h-40">
                                             <Image
-                                                src={caseEl.header_image}
-                                                alt={caseEl.name}
+                                                src={caseEl?.header_image}
+                                                alt={caseEl?.name}
                                                 fill
                                                 className=""
                                                 unoptimized
                                             />
-                                        </div>
+                                        </div>}
                                     </Link>
                                 </h3>
                                 <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
