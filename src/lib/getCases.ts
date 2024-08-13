@@ -1,4 +1,4 @@
-import {collection, doc, getDocs} from "firebase/firestore";
+import {collection, getDocs} from "firebase/firestore";
 import {getAuth, signInWithEmailAndPassword, UserCredential} from "firebase/auth";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
@@ -14,7 +14,7 @@ export interface Cases {
             type: string
         }
     ],
-    header_image: string,
+    header_image?: string,
     tags: [],
     name: string
 }

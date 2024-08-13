@@ -217,12 +217,15 @@ function CaseStudies({
                                 <h3>
                                     <Link href="/">
                                         <span className="absolute inset-0 rounded-3xl"/>
-                                        <Image
-                                            src={caseEl.header_image}
-                                            alt={""}
-                                            className="h-16 w-16"
-                                            unoptimized
-                                        />
+                                        <div className="relative h-40">
+                                            <Image
+                                                src={caseEl.header_image}
+                                                alt={caseEl.name}
+                                                fill
+                                                className=""
+                                                unoptimized
+                                            />
+                                        </div>
                                     </Link>
                                 </h3>
                                 <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
@@ -238,7 +241,7 @@ function CaseStudies({
                                     <span>Проект</span>
                                 </p>
                                 <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
-                                    {caseEl.name}
+                                    {caseEl?.name}
                                 </p>
                                 <p className="mt-4 text-base text-neutral-600">
                                     {caseEl?.content[0]?.value}
@@ -256,7 +259,12 @@ function CaseStudies({
                                 <h3>
                                     <Link href={caseStudy.href}>
                                         <span className="absolute inset-0 rounded-3xl"/>
-                                        <img src={caseStudy.header_image}/>
+                                        <Image
+                                            src={caseStudy.logo}
+                                            alt={caseStudy.client}
+                                            className="h-16 w-16"
+                                            unoptimized
+                                        />
                                     </Link>
                                 </h3>
                                 <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
