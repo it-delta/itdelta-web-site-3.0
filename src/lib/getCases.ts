@@ -10,13 +10,16 @@ interface CasesContent {
     value: [] | string
 }
 export interface Cases {
+    id: string | number,
     status?: string,
     publish_date?: {} | string,
     created_on?: {},
     content?: CasesContent[],
+    year: string,
     header_image?: string,
     tags: [],
-    name: string
+    name: string,
+    description: string,
 }
 
 
@@ -34,26 +37,27 @@ export const getCases = async ():Promise<Cases[] | undefined> => {
         const casesRef = collection(db, "cases", "");
         const casesSnap = await getDocs(casesRef);
         let header_image:string | undefined;
-        let newImages: string[];
+        let urlImages: string[];
         const result:Cases[] =  await Promise.all(casesSnap.docs.map(async (doc: any) => {
-            const contentImages = doc.data().content.find((el: CasesContent) => el.type === "images")?.value;
+            const contentImagesPath = doc.data().content.find((el: CasesContent) => el.type === "images")?.value; // Получаем все пути изображения
             if(doc.data().header_image) {
-                header_image = await getDownloadURL(ref(storage, doc.data().header_image));
+                header_image = await getDownloadURL(ref(storage, doc.data().header_image)); //  получаем url изображенмя из firebase Storage
             }
-            if(contentImages) {
-                newImages = await Promise.all(contentImages.map(async (image:string) => {
-                    return await getDownloadURL(ref(storage, image));
+            if(contentImagesPath) {
+                urlImages = await Promise.all(contentImagesPath.map(async (image:string) => {
+                    return await getDownloadURL(ref(storage, image)); // получаем url изображенмя из firebase Storage
                 }))
             }
             return {
+                id: doc.id,
                 ...doc.data(),
                 header_image,
                 content: [
-                    ...doc.data().content.filter((el: CasesContent) => el.type !== 'images'),
+                    ...doc.data().content.filter((el: CasesContent) => el.type !== 'images'), // Возвращаем все объекты кроме type: images
                     {
                         type: 'images',
-                        value: newImages
-                    }
+                        value: urlImages,
+                    } // добавляем обновленный объект с url изображениями
                 ]
             }
         }))

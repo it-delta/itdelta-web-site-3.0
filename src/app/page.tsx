@@ -210,8 +210,8 @@ function CaseStudies({
             </SectionIntro>
             <Container className="mt-16">
                 <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-                    {cases?.map((caseEl, idx) => (
-                        <FadeIn key={idx} className="flex">
+                    {cases?.map((caseEl:Cases) => (
+                        <FadeIn key={caseEl.id} className="flex">
                             <article
                                 className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
                                 <h3>
@@ -230,10 +230,10 @@ function CaseStudies({
                                 </h3>
                                 <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
                                     <time
-                                        dateTime={caseEl?.publish_date?.split('-')[0]}
+                                        dateTime={caseEl?.year?.split('-')[0] ?? '2023'}
                                         className="font-semibold"
                                     >
-                                        {caseEl?.publish_date?.split('-')[0]}
+                                        {caseEl?.year?.split('-')[0] ?? 2023}
                                     </time>
                                     <span className="text-logoRed " aria-hidden="true">
                     /
@@ -244,7 +244,7 @@ function CaseStudies({
                                     {caseEl?.name}
                                 </p>
                                 <p className="mt-4 text-base text-neutral-600">
-                                    {caseEl?.content[0]?.value}
+                                    {caseEl?.description}
                                 </p>
                             </article>
                         </FadeIn>
