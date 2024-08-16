@@ -1,4 +1,4 @@
-import {collection, getDocs} from "firebase/firestore";
+import { collection, doc, getDoc, getDocs } from 'firebase/firestore'
 import {getAuth, signInWithEmailAndPassword, UserCredential} from "firebase/auth";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
@@ -15,13 +15,24 @@ export interface Cases {
     publish_date?: {} | string,
     created_on?: {},
     content?: CasesContent[],
+    summary?: [],
     year: string,
     header_image?: string,
+    logo?: string,
+    client?: string | undefined,
     tags: [],
+    type: string,
     name: string,
     description: string,
 }
 
+const onAuth = async () => {
+    const email:string = process.env.NEXT_FIREBASE_EMAIL ?? '';
+    const password:string = process.env.NEXT_FIREBASE_PASSWORD ?? '';
+
+    const auth = getAuth();
+    const userCredential:UserCredential = await signInWithEmailAndPassword(auth, email, password);
+}
 
 export const getCases = async ():Promise<Cases[] | undefined> => {
 
@@ -36,12 +47,12 @@ export const getCases = async ():Promise<Cases[] | undefined> => {
 
         const casesRef = collection(db, "cases", "");
         const casesSnap = await getDocs(casesRef);
-        let header_image:string | undefined;
-        let urlImages: string[];
         const result:Cases[] =  await Promise.all(casesSnap.docs.map(async (doc: any) => {
+            let logo:string | undefined = undefined;
+            let urlImages: string[] | undefined = undefined;
             const contentImagesPath = doc.data().content.find((el: CasesContent) => el.type === "images")?.value; // Получаем все пути изображения
-            if(doc.data().header_image) {
-                header_image = await getDownloadURL(ref(storage, doc.data().header_image)); //  получаем url изображенмя из firebase Storage
+            if(doc.data().logo) {
+                logo = await getDownloadURL(ref(storage, doc.data().logo)); //  получаем url изображенмя из firebase Storage
             }
             if(contentImagesPath) {
                 urlImages = await Promise.all(contentImagesPath.map(async (image:string) => {
@@ -51,7 +62,7 @@ export const getCases = async ():Promise<Cases[] | undefined> => {
             return {
                 id: doc.id,
                 ...doc.data(),
-                header_image,
+                logo,
                 content: [
                     ...doc.data().content.filter((el: CasesContent) => el.type !== 'images'), // Возвращаем все объекты кроме type: images
                     {
@@ -70,3 +81,21 @@ export const getCases = async ():Promise<Cases[] | undefined> => {
 
 }
 
+export const getWork = async(workId: string):Promise<any> => {
+
+    await onAuth();
+    const caseRef = doc(db, "cases", workId);
+    try {
+        const work = await getDoc(caseRef);
+        return {
+            ...work.data(),
+            header_image: await getDownloadURL(ref(storage, work.data().header_image))
+        }
+    }
+    catch (error:any) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(`ERROR: ${errorCode} ${errorMessage}`);
+    }
+
+}

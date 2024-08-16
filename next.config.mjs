@@ -1,5 +1,6 @@
 import rehypeShiki from '@leafac/rehype-shiki'
-import nextMDX from '@next/mdx'
+// import nextMDX from '@next/mdx'
+import mdx from "@next/mdx";
 import { Parser } from 'acorn'
 import jsx from 'acorn-jsx'
 import escapeStringRegexp from 'escape-string-regexp'
@@ -16,7 +17,16 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   experimental: {
     // serverActions: true
-  }
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'firebasestorage.googleapis.com',
+        pathname: '/**',
+      },
+    ],
+  },
 }
 
 function remarkMDXLayout(source, metaName) {
@@ -49,42 +59,42 @@ export default async function config() {
     theme: 'css-variables',
   })
 
-  let withMDX = nextMDX({
-    extension: /\.mdx$/,
-    options: {
-      recmaPlugins: [recmaImportImages],
-      rehypePlugins: [
-        [rehypeShiki, { highlighter }],
-        [
-          remarkRehypeWrap,
-          {
-            node: { type: 'mdxJsxFlowElement', name: 'Typography' },
-            start: ':root > :not(mdxJsxFlowElement)',
-            end: ':root > mdxJsxFlowElement',
-          },
-        ],
-      ],
-      remarkPlugins: [
-        remarkGfm,
-        remarkUnwrapImages,
-        [
-          unifiedConditional,
-          [
-            new RegExp(`^${escapeStringRegexp(path.resolve('src/app/blog'))}`),
-            [[remarkMDXLayout, '@/app/blog/wrapper', 'article']],
-          ],
-          [
-            new RegExp(`^${escapeStringRegexp(path.resolve('src/app/work'))}`),
-            [[remarkMDXLayout, '@/app/work/wrapper', 'caseStudy']],
-          ],
-          [
-            new RegExp(`^${escapeStringRegexp(path.resolve('src/app/service'))}`),
-            [[remarkMDXLayout, '@/app/service/wrapper', 'service']],
-          ],
-        ],
-      ],
-    },
-  })
-
+  // let withMDX = nextMDX({
+  //   extension: /\.mdx$/,
+  //   options: {
+  //     recmaPlugins: [recmaImportImages],
+  //     rehypePlugins: [
+  //       [rehypeShiki, { highlighter }],
+  //       [
+  //         remarkRehypeWrap,
+  //         {
+  //           node: { type: 'mdxJsxFlowElement', name: 'Typography' },
+  //           start: ':root > :not(mdxJsxFlowElement)',
+  //           end: ':root > mdxJsxFlowElement',
+  //         },
+  //       ],
+  //     ],
+  //     remarkPlugins: [
+  //       remarkGfm,
+  //       remarkUnwrapImages,
+  //       [
+  //         unifiedConditional,
+  //         [
+  //           new RegExp(`^${escapeStringRegexp(path.resolve('src/app/blog'))}`),
+  //           [[remarkMDXLayout, '@/app/blog/wrapper', 'article']],
+  //         ],
+  //         [
+  //           new RegExp(`^${escapeStringRegexp(path.resolve('src/app/work'))}`),
+  //           [[remarkMDXLayout, '@/app/work/components/Content']],
+  //         ],
+  //         [
+  //           new RegExp(`^${escapeStringRegexp(path.resolve('src/app/service'))}`),
+  //           [[remarkMDXLayout, '@/app/service/wrapper', 'service']],
+  //         ],
+  //       ],
+  //     ],
+  //   },
+  // })
+  let withMDX = mdx()
   return withMDX(nextConfig)
 }

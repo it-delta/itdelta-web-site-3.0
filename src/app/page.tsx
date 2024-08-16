@@ -209,7 +209,7 @@ function CaseStudies({
                 </p>
             </SectionIntro>
             <Container className="mt-16">
-                <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3 mb-5">
                     {cases?.map((caseEl:Cases) => (
                         <FadeIn key={caseEl.id} className="flex">
                             <article
@@ -217,15 +217,17 @@ function CaseStudies({
                                 <h3>
                                     <Link href="/">
                                         <span className="absolute inset-0 rounded-3xl"/>
-                                        {caseEl.header_image && <div className="relative h-40">
-                                            <Image
-                                                src={caseEl?.header_image}
-                                                alt={caseEl?.name}
-                                                fill
-                                                className=""
-                                                unoptimized
-                                            />
-                                        </div>}
+                                        {caseEl.logo &&
+                                            <div className="relative">
+                                                <Image
+                                                  width={100}
+                                                  height={100}
+                                                  src={caseEl?.logo}
+                                                  alt={caseEl?.client ?? caseEl?.name}
+                                                  className="h-16 w-16"
+                                                  unoptimized
+                                                />
+                                            </div>}
                                     </Link>
                                 </h3>
                                 <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
@@ -238,7 +240,7 @@ function CaseStudies({
                                     <span className="text-logoRed " aria-hidden="true">
                     /
                   </span>
-                                    <span>Проект</span>
+                                    <span>{caseEl?.type && 'Проект'}</span>
                                 </p>
                                 <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
                                     {caseEl?.name}
