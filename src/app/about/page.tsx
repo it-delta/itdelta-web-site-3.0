@@ -250,15 +250,6 @@ export default async function About() {
       />
 
       <ContactSection />
-
-      <SectionIntro className="mt-24 sm:mt-32 lg:mt-40" title={"Реквизиты"} smaller>
-        <p className="mb-3 text-gray-700 text-base font-bold leading-7"> ООО &quot;Дельта софт сервис&quot; </p>
-        <p className="mb-3 text-gray-700 text-base font-normal leading-7">ИНН/КПП: 6166046226/616601001 </p>
-        <p className="mb-3 text-gray-700 text-base font-normal leading-7">Юр.адрес: Ростов-на-Дону, ул. Штахановского 21/2 - 12 </p>
-        <p className="mb-3 text-gray-700 text-base font-normal leading-7">Почт.адрес: 344003, Ростов-на-Дону, а/я 71 </p>
-        <p className="mb-3 text-gray-700 text-base font-normal leading-7">р/с 40702810615100016856,ОАО АКБ &quot;АВАНГАРД&quot;, г. МОСКВА к/с 30101810000000000201, БИК 044525201</p>
-      </SectionIntro>
-      
-    </>  
+    </>
   )
 }
