@@ -6,11 +6,13 @@ import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 import { MDXComponents } from '@/components/MDXComponents'
 import { PageLinks } from '@/components/PageLinks'
 import { ContactSection } from '@/components/ContactSection'
-
-
+import Content from "@/app/work/compontents/Content"
+import {md} from "@mdx-js/mdx/lib/util/extnames";
 export default async ({ params: { workId } }: { casesId: string }) => {
   let work = await getWork(workId)
+  let mdxSource = work.content.find(el => el.type === "text").value;
   console.log(work, 'data')
+  console.log(mdxSource, 'MDX');
   return (
     <>
       <article className="mt-24 sm:mt-32 lg:mt-40">
@@ -64,7 +66,7 @@ export default async ({ params: { workId } }: { casesId: string }) => {
         <Container className="mt-24 sm:mt-32 lg:mt-40">
           <FadeIn>
             <MDXComponents.wrapper>
-
+              <Content mdxSource={mdxSource} />
             </MDXComponents.wrapper>
           </FadeIn>
         </Container>

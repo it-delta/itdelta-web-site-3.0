@@ -84,3 +84,4 @@ export function loadServices() {
   return loadEntries<Service>('service', 'service')
       .then(res => res.sort((a, b) => a.sort - b.sort))
 }
+

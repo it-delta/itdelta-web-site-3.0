@@ -1,10 +1,13 @@
+import rehypeShiki from '@leafac/rehype-shiki'
+import {remarkRehypeWrap} from "remark-rehype-wrap";
 import { collection, doc, getDoc, getDocs } from 'firebase/firestore'
 import {getAuth, signInWithEmailAndPassword, UserCredential} from "firebase/auth";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
-
+import { serialize } from 'next-mdx-remote/serialize'
 import {db} from "./firebase";
 const storage = getStorage();
 
+import remarkGfm from "remark-gfm";
 interface CasesContent {
     type: string,
     value: [] | string
@@ -82,14 +85,42 @@ export const getCases = async ():Promise<Cases[] | undefined> => {
 }
 
 export const getWork = async(workId: string):Promise<any> => {
-
     await onAuth();
     const caseRef = doc(db, "cases", workId);
     try {
         const work = await getDoc(caseRef);
+        let highlighter = await await require('shiki').getHighlighter({
+            theme: 'css-variables',
+        })
+
         return {
             ...work.data(),
-            header_image: await getDownloadURL(ref(storage, work.data().header_image))
+            header_image: await getDownloadURL(ref(storage, work.data().header_image)),
+            content: [
+                ...work.data().content.filter((el: CasesContent) => el.type !== 'text'),
+                {
+                    type: "text",
+                    value: await serialize(work.data().content.find((el: CasesContent) => el.type === 'text')?.value, {
+                        scope: {},
+                        mdxOptions: {
+                            format: 'mdx',
+                            remarkPlugins: [remarkGfm],
+                            rehypePlugins: [
+                                [rehypeShiki, {highlighter}],
+                                [
+                                    remarkRehypeWrap,
+                                    {
+                                        node: {type: 'mdxJsxFlowElement', name: 'Typography'},
+                                        start: ':root > :not(mdxJsxFlowElement)',
+                                        end: ':root > mdxJsxFlowElement',
+                                    },
+                                ],
+                            ],
+                        },
+                        parseFrontmatter: false,
+                    }),
+                }
+            ]
         }
     }
     catch (error:any) {
