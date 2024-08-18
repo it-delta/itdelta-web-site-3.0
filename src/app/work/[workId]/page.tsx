@@ -1,4 +1,4 @@
-import {getWork } from '@/lib/getCases'
+import {getWork } from '@/lib/getWork'
 import { PageIntro } from '@/components/PageIntro'
 import { FadeIn } from '@/components/FadeIn'
 import { Container } from '@/components/Container'
