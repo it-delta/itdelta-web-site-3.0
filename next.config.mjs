@@ -17,6 +17,7 @@ const nextConfig = {
     experimental: {
         // serverActions: true
     },
+    transpilePackages: ['next-mdx-remote'],
     images: {
         remotePatterns: [
             {

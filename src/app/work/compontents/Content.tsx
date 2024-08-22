@@ -1,6 +1,8 @@
 'use client';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 
-export default function Content({mdxSource}: {mdxSource: MDXRemoteSerializeResult}) {
-    return <MDXRemote {...mdxSource} />
+export const Content = ({mdxSource}: {mdxSource: MDXRemoteSerializeResult}) =>  {
+    return <div className="prose">
+        <MDXRemote {...mdxSource}  />
+    </div>
 }
