@@ -99,7 +99,7 @@ export default async function config() {
         extension: /\.mdx$/,
         options: {
             recmaPlugins: [recmaImportImages],
-            remarkPlugins: [remarkGfm],
+            remarkPlugins: [remarkGfm, remarkUnwrapImages],
             rehypePlugins: [
                 [rehypeShiki, {highlighter}],
                 [

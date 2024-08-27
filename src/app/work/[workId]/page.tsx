@@ -67,8 +67,8 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
             <MDXComponents.wrapper>
               <Content mdxSource={mdxSource} />
               <TagList className="mt-5">
-                {work.tags.map((tag: string) => (
-                  <TagListItem>{tag}</TagListItem>
+                {work.tags.map((tag, idx :{tag: string, idx: number}) => (
+                  <TagListItem key={idx}>{tag}</TagListItem>
                 ))}
               </TagList>
             </MDXComponents.wrapper>
