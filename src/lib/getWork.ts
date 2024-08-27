@@ -2,6 +2,7 @@ import {doc, getDoc} from "firebase/firestore";
 import {db} from "@/lib/firebase";
 import {getDownloadURL, getStorage, ref} from "firebase/storage";
 import {serialize} from "next-mdx-remote/serialize";
+import imageSize from "rehype-img-size";
 import {onAuth} from "@/lib/getCases";
 import {CasesContent} from "@/lib/getCases";
 const storage = getStorage();
@@ -11,7 +12,11 @@ export const getWork = async (workId: string):Promise<any> => {
     const caseRef = doc(db, "cases", workId);
     try {
         const work = await getDoc(caseRef);
-        const mdxSource = await serialize(work.data().content.find((el: CasesContent) => el.type === 'text')?.value)
+        const mdxSource = await serialize(work.data().content.find((el: CasesContent) => el.type === 'text')?.value,  {
+            mdxOptions: {
+                rehypePlugins: [[imageSize, { dir: "public" }]],
+            },
+        })
 
         return {
             ...work.data(),

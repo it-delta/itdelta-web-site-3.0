@@ -6,10 +6,12 @@ import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 import { MDXComponents } from '@/components/MDXComponents'
 import { ContactSection } from '@/components/ContactSection'
 import {Content} from "@/app/work/compontents/Content"
+import { TagList } from '@/components/TagList'
+import { TagListItem } from '@/components/TagList'
 
-export default async function WorkDetail({ params: { workId } }: { casesId: string }){
+export default async function WorkDetail({ params: { workId } }: { params: { workId: string } }){
   let work = await getWork(workId)
-  let mdxSource = work.content.find(el => el.type === "text").value;
+  let mdxSource = work?.content?.find(({type}: {type: string}) => type === "text").value;
   return (
     <>
       <article className="mt-24 sm:mt-32 lg:mt-40">
@@ -37,7 +39,7 @@ export default async function WorkDetail({ params: { workId } }: { casesId: stri
                     </div>
                     <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-semibold">Услуги</dt>
-                      <dd>{work.service}</dd>
+                      <dd>{work?.service}</dd>
                     </div>
                   </dl>
                 </div>
@@ -64,6 +66,11 @@ export default async function WorkDetail({ params: { workId } }: { casesId: stri
           <FadeIn>
             <MDXComponents.wrapper>
               <Content mdxSource={mdxSource} />
+              <TagList className="mt-5">
+                {work.tags.map((tag: string) => (
+                  <TagListItem>{tag}</TagListItem>
+                ))}
+              </TagList>
             </MDXComponents.wrapper>
           </FadeIn>
         </Container>
