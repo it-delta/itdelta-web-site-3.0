@@ -27,12 +27,12 @@ export function GrayscaleTransitionImage(
 
   return (
     <div ref={ref} className="group relative">
-      <MotionImage alt="" style={{ filter } as any} {...props} />
+      <MotionImage width={100} height={100} alt="" style={{ filter } as any} {...props} />
       <div
         className="pointer-events-none absolute left-0 top-0 w-full opacity-0 transition duration-300 group-hover:opacity-100"
         aria-hidden="true"
       >
-        <Image alt="" {...props} />
+        <Image width={100} height={100}  alt="" {...props} />
       </div>
     </div>
   )

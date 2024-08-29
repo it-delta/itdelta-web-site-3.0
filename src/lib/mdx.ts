@@ -60,7 +60,7 @@ export interface CaseStudy {
   summary: Array<string>
   logo: ImageProps['src']
   image: ImagePropsWithOptionalAlt
-  service: string
+  service: string | undefined,
   testimonial?: {
     author: {
       name: string
@@ -84,3 +84,4 @@ export function loadServices() {
   return loadEntries<Service>('service', 'service')
       .then(res => res.sort((a, b) => a.sort - b.sort))
 }
+
