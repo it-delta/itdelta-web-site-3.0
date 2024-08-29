@@ -18,12 +18,13 @@ import logoCultBooking from '@/images/clients/cultbooking/logo-dark.svg'
 
 
 import { formatDate } from '@/lib/formatDate'
-import { Cases, getCases } from '@/lib/getCases'
+import {getCases } from '@/api/getCases'
+import {CasesType} from "@/types/casesTypes";
 
 function CaseStudies({
                        cases,
                      }: {
-  cases: Array<Cases>
+  cases: Array<CasesType> | undefined
 }) {
   console.log(cases, 'CASES');
   return (
@@ -34,7 +35,7 @@ function CaseStudies({
         </h2>
       </FadeIn>
       <div className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
-        {cases.map((caseEl) => (
+        {cases?.map((caseEl) => (
           <FadeIn key={caseEl?.client}>
             <article>
               <Border className="grid grid-cols-3 gap-x-8 gap-y-8 pt-16">
@@ -80,14 +81,14 @@ function CaseStudies({
                       Подробнее...
                     </Button>
                   </div>
-                  {caseEl?.testimonial && (
-                    <Blockquote
-                      author={caseEL?.testimonial?.author}
-                      className="mt-12"
-                    >
-                      {caseEl?.testimonial?.content}
-                    </Blockquote>
-                  ) && ''}
+                  {/*{caseEl?.testimonial && (*/}
+                  {/*  <Blockquote*/}
+                  {/*    author={caseEL?.testimonial?.author}*/}
+                  {/*    className="mt-12"*/}
+                  {/*  >*/}
+                  {/*    {caseEl?.testimonial?.content}*/}
+                  {/*  </Blockquote>*/}
+                  {/*) && ''}*/}
                 </div>
               </Border>
             </article>
@@ -150,7 +151,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Work() {
-  let cases = await getCases()
+  let cases:Array<CasesType> | undefined = await getCases()
   return (
     <>
       <PageIntro
@@ -168,7 +169,7 @@ export default async function Work() {
         </p>
       </PageIntro>
 
-      <CaseStudies cases={cases}  />
+      <CaseStudies cases={cases} />
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"

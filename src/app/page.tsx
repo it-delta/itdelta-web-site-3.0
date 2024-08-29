@@ -1,8 +1,8 @@
 import {type Metadata} from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import {getCases} from "@/lib/getCases";
-import {Cases} from "@/lib/getCases";
+import {getCases, getMainCases} from "@/api/getCases";
+import {CasesType} from "@/types/casesTypes";
 import {loadServices} from '@/lib/mdx'
 
 import {ContactSection} from '@/components/ContactSection'
@@ -356,7 +356,7 @@ export const metadata: Metadata = {
 export default async function Home() {
     console.log('Get data...');
     let caseStudies = (await loadCaseStudies()).slice(0, 3)
-    const cases:Cases[] | undefined =await getCases();
+    const cases:CasesType[] | undefined = await getMainCases();
     console.log('Rendering...');
     console.log(cases, 'CASES')
     return (
