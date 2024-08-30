@@ -1,4 +1,4 @@
-import {getWork } from '@/lib/getWork'
+import {getWork } from '@/api/getWork'
 import { PageIntro } from '@/components/PageIntro'
 import { FadeIn } from '@/components/FadeIn'
 import { Container } from '@/components/Container'
@@ -8,10 +8,11 @@ import { ContactSection } from '@/components/ContactSection'
 import {Content} from "@/app/work/compontents/Content"
 import { TagList } from '@/components/TagList'
 import { TagListItem } from '@/components/TagList'
+import { Blockquote } from '@/components/Blockquote'
 
 export default async function WorkDetail({ params: { workId } }: { params: { workId: string } }){
   let work = await getWork(workId)
-  let mdxSource = work?.content?.find(({type}: {type: string}) => type === "text").value;
+  let mdxSource = work?.content?.find(({type}: {type: string}) => type === "text")?.value;
   return (
     <>
       <article className="mt-24 sm:mt-32 lg:mt-40">
@@ -66,11 +67,16 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
           <FadeIn>
             <MDXComponents.wrapper>
               <Content mdxSource={mdxSource} />
-              <TagList className="mt-5">
-                {work?.tags?.map((tag, idx :{tag: string, idx: number}) => (
-                  <TagListItem key={idx}>{tag}</TagListItem>
+              <TagList className="mb-10 mt-5">
+                {work?.tags?.map((tag:string, idx:number) => (
+                  <TagListItem key={idx} >{tag}</TagListItem>
                 ))}
               </TagList>
+              {
+                work?.testimonial ? <Blockquote author={work?.testimonial?.author} image={work?.testimonial?.image}>
+                  {work?.testimonial?.content}
+                </Blockquote> : null
+              }
             </MDXComponents.wrapper>
           </FadeIn>
         </Container>

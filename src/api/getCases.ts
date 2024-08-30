@@ -1,15 +1,17 @@
 import {onAuth} from "@/api/onAuth";
-import {collection, getDocs, orderBy, query, where, limit} from "firebase/firestore";
+import {collection, getDocs, query, where, limit} from "firebase/firestore";
 import {db} from "@/lib/firebase";
 import {getDownloadURL, getStorage, ref} from "firebase/storage";
 import {CasesType, CasesContentType} from "@/types/casesTypes";
+import { formattedDate } from '@/lib/formatDate'
 
 const storage = getStorage();
 export const getCases = async ():Promise<CasesType[] | undefined> => {
     await onAuth();
     try {
         const casesRef = collection(db, "cases", "");
-        const casesSnap = await getDocs(casesRef);
+        const casesQuery = query(casesRef, where('active', '==', true))
+        const casesSnap = await getDocs(casesQuery);
         const result:CasesType[] =  await Promise.all(casesSnap.docs.map(async (doc: any) => {
             let logo:string | undefined = undefined;
             let urlImages: string[] | undefined = undefined;
@@ -26,6 +28,7 @@ export const getCases = async ():Promise<CasesType[] | undefined> => {
                 id: doc.id,
                 ...doc.data(),
                 logo,
+                publish_date: formattedDate(doc.data().publish_date.seconds, true),
                 content: [
                     ...doc.data().content.filter((el: CasesContentType) => el.type !== 'images'), // Возвращаем все объекты кроме type: images
                     {
@@ -44,14 +47,14 @@ export const getCases = async ():Promise<CasesType[] | undefined> => {
 
 }
 
-export const getMainCases = async () => {
+export const getMainCases = async ():Promise<CasesType[] | undefined> => {
     await onAuth();
     try {
         const casesRef = collection(db, "cases");
         const casesQuery = query(casesRef, where('active', '==', true), limit(3))
         const casesSnap = await getDocs(casesQuery);
         const result:CasesType[] =  await Promise.all(casesSnap.docs.map(async (doc: any) => {
-            let logo:string | undefined = undefined;
+            let logo:string = '';
             if(doc.data().logo) {
                 logo = await getDownloadURL(ref(storage, doc.data().logo)); //  получаем url изображенмя из firebase Storage
             }
@@ -60,14 +63,16 @@ export const getMainCases = async () => {
                 name: doc.data().name,
                 type: doc.data().type,
                 description: doc.data().description,
-                publish_date: doc.data().publish_date,
+                publish_date: formattedDate(doc.data().publish_date.seconds),
                 logo,
             }
         }))
         return result;
     }
-    catch (e) {
-        console.log(e, 'Error')
+    catch (error: any) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(`ERROR: ${errorCode} ${errorMessage}`);
     }
 
 }

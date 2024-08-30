@@ -1,4 +1,4 @@
-import Image, { type ImageProps } from 'next/image'
+import Image, { type ImageProps, StaticImageData } from 'next/image'
 import clsx from 'clsx'
 
 import { Border } from '@/components/Border'
@@ -10,11 +10,13 @@ function BlockquoteWithImage({
   children,
   className,
   image,
+  src
 }: {
   author: { name: string; role: string }
   children: React.ReactNode
   className?: string
-  image: ImagePropsWithOptionalAlt
+  image?: ImagePropsWithOptionalAlt,
+  src: string | StaticImageData
 }) {
   return (
     <figure
@@ -29,6 +31,9 @@ function BlockquoteWithImage({
       <div className="col-start-1 row-start-2 overflow-hidden rounded-xl bg-neutral-100 sm:col-span-5 sm:row-span-full sm:rounded-3xl">
         <Image
           alt=""
+          width={100}
+          height={100}
+          src={src}
           {...image}
           sizes="(min-width: 1024px) 17.625rem, (min-width: 768px) 16rem, (min-width: 640px) 40vw, 3rem"
           className="h-12 w-12 object-cover grayscale sm:aspect-[7/9] sm:h-auto sm:w-full"

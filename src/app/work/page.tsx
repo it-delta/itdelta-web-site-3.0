@@ -26,7 +26,6 @@ function CaseStudies({
                      }: {
   cases: Array<CasesType> | undefined
 }) {
-  console.log(cases, 'CASES');
   return (
     <Container className="mt-40">
       <FadeIn>
@@ -58,8 +57,8 @@ function CaseStudies({
                       {caseEl?.service}
                     </p>
                     <p className="text-sm text-neutral-950 lg:mt-2">
-                      <time dateTime={caseEl.year}>
-                        {formatDate(caseEl.year)}
+                      <time dateTime={caseEl.publish_date}>
+                        {formatDate(caseEl.publish_date)}
                       </time>
                     </p>
                   </div>
@@ -68,11 +67,9 @@ function CaseStudies({
                   <p className="font-display text-4xl font-medium text-neutral-950">
                     <Link href={`work/${caseEl.id}`}>{caseEl.name}</Link>
                   </p>
-                  {/*<div className="mt-6 space-y-6 text-base text-neutral-600">*/}
-                  {/*  {caseEl?.summary?.map((paragraph) => (*/}
-                  {/*    <p key={paragraph}>{paragraph}</p>*/}
-                  {/*  )) && ''}*/}
-                  {/*</div>*/}
+                  <div className="mt-6 space-y-6 text-base text-neutral-600">
+                      <p>{caseEl?.description}</p>
+                  </div>
                   <div className="mt-8 flex">
                     <Button
                       href={`work/${caseEl.id}`}
