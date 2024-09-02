@@ -2,6 +2,7 @@ import Image, { type ImageProps, StaticImageData } from 'next/image'
 import clsx from 'clsx'
 
 import { Border } from '@/components/Border'
+import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 
 type ImagePropsWithOptionalAlt = Omit<ImageProps, 'alt'> & { alt?: string }
 
@@ -10,13 +11,11 @@ function BlockquoteWithImage({
   children,
   className,
   image,
-  src
 }: {
   author: { name: string; role: string }
   children: React.ReactNode
   className?: string
-  image?: ImagePropsWithOptionalAlt,
-  src: string | StaticImageData
+  image: ImagePropsWithOptionalAlt,
 }) {
   return (
     <figure
@@ -33,7 +32,6 @@ function BlockquoteWithImage({
           alt=""
           width={100}
           height={100}
-          src={src}
           {...image}
           sizes="(min-width: 1024px) 17.625rem, (min-width: 768px) 16rem, (min-width: 640px) 40vw, 3rem"
           className="h-12 w-12 object-cover grayscale sm:aspect-[7/9] sm:h-auto sm:w-full"
@@ -77,10 +75,9 @@ export function Blockquote(
     | React.ComponentPropsWithoutRef<typeof BlockquoteWithImage>
     | (React.ComponentPropsWithoutRef<typeof BlockquoteWithoutImage> & {
         image?: undefined,
-        src?: undefined
       }),
 ) {
-  if (props.image || props.src) {
+  if (props.image) {
     return <BlockquoteWithImage {...props} />
   }
 

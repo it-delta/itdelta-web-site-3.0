@@ -21,7 +21,9 @@ export interface CasesType {
     description: string,
     service?: string,
     testimonial?: {
-        image?: string | StaticImageData
+        image?: {
+            src?: string | StaticImageData
+        }
         content: string,
         author: {
             name: string,
