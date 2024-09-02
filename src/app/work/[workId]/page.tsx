@@ -67,13 +67,13 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
           <FadeIn>
             <MDXComponents.wrapper>
               <Content mdxSource={mdxSource} />
-              <TagList className="mb-10 mt-5">
+              <TagList className="mb-16 mt-5">
                 {work?.tags?.map((tag:string, idx:number) => (
-                  <TagListItem key={idx} >{tag}</TagListItem>
+                  <TagListItem key={idx}>{tag}</TagListItem>
                 ))}
               </TagList>
               {
-                work?.testimonial ? <Blockquote author={work?.testimonial?.author} image={work?.testimonial?.image}>
+                work?.testimonial ? <Blockquote author={work?.testimonial?.author} src={work?.testimonial?.image}>
                   {work?.testimonial?.content}
                 </Blockquote> : null
               }

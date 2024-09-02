@@ -76,10 +76,11 @@ export function Blockquote(
   props:
     | React.ComponentPropsWithoutRef<typeof BlockquoteWithImage>
     | (React.ComponentPropsWithoutRef<typeof BlockquoteWithoutImage> & {
-        image?: undefined
+        image?: undefined,
+        src?: undefined
       }),
 ) {
-  if (props.image) {
+  if (props.image || props.src) {
     return <BlockquoteWithImage {...props} />
   }
 
