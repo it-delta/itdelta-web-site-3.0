@@ -6,15 +6,31 @@ import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 import { MDXComponents } from '@/components/MDXComponents'
 import { ContactSection } from '@/components/ContactSection'
 import {Content} from "@/app/work/compontents/Content"
-import { TagList } from '@/components/TagList'
 import { TagListItem } from '@/components/TagList'
-import { Blockquote } from '@/components/Blockquote'
-import { StatList, StatListItem } from '@/components/StatList'
+import { StatListItem } from '@/components/StatList'
+import { getCases } from '@/api/getCases'
+import { CasesType } from '@/types/casesTypes'
+import { PageLinks } from '@/components/PageLinks'
+
+interface Page {
+  href: string
+  date?: string
+  title: string
+  description: string
+}
 
 export default async function WorkDetail({ params: { workId } }: { params: { workId: string } }){
   let work = await getWork(workId)
   let mdxSource = work?.content?.find(({type}: {type: string}) => type === "text")?.value;
-  console.log(work, 'work');
+  const cases:any = await getCases();
+  const moreCases:Page[] = cases?.filter((caseEl: CasesType) => caseEl.id !== workId).slice(0, 2).map((caseEl:CasesType) => {
+    return {
+      href: caseEl.id,
+      date: caseEl.publish_date,
+      title: caseEl.name,
+      description: caseEl.description
+    }
+  })
   return (
     <>
       <article className="mt-24 sm:mt-32 lg:mt-40">
@@ -94,16 +110,15 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
           </FadeIn>
         </Container>
       </article>
+      {moreCases.length > 0 && (
+          <PageLinks
+            className="mt-24 sm:mt-32 lg:mt-40"
+            title="Другие проекты"
+            pages={moreCases}
+          />
+        )}
 
-      {/*{moreCaseStudies.length > 0 && (*/}
-      {/*  <PageLinks*/}
-      {/*    className="mt-24 sm:mt-32 lg:mt-40"*/}
-      {/*    title="Другие проекты"*/}
-      {/*    pages={moreCaseStudies}*/}
-      {/*  />*/}
-      {/*) */}
-
-      <ContactSection />
+        <ContactSection />
     </>
   )
 }
