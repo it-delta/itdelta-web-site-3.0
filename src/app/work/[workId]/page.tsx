@@ -33,8 +33,8 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
                     <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-semibold">Год</dt>
                       <dd>
-                        <time dateTime={work?.year?.split('-')[0]}>
-                          {work?.year?.split('-')[0] ?? "2023"}
+                        <time dateTime={work?.publish_date?.split('-')[0]}>
+                          {work?.publish_date?.split('-')[0] ?? "2023"}
                         </time>
                       </dd>
                     </div>

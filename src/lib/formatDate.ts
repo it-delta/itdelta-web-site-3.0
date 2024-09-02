@@ -11,13 +11,10 @@ export function formatDate(dateString?: string) {
   })
 }
 
-export const formattedDate = ((seconds:number, mmFormat?:boolean) => {
+export const formattedDate = ((seconds:number) => {
   const date = new Date(seconds * 1000);
   const day = date.getDate().toString().padStart(2, '0'); // Получаем день с ведущим нулем
   const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Получаем месяц (нумерация с 0, поэтому +1)
   const year = date.getFullYear(); // Получаем год
-  if(mmFormat) {
-    return `${month}-${day}-${year}`;
-  }
-  return `${day}-${month}-${year}`;
+  return `${year}-${month}-${day}`;
 })

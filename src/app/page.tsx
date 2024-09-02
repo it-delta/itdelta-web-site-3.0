@@ -229,10 +229,10 @@ function CaseStudies({ cases }: {
                                 </h3>
                                 <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
                                     <time
-                                        dateTime={caseEl?.publish_date?.split('-').at(-1) ?? '2023'}
+                                        dateTime={caseEl?.publish_date?.split('-')[0] ?? '2023'}
                                         className="font-semibold"
                                     >
-                                        {caseEl?.publish_date?.split('-').at(-1) ?? 2023}
+                                        {caseEl?.publish_date?.split('-')[0] ?? 2023}
                                     </time>
                                     <span className="text-logoRed " aria-hidden="true">
                     /

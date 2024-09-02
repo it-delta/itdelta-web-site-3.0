@@ -9,6 +9,7 @@ import rehypeShiki from '@leafac/rehype-shiki'
 import {remarkRehypeWrap} from 'remark-rehype-wrap'
 import remarkGfm from 'remark-gfm'
 import remarkUnwrapImages from 'remark-unwrap-images'
+import { formattedDate } from '@/lib/formatDate'
 const shiki = require('shiki');
 const storage = getStorage();
 
@@ -44,6 +45,7 @@ export const getWork = async (workId: string):Promise<CasesType | any> => {
         )
         return {
             ...work.data(),
+            publish_date: formattedDate(work.data().publish_date.seconds),
             header_image: await getDownloadURL(ref(storage, work.data().header_image)),
             content: [
                 ...work.data()?.content.filter((el: CasesContentType) => el.type !== 'text'),

@@ -28,7 +28,7 @@ export const getCases = async ():Promise<CasesType[] | undefined> => {
                 id: doc.id,
                 ...doc.data(),
                 logo,
-                publish_date: formattedDate(doc.data().publish_date.seconds, true),
+                publish_date: formattedDate(doc.data().publish_date.seconds),
                 content: [
                     ...doc.data().content.filter((el: CasesContentType) => el.type !== 'images'), // Возвращаем все объекты кроме type: images
                     {
@@ -38,7 +38,7 @@ export const getCases = async ():Promise<CasesType[] | undefined> => {
                 ]
             }
         }))
-        return result;
+        return  result.sort((a, b) => new Date(b.publish_date).getTime() - new Date(a.publish_date).getTime());
     }  catch(error: any) {
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -51,8 +51,9 @@ export const getMainCases = async ():Promise<CasesType[] | undefined> => {
     await onAuth();
     try {
         const casesRef = collection(db, "cases");
-        const casesQuery = query(casesRef, where('active', '==', true), limit(3))
+        const casesQuery = query(casesRef, where('active', '==', true))
         const casesSnap = await getDocs(casesQuery);
+
         const result:CasesType[] =  await Promise.all(casesSnap.docs.map(async (doc: any) => {
             let logo:string = '';
             if(doc.data().logo) {
@@ -67,7 +68,7 @@ export const getMainCases = async ():Promise<CasesType[] | undefined> => {
                 logo,
             }
         }))
-        return result;
+        return result.sort((a, b) => new Date(a.publish_date).getTime() - new Date(b.publish_date).getTime()).slice(-3);
     }
     catch (error: any) {
         const errorCode = error.code;
