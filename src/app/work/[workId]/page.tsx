@@ -69,7 +69,7 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
           <FadeIn>
             <MDXComponents.wrapper>
               <Content mdxSource={mdxSource} />
-              <TagList className="mb-16 mt-5">
+              <TagList className="mb-20 mt-5">
                 {work?.tags?.map((tag:string, idx:number) => (
                   <TagListItem key={idx}>{tag}</TagListItem>
                 ))}
@@ -79,18 +79,18 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
                   {work?.testimonial?.content}
                 </Blockquote> : null
               }
-              {/*{*/}
-              {/*  work.stat_list.length ? (*/}
-              {/*    <StatList>*/}
-              {/*      {*/}
-              {/*        work.stat_list.map((stat) => (*/}
-              {/*          <StatListItem label={stat.label} value={stat.value} />*/}
-              {/*        ))*/}
-              {/*      }*/}
-              {/*    </StatList>*/}
-              {/*  ) : null*/}
-              {/*}*/}
             </MDXComponents.wrapper>
+            {
+              work?.stat_list.length ? (
+                <StatList className="mt-20">
+                  {
+                    work.stat_list.map((stat: {label: string, value: string}) => (
+                      <StatListItem label={stat.label} value={stat.value} />
+                    ))
+                  }
+                </StatList>
+              ) : null
+            }
           </FadeIn>
         </Container>
       </article>
