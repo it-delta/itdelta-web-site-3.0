@@ -9,10 +9,12 @@ import {Content} from "@/app/work/compontents/Content"
 import { TagList } from '@/components/TagList'
 import { TagListItem } from '@/components/TagList'
 import { Blockquote } from '@/components/Blockquote'
+import { StatList, StatListItem } from '@/components/StatList'
 
 export default async function WorkDetail({ params: { workId } }: { params: { workId: string } }){
   let work = await getWork(workId)
   let mdxSource = work?.content?.find(({type}: {type: string}) => type === "text")?.value;
+  console.log(work, 'work');
   return (
     <>
       <article className="mt-24 sm:mt-32 lg:mt-40">
@@ -77,6 +79,17 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
                   {work?.testimonial?.content}
                 </Blockquote> : null
               }
+              {/*{*/}
+              {/*  work.stat_list.length ? (*/}
+              {/*    <StatList>*/}
+              {/*      {*/}
+              {/*        work.stat_list.map((stat) => (*/}
+              {/*          <StatListItem label={stat.label} value={stat.value} />*/}
+              {/*        ))*/}
+              {/*      }*/}
+              {/*    </StatList>*/}
+              {/*  ) : null*/}
+              {/*}*/}
             </MDXComponents.wrapper>
           </FadeIn>
         </Container>

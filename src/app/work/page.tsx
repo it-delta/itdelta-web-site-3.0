@@ -78,14 +78,14 @@ function CaseStudies({
                       Подробнее...
                     </Button>
                   </div>
-                  {/*{caseEl?.testimonial && (*/}
-                  {/*  <Blockquote*/}
-                  {/*    author={caseEL?.testimonial?.author}*/}
-                  {/*    className="mt-12"*/}
-                  {/*  >*/}
-                  {/*    {caseEl?.testimonial?.content}*/}
-                  {/*  </Blockquote>*/}
-                  {/*) && ''}*/}
+                  {caseEl?.testimonial ? (
+                    <Blockquote
+                      author={caseEl?.testimonial?.author}
+                      className="mt-12"
+                    >
+                      {caseEl?.testimonial?.content}
+                    </Blockquote>
+                  ) : null}
                 </div>
               </Border>
             </article>
