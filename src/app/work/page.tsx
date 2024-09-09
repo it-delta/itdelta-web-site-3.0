@@ -18,7 +18,7 @@ import logoCultBooking from '@/images/clients/cultbooking/logo-dark.svg'
 
 
 import { formatDate } from '@/lib/formatDate'
-import { getMainCache } from '@/api/getCases'
+import { getCasesCache } from '@/api/getCases'
 import {CasesType} from "@/types/casesTypes";
 
 function CaseStudies({
@@ -148,7 +148,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Work() {
-  let cases:Array<CasesType> | undefined = await getMainCache()
+  let cases:Array<CasesType> | undefined = await getCasesCache()
   return (
     <>
       <PageIntro

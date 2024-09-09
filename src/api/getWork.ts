@@ -11,7 +11,6 @@ import remarkGfm from 'remark-gfm'
 import remarkUnwrapImages from 'remark-unwrap-images'
 import { formattedDate } from '@/lib/formatDate'
 import { unstable_cache as cache } from 'next/dist/server/web/spec-extension/unstable-cache'
-import { getMainCache } from '@/api/getCases'
 const shiki = require('shiki');
 const storage = getStorage();
 
