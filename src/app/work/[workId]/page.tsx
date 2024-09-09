@@ -1,4 +1,4 @@
-import {getWork } from '@/api/getWork'
+import {getWorkCache } from '@/api/getWork'
 import { PageIntro } from '@/components/PageIntro'
 import { FadeIn } from '@/components/FadeIn'
 import { Container } from '@/components/Container'
@@ -8,7 +8,7 @@ import { ContactSection } from '@/components/ContactSection'
 import {Content} from "@/app/work/compontents/Content"
 import { TagListItem } from '@/components/TagList'
 import { StatListItem } from '@/components/StatList'
-import { getCases } from '@/api/getCases'
+import { getCasesCache } from '@/api/getCases'
 import { CasesType } from '@/types/casesTypes'
 import { PageLinks } from '@/components/PageLinks'
 
@@ -20,9 +20,9 @@ interface Page {
 }
 
 export default async function WorkDetail({ params: { workId } }: { params: { workId: string } }){
-  let work = await getWork(workId)
+  let work = await getWorkCache(workId)
   let mdxSource = work?.content?.find(({type}: {type: string}) => type === "text")?.value;
-  const cases:any = await getCases();
+  const cases:any = await getCasesCache();
   const moreCases:Page[] = cases?.filter((caseEl: CasesType) => caseEl.id !== workId).slice(0, 2).map((caseEl:CasesType) => {
     return {
       href: caseEl.id,

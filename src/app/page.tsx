@@ -1,7 +1,7 @@
 import {type Metadata} from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import {getMainCases} from "@/api/getCases";
+import {getMainCasesCache } from '@/api/getCases'
 import {CasesType} from "@/types/casesTypes";
 import {loadServices} from '@/lib/mdx'
 
@@ -40,7 +40,6 @@ import {
     StarIcon,
     UsersIcon
 } from '@heroicons/react/24/outline'
-import {type CaseStudy, type MDXEntry, loadCaseStudies} from '@/lib/mdx'
 
 const clients = [
     ['CloudCollect', LogoCCLight],
@@ -314,7 +313,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
     console.log('Get data...');
-    const cases:CasesType[] | undefined = await getMainCases();
+    const cases:CasesType[] | undefined = await getMainCasesCache();
     console.log('Rendering...');
     return (
         <>

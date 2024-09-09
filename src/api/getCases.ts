@@ -4,9 +4,10 @@ import {db} from "@/lib/firebase";
 import {getDownloadURL, getStorage, ref} from "firebase/storage";
 import {CasesType, CasesContentType} from "@/types/casesTypes";
 import { formattedDate } from '@/lib/formatDate'
+import { unstable_cache as cache } from "next/cache";
 
 const storage = getStorage();
-export const getCases = async ():Promise<CasesType[] | undefined> => {
+const getCases = async ():Promise<CasesType[] | undefined> => {
     await onAuth();
     try {
         const casesRef = collection(db, "cases", "");
@@ -47,7 +48,7 @@ export const getCases = async ():Promise<CasesType[] | undefined> => {
 
 }
 
-export const getMainCases = async ():Promise<CasesType[] | undefined> => {
+const getMainCases = async ():Promise<CasesType[] | undefined> => {
     await onAuth();
     try {
         const casesRef = collection(db, "cases");
@@ -77,3 +78,21 @@ export const getMainCases = async ():Promise<CasesType[] | undefined> => {
     }
 
 }
+
+export const getMainCasesCache = cache(
+  getMainCases,
+  ["getMainCases"],
+  {
+      tags: ["getMainCases"],
+      revalidate: 60 * 60 * 24
+  }
+)
+
+export const getCasesCache = cache(
+  getCases,
+  ["getCases"],
+  {
+      tags: ["getCases"],
+      revalidate: 60 * 60 * 24
+  }
+)

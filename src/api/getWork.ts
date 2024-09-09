@@ -10,10 +10,12 @@ import {remarkRehypeWrap} from 'remark-rehype-wrap'
 import remarkGfm from 'remark-gfm'
 import remarkUnwrapImages from 'remark-unwrap-images'
 import { formattedDate } from '@/lib/formatDate'
+import { unstable_cache as cache } from 'next/dist/server/web/spec-extension/unstable-cache'
+import { getMainCache } from '@/api/getCases'
 const shiki = require('shiki');
 const storage = getStorage();
 
-export const getWork = async (workId: string):Promise<CasesType | any> => {
+const getWork = async (workId: string):Promise<CasesType | any> => {
     await onAuth();
     const caseRef = doc(db, "cases", workId);
     let highlighter = await shiki.getHighlighter({
@@ -63,3 +65,12 @@ export const getWork = async (workId: string):Promise<CasesType | any> => {
     }
 
 }
+
+export const getWorkCache = cache(
+  getWork,
+  ["getWork"],
+  {
+    tags: ["getWork"],
+    revalidate: 60 * 60 * 24
+  }
+)
