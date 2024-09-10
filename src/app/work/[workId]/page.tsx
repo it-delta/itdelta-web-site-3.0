@@ -100,9 +100,9 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
               work?.stat_list?.length ? (
                 <MDXComponents.StatList>
                   {
-                    work.stat_list.map((stat: {label: string, value: string}) => (
-                      <StatListItem key={stat.label} label={stat.label} value={stat.value} />
-                    ))
+                    work.stat_list.map((stat: {label: string, value: string}, index:number) => {
+                     return  <StatListItem key={stat.value || index} label={stat.label} value={stat.value} />
+                    })
                   }
                 </MDXComponents.StatList>
               ) : null
