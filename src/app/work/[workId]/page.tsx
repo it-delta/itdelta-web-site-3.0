@@ -86,8 +86,8 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
             <MDXComponents.wrapper>
               <Content mdxSource={mdxSource} />
               <MDXComponents.TagList>
-                {work?.tags?.map((tag:string, idx: number) => (
-                  <TagListItem key={tag+idx}>{tag}</TagListItem>
+                {work?.tags?.map((tag:string) => (
+                  <TagListItem key={tag}>{tag}</TagListItem>
                 ))}
               </MDXComponents.TagList>
               {
@@ -100,8 +100,8 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
               work?.stat_list?.length ? (
                 <MDXComponents.StatList>
                   {
-                    work.stat_list.map((stat: {label: string, value: string}, idx: number) => (
-                      <StatListItem key={stat.label + idx} label={stat.label} value={stat.value} />
+                    work.stat_list.map((stat: {label: string, value: string}) => (
+                      <StatListItem key={stat.label} label={stat.label} value={stat.value} />
                     ))
                   }
                 </MDXComponents.StatList>
