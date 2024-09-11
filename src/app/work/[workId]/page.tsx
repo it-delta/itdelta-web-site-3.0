@@ -11,7 +11,7 @@ import { StatListItem } from '@/components/StatList'
 import { getCasesCache } from '@/api/getCases'
 import { CasesType } from '@/types/casesTypes'
 import { PageLinks } from '@/components/PageLinks'
-
+import { Suspense } from 'react'
 interface Page {
   href: string
   date?: string
@@ -32,7 +32,7 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
     }
   })
   return (
-    <>
+    <Suspense fallback={<div>Loading ...</div>}>
       <article className="mt-24 sm:mt-32 lg:mt-40">
         <header>
           <PageIntro eyebrow="Проект" title={work?.name} centered>
@@ -119,6 +119,6 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
         )}
 
         <ContactSection />
-    </>
+    </Suspense>
   )
 }
