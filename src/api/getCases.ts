@@ -93,6 +93,5 @@ export const getCasesCache = cache(
   ["getCases"],
   {
       tags: ["getCases"],
-      revalidate: 60 * 60 * 24
   }
 )

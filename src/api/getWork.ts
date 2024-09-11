@@ -65,11 +65,12 @@ const getWork = async (workId: string):Promise<CasesType | any> => {
 
 }
 
-export const getWorkCache = cache(
-  getWork,
-  ["getWork"],
-  {
-    tags: ["getWork"],
-    revalidate: 60 * 60 * 24
-  }
-)
+export const getWorkCache = (id:string) => {
+  return cache(
+    async () => await getWork(id),
+    ['getWork', `getWork-${id}`],
+    {
+      tags: ['getWork', `getWork-${id}`],
+    }
+  )
+}

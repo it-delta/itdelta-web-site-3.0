@@ -20,7 +20,7 @@ interface Page {
 }
 
 export default async function WorkDetail({ params: { workId } }: { params: { workId: string } }){
-  let work = await getWorkCache(workId)
+  let work = await getWorkCache(workId)()
   let mdxSource = work?.content?.find(({type}: {type: string}) => type === "text")?.value;
   const cases:any = await getCasesCache();
   const moreCases:Page[] = cases?.filter((caseEl: CasesType) => caseEl.id !== workId).slice(0, 2).map((caseEl:CasesType) => {
