@@ -18,14 +18,14 @@ import logoCultBooking from '@/images/clients/cultbooking/logo-dark.svg'
 
 
 import { formatDate } from '@/lib/formatDate'
-import { Cases, getCases } from '@/lib/getCases'
+import { getCasesCache } from '@/api/getCases'
+import {CasesType} from "@/types/casesTypes";
 
 function CaseStudies({
                        cases,
                      }: {
-  cases: Array<Cases>
+  cases: Array<CasesType> | undefined
 }) {
-  console.log(cases, 'CASES');
   return (
     <Container className="mt-40">
       <FadeIn>
@@ -34,7 +34,7 @@ function CaseStudies({
         </h2>
       </FadeIn>
       <div className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
-        {cases.map((caseEl) => (
+        {cases?.map((caseEl) => (
           <FadeIn key={caseEl?.client}>
             <article>
               <Border className="grid grid-cols-3 gap-x-8 gap-y-8 pt-16">
@@ -44,7 +44,7 @@ function CaseStudies({
                       width={100}
                       height={100}
                       src={caseEl?.logo}
-                      alt=""
+                      alt={caseEl?.client ?? ''}
                       className="h-16 w-16 flex-none"
                       unoptimized
                     />
@@ -57,8 +57,8 @@ function CaseStudies({
                       {caseEl?.service}
                     </p>
                     <p className="text-sm text-neutral-950 lg:mt-2">
-                      <time dateTime={caseEl.year}>
-                        {formatDate(caseEl.year)}
+                      <time dateTime={caseEl.publish_date}>
+                        {formatDate(caseEl.publish_date)}
                       </time>
                     </p>
                   </div>
@@ -67,11 +67,9 @@ function CaseStudies({
                   <p className="font-display text-4xl font-medium text-neutral-950">
                     <Link href={`work/${caseEl.id}`}>{caseEl.name}</Link>
                   </p>
-                  {/*<div className="mt-6 space-y-6 text-base text-neutral-600">*/}
-                  {/*  {caseEl?.summary?.map((paragraph) => (*/}
-                  {/*    <p key={paragraph}>{paragraph}</p>*/}
-                  {/*  )) && ''}*/}
-                  {/*</div>*/}
+                  <div className="mt-6 space-y-6 text-base text-neutral-600">
+                      <p>{caseEl?.description}</p>
+                  </div>
                   <div className="mt-8 flex">
                     <Button
                       href={`work/${caseEl.id}`}
@@ -80,14 +78,14 @@ function CaseStudies({
                       Подробнее...
                     </Button>
                   </div>
-                  {caseEl?.testimonial && (
+                  {caseEl?.testimonial ? (
                     <Blockquote
-                      author={caseEL?.testimonial?.author}
+                      author={caseEl?.testimonial?.author}
                       className="mt-12"
                     >
                       {caseEl?.testimonial?.content}
                     </Blockquote>
-                  ) && ''}
+                  ) : null}
                 </div>
               </Border>
             </article>
@@ -150,7 +148,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Work() {
-  let cases = await getCases()
+  let cases:Array<CasesType> | undefined = await getCasesCache()
   return (
     <>
       <PageIntro
@@ -168,7 +166,7 @@ export default async function Work() {
         </p>
       </PageIntro>
 
-      <CaseStudies cases={cases}  />
+      <CaseStudies cases={cases} />
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"

@@ -1,4 +1,4 @@
-import {getWork } from '@/lib/getWork'
+import {getWorkCache } from '@/api/getWork'
 import { PageIntro } from '@/components/PageIntro'
 import { FadeIn } from '@/components/FadeIn'
 import { Container } from '@/components/Container'
@@ -6,14 +6,33 @@ import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 import { MDXComponents } from '@/components/MDXComponents'
 import { ContactSection } from '@/components/ContactSection'
 import {Content} from "@/app/work/compontents/Content"
-import { TagList } from '@/components/TagList'
 import { TagListItem } from '@/components/TagList'
+import { StatListItem } from '@/components/StatList'
+import { getCasesCache } from '@/api/getCases'
+import { CasesType } from '@/types/casesTypes'
+import { PageLinks } from '@/components/PageLinks'
+import { Suspense } from 'react'
+interface Page {
+  href: string
+  date?: string
+  title: string
+  description: string
+}
 
 export default async function WorkDetail({ params: { workId } }: { params: { workId: string } }){
-  let work = await getWork(workId)
-  let mdxSource = work?.content?.find(({type}: {type: string}) => type === "text").value;
+  let work = await getWorkCache(workId)()
+  let mdxSource = work?.content?.find(({type}: {type: string}) => type === "text")?.value;
+  const cases:any = await getCasesCache();
+  const moreCases:Page[] = cases?.filter((caseEl: CasesType) => caseEl.id !== workId).slice(0, 2).map((caseEl:CasesType) => {
+    return {
+      href: caseEl.id,
+      date: caseEl.publish_date,
+      title: caseEl.name,
+      description: caseEl.description
+    }
+  })
   return (
-    <>
+    <Suspense fallback={<div>Loading ...</div>}>
       <article className="mt-24 sm:mt-32 lg:mt-40">
         <header>
           <PageIntro eyebrow="Проект" title={work?.name} centered>
@@ -32,8 +51,8 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
                     <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-semibold">Год</dt>
                       <dd>
-                        <time dateTime={work?.year?.split('-')[0]}>
-                          {work?.year?.split('-')[0] ?? "2023"}
+                        <time dateTime={work?.publish_date?.split('-')[0]}>
+                          {work?.publish_date?.split('-')[0] ?? "2023"}
                         </time>
                       </dd>
                     </div>
@@ -66,25 +85,40 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
           <FadeIn>
             <MDXComponents.wrapper>
               <Content mdxSource={mdxSource} />
-              <TagList className="mt-5">
-                {work?.tags?.map((tag, idx :{tag: string, idx: number}) => (
-                  <TagListItem key={idx}>{tag}</TagListItem>
+              <MDXComponents.TagList>
+                {work?.tags?.map((tag:string) => (
+                  <TagListItem key={tag}>{tag}</TagListItem>
                 ))}
-              </TagList>
+              </MDXComponents.TagList>
+              {
+                work?.testimonial ? <MDXComponents.Blockquote author={work?.testimonial?.author} image={work.testimonial.image}>
+                  {work?.testimonial?.content}
+                </MDXComponents.Blockquote> : null
+              }
             </MDXComponents.wrapper>
+            {
+              work?.stat_list?.length ? (
+                <MDXComponents.StatList>
+                  {
+                    work.stat_list.map((stat: {label: string, value: string}, index:number) => {
+                     return  <StatListItem key={stat.value || index} label={stat.label} value={stat.value} />
+                    })
+                  }
+                </MDXComponents.StatList>
+              ) : null
+            }
           </FadeIn>
         </Container>
       </article>
+      {moreCases.length > 0 && (
+          <PageLinks
+            className="mt-24 sm:mt-32 lg:mt-40"
+            title="Другие проекты"
+            pages={moreCases}
+          />
+        )}
 
-      {/*{moreCaseStudies.length > 0 && (*/}
-      {/*  <PageLinks*/}
-      {/*    className="mt-24 sm:mt-32 lg:mt-40"*/}
-      {/*    title="Другие проекты"*/}
-      {/*    pages={moreCaseStudies}*/}
-      {/*  />*/}
-      {/*) */}
-
-      <ContactSection />
-    </>
+        <ContactSection />
+    </Suspense>
   )
 }

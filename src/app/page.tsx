@@ -1,8 +1,8 @@
 import {type Metadata} from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import {getCases} from "@/lib/getCases";
-import {Cases} from "@/lib/getCases";
+import {getMainCasesCache } from '@/api/getCases'
+import {CasesType} from "@/types/casesTypes";
 import {loadServices} from '@/lib/mdx'
 
 import {ContactSection} from '@/components/ContactSection'
@@ -40,7 +40,6 @@ import {
     StarIcon,
     UsersIcon
 } from '@heroicons/react/24/outline'
-import {type CaseStudy, type MDXEntry, loadCaseStudies} from '@/lib/mdx'
 
 const clients = [
     ['CloudCollect', LogoCCLight],
@@ -186,13 +185,10 @@ function Clients() {
     )
 }
 
-function CaseStudies({
-                         caseStudies,
-    cases
-                     }: {
-    caseStudies: Array<MDXEntry<CaseStudy>>
-    cases: Cases[] | undefined
-}) {
+function CaseStudies({ cases }: {
+    cases: CasesType[] | undefined
+})
+{
     return (
         <>
             <SectionIntro
@@ -210,12 +206,12 @@ function CaseStudies({
             </SectionIntro>
             <Container className="mt-16">
                 <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3 mb-5">
-                    {cases?.map((caseEl:Cases) => (
+                    {cases?.map((caseEl:CasesType) => (
                         <FadeIn key={caseEl.id} className="flex">
                             <article
                                 className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
                                 <h3>
-                                    <Link href="/">
+                                    <Link href={`work/${caseEl.id}`}>
                                         <span className="absolute inset-0 rounded-3xl"/>
                                         {caseEl.logo &&
                                             <div className="relative">
@@ -232,10 +228,10 @@ function CaseStudies({
                                 </h3>
                                 <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
                                     <time
-                                        dateTime={caseEl?.year?.split('-')[0] ?? '2023'}
+                                        dateTime={caseEl?.publish_date?.split('-')[0] ?? '2023'}
                                         className="font-semibold"
                                     >
-                                        {caseEl?.year?.split('-')[0] ?? 2023}
+                                        {caseEl?.publish_date?.split('-')[0] ?? 2023}
                                     </time>
                                     <span className="text-logoRed " aria-hidden="true">
                     /
@@ -251,44 +247,6 @@ function CaseStudies({
                             </article>
                         </FadeIn>
 
-                    ))}
-                </FadeInStagger>
-                <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-                    {caseStudies.map((caseStudy) => (
-                        <FadeIn key={caseStudy.href} className="flex">
-                            <article
-                                className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
-                                <h3>
-                                    <Link href={caseStudy.href}>
-                                        <span className="absolute inset-0 rounded-3xl"/>
-                                        <Image
-                                            src={caseStudy.logo}
-                                            alt={caseStudy.client}
-                                            className="h-16 w-16"
-                                            unoptimized
-                                        />
-                                    </Link>
-                                </h3>
-                                <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
-                                    <time
-                                        dateTime={caseStudy.date.split('-')[0]}
-                                        className="font-semibold"
-                                    >
-                                        {caseStudy.date.split('-')[0]}
-                                    </time>
-                                    <span className="text-logoRed " aria-hidden="true">
-                    /
-                  </span>
-                                    <span>Проект</span>
-                                </p>
-                                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
-                                    {caseStudy.title}
-                                </p>
-                                <p className="mt-4 text-base text-neutral-600">
-                                    {caseStudy.description}
-                                </p>
-                            </article>
-                        </FadeIn>
                     ))}
                 </FadeInStagger>
             </Container>
@@ -355,10 +313,8 @@ export const metadata: Metadata = {
 
 export default async function Home() {
     console.log('Get data...');
-    let caseStudies = (await loadCaseStudies()).slice(0, 3)
-    const cases:Cases[] | undefined =await getCases();
+    const cases:CasesType[] | undefined = await getMainCasesCache();
     console.log('Rendering...');
-    console.log(cases, 'CASES')
     return (
         <>
             <Container className="mt-24 sm:mt-32">
@@ -395,7 +351,7 @@ export default async function Home() {
 
             <Clients/>
 
-            <CaseStudies cases={cases} caseStudies={caseStudies}/>
+            <CaseStudies cases={cases} />
 
             <Testimonial
                 className="mt-24 sm:mt-32 lg:mt-40"
