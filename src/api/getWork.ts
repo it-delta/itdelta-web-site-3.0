@@ -11,10 +11,17 @@ import remarkGfm from 'remark-gfm'
 import remarkUnwrapImages from 'remark-unwrap-images'
 import { formattedDate } from '@/lib/formatDate'
 import { unstable_cache as cache } from 'next/dist/server/web/spec-extension/unstable-cache'
+import {getCases} from "./getCases";
 const shiki = require('shiki');
 const storage = getStorage();
 
-const getWork = async (workId: string):Promise<CasesType | any> => {
+// export const getWork = async (id: string): Promise<CasesType | undefined>  => {
+//     const cases = await getCases();
+//
+//     return cases.find((e) => e.id === id);
+// }
+
+export const getWork = async (workId: string):Promise<CasesType | any> => {
     await onAuth();
     const caseRef = doc(db, "cases", workId);
     let highlighter = await shiki.getHighlighter({
@@ -46,7 +53,7 @@ const getWork = async (workId: string):Promise<CasesType | any> => {
         )
         return {
             ...work.data(),
-            publish_date: formattedDate(work.data().publish_date.seconds),
+            publish_date: new Date(work.data().publish_date.seconds * 1000),
             header_image: await getDownloadURL(ref(storage, work.data().header_image)),
             content: [
                 ...work.data()?.content.filter((el: CasesContentType) => el.type !== 'text'),
@@ -65,7 +72,9 @@ const getWork = async (workId: string):Promise<CasesType | any> => {
 
 }
 
+/*
 export const getWorkCache = (id:string) => {
+    // return getWork(id);
   return cache(
     async () => await getWork(id),
     ['getWork', `getWork-${id}`],
@@ -73,4 +82,4 @@ export const getWorkCache = (id:string) => {
       tags: ['getWork', `getWork-${id}`],
     }
   )
-}
+}*/

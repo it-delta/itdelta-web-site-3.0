@@ -5,13 +5,10 @@ export interface CasesContentType {
     value: [] | string
 }
 export interface CasesType {
-    id: string | number,
-    status?: string,
-    publish_date: string,
-    created_on?: {},
+    id: string,
+    publish_date: Date,
     content?: CasesContentType[],
     summary?: [],
-    year?: string,
     header_image?: string,
     logo: string,
     client?: string | undefined,
@@ -29,5 +26,9 @@ export interface CasesType {
             name: string,
             role: string
         }
-    }
+    },
+    stat_list?: {
+        label: string,
+        value: string
+    }[]
 }

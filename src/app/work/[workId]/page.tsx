@@ -1,4 +1,4 @@
-import {getWorkCache } from '@/api/getWork'
+import {getWork } from '@/api/getWork'
 import { PageIntro } from '@/components/PageIntro'
 import { FadeIn } from '@/components/FadeIn'
 import { Container } from '@/components/Container'
@@ -8,29 +8,24 @@ import { ContactSection } from '@/components/ContactSection'
 import {Content} from "@/app/work/compontents/Content"
 import { TagListItem } from '@/components/TagList'
 import { StatListItem } from '@/components/StatList'
-import { getCasesCache } from '@/api/getCases'
+import { getCases } from '@/api/getCases'
 import { CasesType } from '@/types/casesTypes'
 import { PageLinks } from '@/components/PageLinks'
 import { Suspense } from 'react'
-interface Page {
-  href: string
-  date?: string
-  title: string
-  description: string
-}
 
 export default async function WorkDetail({ params: { workId } }: { params: { workId: string } }){
-  let work = await getWorkCache(workId)()
+  let work = await getWork(workId)
   let mdxSource = work?.content?.find(({type}: {type: string}) => type === "text")?.value;
-  const cases:any = await getCasesCache();
-  const moreCases:Page[] = cases?.filter((caseEl: CasesType) => caseEl.id !== workId).slice(0, 2).map((caseEl:CasesType) => {
+  const cases: CasesType[] = await getCases();
+  const moreCases = cases?.filter((caseEl: CasesType) => caseEl.id !== workId).slice(0, 2).map((caseEl:CasesType) => {
     return {
       href: caseEl.id,
-      date: caseEl.publish_date,
+      date: caseEl.publish_date.toLocaleDateString("ru-RU", {year: "numeric", month: "long"}),
       title: caseEl.name,
       description: caseEl.description
     }
   })
+
   return (
     <Suspense fallback={<div>Loading ...</div>}>
       <article className="mt-24 sm:mt-32 lg:mt-40">
@@ -50,11 +45,7 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
                     </div>
                     <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-semibold">Год</dt>
-                      <dd>
-                        <time dateTime={work?.publish_date?.split('-')[0]}>
-                          {work?.publish_date?.split('-')[0] ?? "2023"}
-                        </time>
-                      </dd>
+                      <dd>{work?.publish_date.toLocaleDateString("ru-RU", { year: "numeric" })}</dd>
                     </div>
                     <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-semibold">Услуги</dt>
@@ -110,13 +101,14 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
           </FadeIn>
         </Container>
       </article>
+
       {moreCases.length > 0 && (
           <PageLinks
             className="mt-24 sm:mt-32 lg:mt-40"
             title="Другие проекты"
             pages={moreCases}
           />
-        )}
+      )}
 
         <ContactSection />
     </Suspense>

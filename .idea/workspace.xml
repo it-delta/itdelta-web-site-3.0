@@ -4,44 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d240011-3954-4b89-a613-abca9192c6c8" name="Changes" comment="get image in firebase store">
-      <change afterPath="$PROJECT_DIR$/src/app/_work/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/work/[workId]/page.tsx" afterDir="false" />
+    <list default="true" id="2d240011-3954-4b89-a613-abca9192c6c8" name="Changes" comment="improvements">
+      <change afterPath="$PROJECT_DIR$/src/app/service/ai-development/ai.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/service/ai-development/page.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/service/ai-development/pilot.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/service/ai-development/pilot_1.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/getCases.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/getCases.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/getWork.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/getWork.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/clear-cache/api/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/clear-cache/api/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/bak2.me/hero.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/bak2.me/hero.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/bak2.me/i1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/bak2.me/i1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/bak2.me/i2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/bak2.me/i2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/bak2.me/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/bak2.me/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/cloudcollect/hero.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/cloudcollect/hero.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/cloudcollect/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/cloudcollect/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/cloudcollect/torben-s.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/cloudcollect/torben-s.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/cultbooking/hero.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/cultbooking/hero.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/cultbooking/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/cultbooking/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/cultbooking/reinhard-v.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/cultbooking/reinhard-v.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/family-fund/debra-fiscal.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/family-fund/debra-fiscal.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/family-fund/hero.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/family-fund/hero.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/family-fund/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/family-fund/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/org-online/hero.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/org-online/hero.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/org-online/i2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/org-online/i2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/org-online/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/org-online/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service/booking-system-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/booking-system-development/page.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/work/[workId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/[workId]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/work/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/phobia/hero.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/phobia/hero.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/phobia/jenny-wilson.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/phobia/jenny-wilson.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/phobia/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/phobia/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/unseal/emily-selman.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/unseal/emily-selman.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/unseal/hero.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/unseal/hero.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/unseal/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/unseal/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/v-monitor/hero.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/v-monitor/hero.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/v-monitor/hero.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/v-monitor/hero.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/v-monitor/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/v-monitor/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/wrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_work/wrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/getCases.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/getCases.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/mdx.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/mdx.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PageLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageLinks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/casesTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/casesTypes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,21 +31,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;itdelta-prog&quot;
-  }
-}</component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
   </component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;git@github.com:it-delta/itdelta-web-site-3.0.git&quot;,
-    &quot;accountId&quot;: &quot;c9c6bced-8d8a-4aab-94a7-8ca62fcd7f36&quot;
-  }
-}</component>
   <component name="JsBowerSettings">
     <bower-package value="" />
     <bower.json value="" />
@@ -77,9 +42,6 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
   <component name="ProjectId" id="2aFr8Z6nuXlCcDLOCtUxKkBNE0S" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -88,28 +50,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;git-widget-placeholder&quot;: &quot;#4 on add-firebase&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/prog/projects/itdelta-web-site-3.0/node_modules/prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/snap/phpstorm/415/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/service" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/service" />
       <recent name="$PROJECT_DIR$/src/app/work/bak2.me" />
       <recent name="$PROJECT_DIR$/src/images/clients/bak2.me" />
       <recent name="$PROJECT_DIR$/src/app/work" />
-      <recent name="$PROJECT_DIR$/src/app/service" />
       <recent name="$PROJECT_DIR$/src/app/process" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/service/ai-development" />
       <recent name="$PROJECT_DIR$/src/app/work/bak2.me" />
       <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/src/components" />
@@ -161,6 +119,8 @@
       <workItem from="1723553437487" duration="7000000" />
       <workItem from="1723731096597" duration="81000" />
       <workItem from="1723787997823" duration="24336000" />
+      <workItem from="1724915692457" duration="1386000" />
+      <workItem from="1726814517337" duration="10936000" />
     </task>
     <task id="LOCAL-00001" summary="cases">
       <created>1704008424663</created>
@@ -457,9 +417,9 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Contact form fixed1" />
     <MESSAGE value="Contact form fixed2" />
     <MESSAGE value="SocialMedia" />
     <MESSAGE value="YM added" />
@@ -484,7 +444,8 @@
     <MESSAGE value="services updated" />
     <MESSAGE value="FireCMS added" />
     <MESSAGE value="get image in firebase store" />
-    <option name="LAST_COMMIT_MESSAGE" value="get image in firebase store" />
+    <MESSAGE value="improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="improvements" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

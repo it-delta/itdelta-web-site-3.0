@@ -18,7 +18,7 @@ import logoCultBooking from '@/images/clients/cultbooking/logo-dark.svg'
 
 
 import { formatDate } from '@/lib/formatDate'
-import { getCasesCache } from '@/api/getCases'
+import { getCases } from '@/api/getCases'
 import {CasesType} from "@/types/casesTypes";
 
 function CaseStudies({
@@ -57,9 +57,7 @@ function CaseStudies({
                       {caseEl?.service}
                     </p>
                     <p className="text-sm text-neutral-950 lg:mt-2">
-                      <time dateTime={caseEl.publish_date}>
-                        {formatDate(caseEl.publish_date)}
-                      </time>
+                      {caseEl.publish_date.toLocaleDateString("ru-RU", {year: "numeric", month: "long"})}
                     </p>
                   </div>
                 </div>
@@ -148,7 +146,8 @@ export const metadata: Metadata = {
 }
 
 export default async function Work() {
-  let cases:Array<CasesType> | undefined = await getCasesCache()
+  let cases:Array<CasesType> | undefined = await getCases()
+
   return (
     <>
       <PageIntro

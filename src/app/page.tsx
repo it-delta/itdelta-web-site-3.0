@@ -1,7 +1,7 @@
 import {type Metadata} from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import {getMainCasesCache } from '@/api/getCases'
+import {getMainCases } from '@/api/getCases'
 import {CasesType} from "@/types/casesTypes";
 import {loadServices} from '@/lib/mdx'
 
@@ -52,74 +52,6 @@ const clients = [
     // ['Bright Path', logoBrightPath],
     // ['North Adventures', logoNorthAdventures],
 ]
-
-/*
-const features = [
-    {
-        name: 'Разработка личных кабинетов',
-        description:
-            'Партнерские порталы, кабинеты для дилеров, системы лояльности - всё что позволит улучшить удобство работы ваших клиентов.',
-        href: '#',
-        icon: InboxIcon,
-    },
-    {
-        name: 'CRM системы',
-        description:
-            'Прием заявок из различных каналов, стадии обработки сделки, учёт коммуникаций, система задач, уведомлений и прочие инструменты автоматизации отдела продаж.',
-        href: '#',
-        icon: UsersIcon,
-    },
-    {
-        name: 'Учебные порталы (LMS)',
-        description:
-            'Корпоративная система обучения, автоматизация учебных центров. Потоки, группы обучающихся, курсы, уроки. Возможность автоматической и ручной проверки заданий, система рейтингов.',
-        href: '#',
-        icon: AcademicCapIcon,
-    },
-    {
-        name: 'Интернет-магазины',
-        description:
-            'Создание интернет-магазинов со сложными интеграциями с 1С, системами оплаты и доставки. Работа с дилерами, системы лояльности.',
-        href: '#',
-        icon: BanknotesIcon,
-    },
-    {
-        name: 'Системы бронирования',
-        description:
-            'Создание системы бронирования для гостиниц, клиник, спортивных и учебных центров. Интеграция с системами лояльности.',
-        href: '#',
-        icon: BookOpenIcon,
-    },
-    {
-        name: 'Документооборот',
-        description:
-            'Уменьшите нагрузку на менеджеров, создав кабинет клиента с отображением счетов, оплат, актов, накладных, претензий и прочих необходимых документов. ',
-        href: '#',
-        icon: DocumentIcon,
-    },
-    {
-        name: 'Маркетплейсы и агрегаторы',
-        description:
-            'Системы, объединяющие продавцов и покупателей. В настоящее время актуален в узких нишах.',
-        href: '#',
-        icon: GlobeAltIcon,
-    },
-    {
-        name: 'Системы лояльности',
-        description:
-            'Система маркетинговых инструментов для увеличения повторных продаж, дополнительные и перекрестные продажи (Up-sell, Cross-sell).',
-        href: '#',
-        icon: ReceiptPercentIcon,
-    },
-    {
-        name: 'MVP для стартапов',
-        description:
-            'MVP (minimum viable product) — это минимально жизнеспособный продукт, который позволяет понять насколько интересен пользователям продукт и готовы ли они за него платить.',
-        href: '#',
-        icon: StarIcon,
-    },
-]
-*/
 
 async function Features() {
     let services = await loadServices()
@@ -226,18 +158,15 @@ function CaseStudies({ cases }: {
                                             </div>}
                                     </Link>
                                 </h3>
-                                <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
-                                    <time
-                                        dateTime={caseEl?.publish_date?.split('-')[0] ?? '2023'}
-                                        className="font-semibold"
-                                    >
-                                        {caseEl?.publish_date?.split('-')[0] ?? 2023}
-                                    </time>
+                                <div className="mt-6 flex gap-x-2 text-sm text-neutral-950">
+                                    <span className="font-semibold">
+                                        {caseEl.publish_date.toLocaleDateString("ru-RU", {year: "numeric"})}
+                                    </span>
                                     <span className="text-logoRed " aria-hidden="true">
-                    /
-                  </span>
+                                      /
+                                    </span>
                                     <span>{caseEl?.type && 'Проект'}</span>
-                                </p>
+                                </div>
                                 <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
                                     {caseEl?.name}
                                 </p>
@@ -313,7 +242,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
     console.log('Get data...');
-    const cases:CasesType[] | undefined = await getMainCasesCache();
+    const cases:CasesType[] | undefined = await getMainCases();
     console.log('Rendering...');
     return (
         <>
@@ -330,7 +259,7 @@ export default async function Home() {
                             </p>
                             <p className="mt-1 flex items-center gap-4">
                                 <ArrowRightIcon className="h-4 w-4 text-logoRed shrink-0" aria-hidden="true"/>
-                                Личные кабинеты, CRM системы, сложные интеграции.
+                                Внедрение AI, Личные кабинеты, CRM системы, сложные интеграции.
                             </p>
                             <p className="mt-1 flex items-center gap-4">
                                 <ArrowRightIcon className="h-4 w-4 text-logoRed shrink-0" aria-hidden="true"/>

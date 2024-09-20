@@ -28,7 +28,6 @@ import imageTeam4 from '@/images/team/nik.jpg'
 import imageTeam5 from '@/images/team/vladimir.jpg'
 import imageTeam6 from '@/images/team/sofa.jpeg'
 import { loadArticles } from '@/lib/mdx'
-import { formatDate } from '@/lib/formatDate'
 
 function Culture() {
   return (
