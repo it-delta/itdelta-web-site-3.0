@@ -3,14 +3,19 @@ import clsx from 'clsx'
 export function TagList({
   children,
   className,
+  title,
 }: {
   children: React.ReactNode
   className?: string
+  title?: string
 }) {
   return (
-    <ul role="list" className={clsx(className, 'flex flex-wrap gap-4')}>
-      {children}
-    </ul>
+    <>
+      <h3 className="font-[600] text-xl mt-6">{title}</h3>
+      <ul role="list" className={clsx(className, 'flex flex-wrap gap-4')}>
+        {children}
+      </ul>
+    </>
   )
 }
 
