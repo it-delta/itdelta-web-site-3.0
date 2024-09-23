@@ -57,7 +57,7 @@ function CaseStudies({
                       {caseEl?.service}
                     </p>
                     <p className="text-sm text-neutral-950 lg:mt-2">
-                      {caseEl.publish_date.toLocaleDateString("ru-RU", {year: "numeric", month: "long"})}
+                      {new Date(caseEl.publish_date).toLocaleDateString("ru-RU", {year: "numeric", month: "long"})}
                     </p>
                   </div>
                 </div>

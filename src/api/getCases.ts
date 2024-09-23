@@ -1,46 +1,71 @@
 import {onAuth} from "@/api/onAuth";
-import {collection, getDocs, query, where, limit} from "firebase/firestore";
+import {collection, getDocs, query, where} from "firebase/firestore";
 import {db} from "@/lib/firebase";
 import {getDownloadURL, getStorage, ref} from "firebase/storage";
 import {CasesType, CasesContentType} from "@/types/casesTypes";
 import { unstable_cache as cache } from "next/cache";
+import { serialize } from 'next-mdx-remote/serialize'
+import rehypeShiki from '@leafac/rehype-shiki'
+// @ts-ignore
+import { remarkRehypeWrap} from 'remark-rehype-wrap';
+import remarkGfm from 'remark-gfm'
+import remarkUnwrapImages from 'remark-unwrap-images'
+const shiki = require('shiki');
 
 const storage = getStorage();
 
 const fetchCasesCollection = async (): Promise<CasesType[]> => {
     await onAuth();
+    let highlighter = await shiki.getHighlighter({
+        theme: 'css-variables',
+    })
     try {
         const casesRef = collection(db, "cases", "");
         const casesQuery = query(casesRef, where('active', '==', true))
         const casesSnap = await getDocs(casesQuery);
 
         const result:CasesType[] =  await Promise.all(casesSnap.docs.map(async (doc: any) => {
-            let logo:string | undefined = undefined;
-            let urlImages: string[] | undefined = undefined;
-            const contentImagesPath = doc.data().content.find((el: CasesContentType) => el.type === "images")?.value; // Получаем все пути изображения
-            if(doc.data().logo) {
-                logo = await getDownloadURL(ref(storage, doc.data().logo)); //  получаем url изображенмя из firebase Storage
-            }
-            if(contentImagesPath) {
-                urlImages = await Promise.all(contentImagesPath.map(async (image:string) => {
-                    return await getDownloadURL(ref(storage, image)); // получаем url изображенмя из firebase Storage
-                }))
-            }
+            let [contentText, contentImages={}] = doc?.data()?.content ?? [];
+
+            const mdxSource:any = await serialize(
+              contentText?.value,
+              {
+                  mdxOptions: {
+                      rehypePlugins: [
+                          [rehypeShiki as unknown as any, { highlighter }],
+                          [
+                              remarkRehypeWrap as unknown as any,
+                              {
+                                  node: { type: 'mdxJsxFlowElement', name: 'Typography' },
+                                  start: ':root > :not(mdxJsxFlowElement)',
+                                  end: ':root > mdxJsxFlowElement',
+                              },
+                          ],
+                      ],
+                      remarkPlugins: [remarkGfm  as unknown as any, remarkUnwrapImages],
+                  },
+              },
+            );
+            const contentImagesUrl:[string] = contentImages?.value && await Promise.all(contentImages?.value?.map(async (img:string) => {
+                try {
+                    return await getDownloadURL(ref(storage, img))
+                }
+                catch (e) {
+                    console.log('Error:', e);
+                }
+                return []
+            }))
             return {
                 id: doc.id,
                 ...doc.data(),
-                logo,
+                logo: doc.data().logo && await getDownloadURL(ref(storage, doc.data().logo)),
+                header_image: doc.data().header_image && await getDownloadURL(ref(storage, doc.data().header_image)),
                 publish_date: new Date(doc.data().publish_date.seconds * 1000),
-                content: [
-                    ...doc.data().content.filter((el: CasesContentType) => el.type !== 'images'), // Возвращаем все объекты кроме type: images
-                    {
-                        type: 'images',
-                        value: urlImages,
-                    } // добавляем обновленный объект с url изображениями
-                ]
+                contentText: mdxSource ?? [],
+                contentImages: contentImagesUrl ?? [],
             }
         }))
-        return  result.sort((a, b) => b.publish_date.getTime() - a.publish_date.getTime());
+        return result.sort((a, b) => b.publish_date.getTime() - a.publish_date.getTime());
 
     } catch(error: any) {
         const errorCode = error.code;
@@ -63,10 +88,10 @@ export const getMainCases = async ():Promise<CasesType[] | undefined> => {
     })).slice(0,3);
 }
 
-export const getCases = fetchCasesCollection/*cache(
-  getCases,
+export const getCases = cache(
+  fetchCasesCollection,
   ["getCases"],
   {
       tags: ["getCases"],
   }
-)*/
+)

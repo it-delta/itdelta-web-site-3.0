@@ -1,4 +1,3 @@
-import {getWork } from '@/api/getWork'
 import { PageIntro } from '@/components/PageIntro'
 import { FadeIn } from '@/components/FadeIn'
 import { Container } from '@/components/Container'
@@ -15,13 +14,13 @@ import { Suspense } from 'react'
 import { Img } from '@/components/Img'
 
 export default async function WorkDetail({ params: { workId } }: { params: { workId: string } }){
-  let work = await getWork(workId)
-  let mdxSource = work?.contentText
   const cases: CasesType[] = await getCases();
+  const work = cases.find((work) => work.id === workId);
+  let mdxSource = work?.contentText
   const moreCases = cases?.filter((caseEl: CasesType) => caseEl.id !== workId).slice(0, 2).map((caseEl:CasesType) => {
     return {
       href: caseEl.id,
-      date: caseEl.publish_date.toLocaleDateString("ru-RU", {year: "numeric", month: "long"}),
+      date: new Date(caseEl.publish_date).toLocaleDateString("ru-RU", {year: "numeric", month: "numeric", day: 'numeric'}),
       title: caseEl.name,
       description: caseEl.description
     }
@@ -46,7 +45,7 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
                     </div>
                     <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-semibold">Год</dt>
-                      <dd>{work?.publish_date.toLocaleDateString("ru-RU", { year: "numeric" })}</dd>
+                      <dd>{new Date(work?.publish_date).toLocaleDateString("ru-RU", { year: "numeric" })}</dd>
                     </div>
                     <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-semibold">Услуги</dt>
