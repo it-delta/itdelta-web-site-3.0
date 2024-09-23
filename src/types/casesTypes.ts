@@ -8,6 +8,8 @@ export interface CasesType {
     id: string,
     publish_date: Date,
     content?: CasesContentType[],
+    contentImages?: [string],
+    contentText?: [string]
     summary?: [],
     header_image?: string,
     logo: string,

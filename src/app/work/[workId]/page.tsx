@@ -12,10 +12,11 @@ import { getCases } from '@/api/getCases'
 import { CasesType } from '@/types/casesTypes'
 import { PageLinks } from '@/components/PageLinks'
 import { Suspense } from 'react'
+import { Img } from '@/components/Img'
 
 export default async function WorkDetail({ params: { workId } }: { params: { workId: string } }){
   let work = await getWork(workId)
-  let mdxSource = work?.content?.find(({type}: {type: string}) => type === "text")?.value;
+  let mdxSource = work?.contentText
   const cases: CasesType[] = await getCases();
   const moreCases = cases?.filter((caseEl: CasesType) => caseEl.id !== workId).slice(0, 2).map((caseEl:CasesType) => {
     return {
@@ -76,11 +77,16 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
           <FadeIn>
             <MDXComponents.wrapper>
               <Content mdxSource={mdxSource} />
-              <MDXComponents.TagList>
-                {work?.tags?.map((tag:string) => (
-                  <TagListItem key={tag}>{tag}</TagListItem>
-                ))}
-              </MDXComponents.TagList>
+              <>
+                {work?.contentImages?.map((imgUrl:string) => {
+                  return <Img key={imgUrl} src={imgUrl}/>
+                })}
+              </>
+                <MDXComponents.TagList title={'Технологии'}>
+                  {work?.tags?.map((tag:string) => (
+                    <TagListItem key={tag}>{tag}</TagListItem>
+                  ))}
+                </MDXComponents.TagList>
               {
                 work?.testimonial ? <MDXComponents.Blockquote author={work?.testimonial?.author} image={work.testimonial.image}>
                   {work?.testimonial?.content}

@@ -27,13 +27,15 @@ export const getWork = async (workId: string):Promise<CasesType | any> => {
     let highlighter = await shiki.getHighlighter({
         theme: 'css-variables',
     })
+
     try {
         const work:any = await getDoc(caseRef);
 
-        let mdxSource:any = await serialize(
-          work
-            ?.data()
-            ?.content.find((el: CasesContentType) => el.type === 'text')?.value,
+
+        let [contentText, contentImages={}] = work?.data()?.content ?? [];
+
+        const mdxSource:any = await serialize(
+          contentText?.value,
           {
             mdxOptions: {
               rehypePlugins: [
@@ -50,18 +52,22 @@ export const getWork = async (workId: string):Promise<CasesType | any> => {
               remarkPlugins: [remarkGfm  as unknown as any, remarkUnwrapImages],
             },
           },
-        )
+        );
+        const contentImagesUrl:[string] = contentImages?.value && await Promise.all(contentImages?.value?.map(async (img:string) => {
+          try {
+            return await getDownloadURL(ref(storage, img))
+          }
+          catch (e) {
+            console.log(e);
+          }
+          return []
+        }))
         return {
             ...work.data(),
             publish_date: new Date(work.data().publish_date.seconds * 1000),
             header_image: await getDownloadURL(ref(storage, work.data().header_image)),
-            content: [
-                ...work.data()?.content.filter((el: CasesContentType) => el.type !== 'text'),
-                {
-                    type: "text",
-                    value: mdxSource
-                }
-            ]
+            contentText: mdxSource ?? [],
+            contentImages: contentImagesUrl ?? [],
         }
     }
     catch (error:any) {
