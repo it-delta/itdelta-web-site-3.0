@@ -59,9 +59,9 @@ const fetchCasesCollection = async (): Promise<CasesType[]> => {
                 id: doc.id,
                 ...doc.data(),
                 logo: doc.data().logo && await getDownloadURL(ref(storage, doc.data().logo)),
-                header_image: doc.data().header_image && await getDownloadURL(ref(storage, doc.data().header_image)),
+                header_image: await getDownloadURL(ref(storage, doc.data().header_image)),
                 publish_date: new Date(doc.data().publish_date.seconds * 1000),
-                contentText: mdxSource ?? [],
+                contentText: mdxSource,
                 contentImages: contentImagesUrl ?? [],
             }
         }))

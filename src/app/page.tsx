@@ -244,7 +244,6 @@ export default async function Home() {
     console.log('Get data...');
     const cases:CasesType[] | undefined = await getMainCases();
     console.log('Rendering...');
-    console.log(cases, 'cases');
     return (
         <>
             <Container className="mt-24 sm:mt-32">
