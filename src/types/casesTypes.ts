@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image'
-
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 export interface CasesContentType {
     type: string,
     value: [] | string
@@ -9,7 +9,7 @@ export interface CasesType {
     publish_date: Date,
     content?: CasesContentType[],
     contentImages?: [string],
-    contentText?: [string]
+    contentText?: MDXRemoteSerializeResult
     summary?: [],
     header_image?: string,
     logo: string,
@@ -21,7 +21,7 @@ export interface CasesType {
     service?: string,
     testimonial?: {
         image?: {
-            src?: string | StaticImageData
+            src: string | StaticImageData
         }
         content: string,
         author: {

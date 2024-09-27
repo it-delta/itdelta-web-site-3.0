@@ -160,7 +160,7 @@ function CaseStudies({ cases }: {
                                 </h3>
                                 <div className="mt-6 flex gap-x-2 text-sm text-neutral-950">
                                     <span className="font-semibold">
-                                        {caseEl.publish_date.toLocaleDateString("ru-RU", {year: "numeric"})}
+                                        {new Date(caseEl.publish_date).toLocaleDateString('ru-RU', {year:'numeric'})}
                                     </span>
                                     <span className="text-logoRed " aria-hidden="true">
                                       /
