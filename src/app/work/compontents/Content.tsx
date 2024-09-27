@@ -4,5 +4,5 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 
 export const Content = ({mdxSource}: {mdxSource: MDXRemoteSerializeResult | undefined}) =>  {
     // @ts-ignore
-    return  <MDXRemote {...mdxSource}  components={MDXComponents}/>
+    return mdxSource && <MDXRemote {...mdxSource}  components={MDXComponents}/>
 }

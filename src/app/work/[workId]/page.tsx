@@ -83,12 +83,16 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
         <Container className="mt-24 sm:mt-32 lg:mt-40">
           <FadeIn>
             <MDXComponents.wrapper>
-              <Content mdxSource={mdxSource} />
-              <>
-                {work?.contentImages?.map((imgUrl: string) => {
-                  return <Img key={imgUrl} src={imgUrl} />
-                })}
-              </>
+              {work?.content?.map((obj: any, idx:number) => {
+                return (
+                  <div key={`${obj.type}-idx`}>
+                    <Content mdxSource={obj.type === 'text' && obj?.value} />
+                      {obj.type === 'images' && obj?.value?.map((imgUrl: string) => {
+                        return <Img key={imgUrl} src={imgUrl} />
+                      })}
+                  </div>
+                )
+              })}
               <MDXComponents.TagList title={'Технологии'}>
                 {work?.tags?.map((tag: string) => (
                   <TagListItem key={tag}>{tag}</TagListItem>

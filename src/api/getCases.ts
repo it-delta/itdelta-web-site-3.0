@@ -25,44 +25,54 @@ const fetchCasesCollection = async (): Promise<CasesType[]> => {
         const casesSnap = await getDocs(casesQuery);
 
         const result:CasesType[] =  await Promise.all(casesSnap.docs.map(async (doc: any) => {
-            let [contentText, contentImages={}] = doc?.data()?.content ?? [];
 
-            const mdxSource:any = await serialize(
-              contentText?.value,
-              {
-                  mdxOptions: {
-                      rehypePlugins: [
-                          [rehypeShiki as unknown as any, { highlighter }],
-                          [
-                              remarkRehypeWrap as unknown as any,
-                              {
-                                  node: { type: 'mdxJsxFlowElement', name: 'Typography' },
-                                  start: ':root > :not(mdxJsxFlowElement)',
-                                  end: ':root > mdxJsxFlowElement',
+            const updateContent = await Promise.all(doc?.data()?.content?.map(async (obj:CasesContentType) => {
+                if(obj.type === 'text') {
+                    return {
+                        type: obj.type,
+                        value: await serialize(
+                          obj.value as string,
+                          {
+                              mdxOptions: {
+                                  rehypePlugins: [
+                                      [rehypeShiki as unknown as any, { highlighter }],
+                                      [
+                                          remarkRehypeWrap as unknown as any,
+                                          {
+                                              node: { type: 'mdxJsxFlowElement', name: 'Typography' },
+                                              start: ':root > :not(mdxJsxFlowElement)',
+                                              end: ':root > mdxJsxFlowElement',
+                                          },
+                                      ],
+                                  ],
+                                  remarkPlugins: [remarkGfm  as unknown as any, remarkUnwrapImages],
                               },
-                          ],
-                      ],
-                      remarkPlugins: [remarkGfm  as unknown as any, remarkUnwrapImages],
-                  },
-              },
-            );
-            const contentImagesUrl:[string] = contentImages?.value && await Promise.all(contentImages?.value?.map(async (img:string) => {
-                try {
-                    return await getDownloadURL(ref(storage, img))
+                          },
+                        )
+                    }
                 }
-                catch (e) {
-                    console.log('Error:', e);
+                if(obj.type === 'images') {
+                    return {
+                        type: obj.type,
+                        value: obj.value && await Promise.all(typeof obj.value !== 'string' ? obj.value?.map(async (img: string) => {
+                            try {
+                                return await getDownloadURL(ref(storage, img))
+                            } catch (e) {
+                                console.log('Error:', e)
+                            }
+                            return []
+                        }) : [])
+                    }
                 }
-                return []
             }))
+
             return {
                 id: doc.id,
                 ...doc.data(),
                 logo: doc.data().logo && await getDownloadURL(ref(storage, doc.data().logo)),
                 header_image: await getDownloadURL(ref(storage, doc.data().header_image)),
                 publish_date: new Date(doc.data().publish_date.seconds * 1000),
-                contentText: mdxSource,
-                contentImages: contentImagesUrl ?? [],
+                content: updateContent,
             }
         }))
         return result.sort((a, b) => b.publish_date.getTime() - a.publish_date.getTime());
