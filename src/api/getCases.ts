@@ -48,7 +48,7 @@ const fetchCasesCollection = async (): Promise<CasesType[]> => {
                                   remarkPlugins: [remarkGfm  as unknown as any, remarkUnwrapImages],
                               },
                           },
-                        )
+                        ).then((res) => res).catch((e) => '')
                     }
                 }
                 if(obj.type === 'images') {
@@ -69,8 +69,8 @@ const fetchCasesCollection = async (): Promise<CasesType[]> => {
             return {
                 id: doc.id,
                 ...doc.data(),
-                logo: doc.data().logo && await getDownloadURL(ref(storage, doc.data().logo)),
-                header_image: await getDownloadURL(ref(storage, doc.data().header_image)),
+                logo: doc.data()?.logo && await getDownloadURL(ref(storage, doc.data().logo)),
+                header_image: doc.data()?.header_image && await getDownloadURL(ref(storage, doc.data().header_image)),
                 publish_date: new Date(doc.data().publish_date.seconds * 1000),
                 content: updateContent,
             }

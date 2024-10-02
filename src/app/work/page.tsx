@@ -40,14 +40,14 @@ function CaseStudies({
               <Border className="grid grid-cols-3 gap-x-8 gap-y-8 pt-16">
                 <div className="col-span-full sm:flex sm:items-center sm:justify-between sm:gap-x-8 lg:col-span-1 lg:block">
                   <div className="sm:flex sm:items-center sm:gap-x-6 lg:block">
-                    <Image
+                    {caseEl?.logo &&  <Image
                       width={100}
                       height={100}
                       src={caseEl?.logo}
                       alt={caseEl?.client ?? ''}
                       className="h-16 w-16 flex-none"
                       unoptimized
-                    />
+                    />}
                     <h3 className="mt-6 text-sm font-semibold text-neutral-950 sm:mt-0 lg:mt-8">
                       {caseEl?.client}
                     </h3>
