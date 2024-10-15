@@ -22,12 +22,13 @@ function ArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 interface Page {
   href: string
-  date?: string
+  date?:string,
   title: string
   description: string
 }
 
 function PageLink({ page }: { page: Page }) {
+
   return (
     <article key={page.href}>
       <Border
@@ -42,8 +43,7 @@ function PageLink({ page }: { page: Page }) {
                   dateTime={page.date}
                   className="order-first text-sm text-neutral-600"
               >
-                  {formatDate(page.date)}
-                  {page.date}
+                {page.date}
               </time>
           }
         <p className="mt-2.5 text-base text-neutral-600">{page.description}</p>
