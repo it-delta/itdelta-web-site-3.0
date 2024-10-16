@@ -4,7 +4,6 @@ import { Container } from '@/components/Container'
 import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 import { MDXComponents } from '@/components/MDXComponents'
 import { ContactSection } from '@/components/ContactSection'
-import {Content} from "@/app/work/compontents/Content"
 import { TagListItem } from '@/components/TagList'
 import { StatListItem } from '@/components/StatList'
 import { getCases } from '@/api/getCases'
@@ -12,6 +11,7 @@ import { CasesType } from '@/types/casesTypes'
 import { PageLinks } from '@/components/PageLinks'
 import { Suspense } from 'react'
 import { Img } from '@/components/Img'
+import { MdxContent } from '@/components/MdxContent'
 
 export default async function WorkDetail({ params: { workId } }: { params: { workId: string } }){
   const cases: CasesType[] = await getCases();
@@ -86,7 +86,7 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
               {work?.content?.map((obj: any, idx:number) => {
                 return (
                   <div key={`${obj.type}-idx`}>
-                    <Content mdxSource={obj.type === 'text' && obj?.value} />
+                    <MdxContent mdxSource={obj.type === 'text' && obj?.value} />
                       {obj.type === 'images' && obj?.value?.map((imgUrl: string) => {
                         return <Img key={imgUrl} src={imgUrl} />
                       })}
