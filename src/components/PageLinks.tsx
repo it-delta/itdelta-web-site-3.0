@@ -22,7 +22,7 @@ function ArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 interface Page {
   href: string
-  date?:string,
+  date?: any,
   title: string
   description: string
 }
@@ -38,12 +38,12 @@ function PageLink({ page }: { page: Page }) {
         <h3 className={clsx("text-base font-semibold text-neutral-950", page.date ? "mt-6" : "")}>
           {page.title}
         </h3>
-          {page.date &&
+          {page?.date &&
               <time
                   dateTime={page.date}
                   className="order-first text-sm text-neutral-600"
               >
-                {page.date}
+                {new Date(page.date).toLocaleDateString("ru-RU", {month: "long", day: 'numeric', year: "numeric"})}
               </time>
           }
         <p className="mt-2.5 text-base text-neutral-600">{page.description}</p>

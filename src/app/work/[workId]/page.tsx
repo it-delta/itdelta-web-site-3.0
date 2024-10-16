@@ -20,7 +20,7 @@ export default async function WorkDetail({ params: { workId } }: { params: { wor
   const moreCases = cases?.filter((caseEl: CasesType) => caseEl.id !== workId).slice(0, 2).map((caseEl:CasesType) => {
     return {
       href: caseEl.id,
-      date: new Date(caseEl.publish_date).toLocaleDateString("ru-RU", {year: "numeric", month: "numeric", day: 'numeric'}),
+      date: caseEl.publish_date,
       title: caseEl.name,
       description: caseEl.description
     }
