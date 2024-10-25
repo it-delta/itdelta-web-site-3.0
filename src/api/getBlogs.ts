@@ -86,14 +86,14 @@ export  const fetchBlogCollection = async (): Promise<BlogType[]> => {
   return [];
 }
 
-export const getBlog = async (id:string):Promise<BlogType> => {
+export const getBlog = async (id:string):Promise<BlogType | undefined> => {
   const blogs: BlogType[] = await fetchBlogCollection();
   return blogs.find((blog) => blog.id === id);
 }
-// export const getBlogs = cache(
-//   fetchBlogCollection,
-//   ["getBlogs"],
-//   {
-//     tags: ["getBlogs"],
-//   }
-// )
+export const getBlogs = cache(
+  fetchBlogCollection,
+  ["getBlogs"],
+  {
+    tags: ["getBlogs"],
+  }
+)
