@@ -10,7 +10,6 @@ import { MdxContent } from '@/components/MdxContent'
 import { Img } from '@/components/Img'
 export default async function BlogDetail({ params: { blogId } }: { params: { blogId: string } }){
   const blog:BlogType | undefined  = await getBlog(blogId);
-  console.log(blog, 'blogggg');
   return (
     <Suspense fallback={<div>Loading</div>}>
       <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">

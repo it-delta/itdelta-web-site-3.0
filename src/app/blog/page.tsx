@@ -19,13 +19,13 @@ export const metadata: Metadata = {
 
 export default async function Blog() {
   let blogs = await fetchBlogCollection()
-  console.log(blogs, 'blogs');
 
   return (
     <>
       <PageIntro eyebrow="Блог" title="Последние новости и статьи">
         <p>
-          Будьте в курсе последних новостей, поскольку наши специалисты постоянно находят новые темы чтобы поделиться с Вами.
+          Будьте в курсе последних новостей, поскольку наши специалисты
+          постоянно находят новые темы чтобы поделиться с Вами.
           {/*
           Stay up-to-date with the latest industry news as our marketing teams
           finds new ways to re-purpose old CSS tricks articles.
@@ -35,7 +35,7 @@ export default async function Blog() {
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
         <div className="space-y-24 lg:space-y-32">
-          {blogs.map((blog:BlogType) => (
+          {blogs.map((blog: BlogType) => (
             <FadeIn key={blog.id}>
               <article>
                 <Border className="pt-16">
@@ -46,11 +46,20 @@ export default async function Blog() {
                       </h2>
                       <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
                         <dt className="sr-only">Published</dt>
-                        <dd className="absolute left-0 top-0 text-sm text-neutral-950 lg:static">
-                          <time dateTime={blog.publish_date}>
-                            {new Date(blog.publish_date).toLocaleDateString("ru-RU", {month: "long", day: 'numeric', year: "numeric"})}
-                          </time>
-                        </dd>
+                        {blog.publish_date && (
+                          <dd className="absolute left-0 top-0 text-sm text-neutral-950 lg:static">
+                            <time dateTime={blog.publish_date}>
+                              {new Date(blog.publish_date).toLocaleDateString(
+                                'ru-RU',
+                                {
+                                  month: 'long',
+                                  day: 'numeric',
+                                  year: 'numeric',
+                                },
+                              )}
+                            </time>
+                          </dd>
+                        )}
                         <dt className="sr-only">Автор</dt>
                         <dd className="mt-6 flex gap-x-4">
                           <div className="flex-none overflow-hidden rounded-xl bg-neutral-100">
