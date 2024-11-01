@@ -22,11 +22,15 @@ import imageLeonardKrasner from '@/images/team/leonard-krasner.jpg'
 // import imageLeslieAlexander from '@/images/team/leslie-alexander.jpg'
 // import imageMichaelFoster from '@/images/team/michael-foster.jpg'
 // import imageWhitneyFrancis from '@/images/team/whitney-francis.jpg'
+import imageTeam1 from '@/images/team/max.jpeg'
 import imageTeam2 from '@/images/team/lev.jpg'
-import imageTeam3 from '@/images/team/maria.jpg'
+import imageTeam3 from '@/images/team/arina.jpg'
 import imageTeam4 from '@/images/team/nik.jpg'
 import imageTeam5 from '@/images/team/vladimir.jpg'
-import imageTeam6 from '@/images/team/sofa.jpeg'
+import imageTeam6 from '@/images/team/nastya.jpg'
+import imageTeam7 from '@/images/team/ruslan.png'
+import imageTeam8 from '@/images/team/raffi.png'
+import imageTeam9 from '@/images/team/rifat.jpg'
 import { loadArticles } from '@/lib/mdx'
 
 function Culture() {
@@ -85,7 +89,7 @@ const team = [
       {
         name: 'Максим',
         role: 'CEO',
-        image: { src: imageLeonardKrasner },
+        image: { src: imageTeam1 },
       },
       {
         name: 'Лев',
@@ -94,10 +98,10 @@ const team = [
         // image: { src: imageEmmaDorsey },
       },
       {
-        name: 'Мария',
+        name: 'Арина',
         role: 'Project Manager',
         // image: { src: imageTeam3 },
-        image: { src: imageChelseaHagon },
+        image: { src: imageTeam3 },
       },
       {
         name: 'Никита',
@@ -111,9 +115,27 @@ const team = [
         image: { src: imageTeam5 },
       },
       {
-        name: 'София',
+        name: 'Анастасия',
         role: 'HR',
         image: { src: imageTeam6 },
+        // image: { src: imageKathrynMurphy },
+      },
+      {
+        name: 'Руслан',
+        role: 'Front End',
+        image: { src: imageTeam7 },
+        // image: { src: imageKathrynMurphy },
+      },
+      {
+        name: 'Раффи',
+        role: 'Front End',
+        image: { src: imageTeam8 },
+        // image: { src: imageKathrynMurphy },
+      },
+      {
+        name: 'Рифат',
+        role: 'Back End',
+        image: { src: imageTeam9 },
         // image: { src: imageKathrynMurphy },
       },
 /*      {
