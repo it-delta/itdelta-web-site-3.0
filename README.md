@@ -22,6 +22,24 @@ Finally, open [http://localhost:3000](http://localhost:3000) in your browser to 
 
 You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
 
+## Working with backups
+1) - Install Firebase CLI: `npm install -g firebase-tools`  
+2) Log in to your Firebase account: `firebase login`
+3) Select a project:
+- List projects: -`firebase projects:list`
+- Choose a project: `firebase use itdelta-web-site-3`
+
+Create a scheduled backup `firebase firestore:backups:schedules:create --database '(default)' --recurrence 'DAILY' --retention 14w`
+
+1) To get a list of all backup schedules, use the following command: `firebase firestore:backups:schedules:list --database '(default)'`
+2) Deleting a backup schedule can be achieved with this command: `firebase firestore:backups:schedules:delete BACKUP-SCHEDULE`
+3) To list all backups, use this command: `firebase firestore:backups:list`
+4) Delete backup use this command: `firebase firestore:backups:delete BACKUP`
+5) To begin the restore operation, use one of the following methods: `firebase firestore:databases:restore \
+--backup 'BACKUP' \
+--database 'DATABASE_ID'`
+
+For more details, refer to the [Firebase documentation](https://firebase.google.com/docs/firestore/backups?hl=ru)
 ## License
 
 This site template is a commercial product and is licensed under the [Tailwind UI license](https://tailwindui.com/license).
