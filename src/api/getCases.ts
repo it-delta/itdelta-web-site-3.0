@@ -10,6 +10,7 @@ import rehypeShiki from '@leafac/rehype-shiki'
 import { remarkRehypeWrap} from 'remark-rehype-wrap';
 import remarkGfm from 'remark-gfm'
 import remarkUnwrapImages from 'remark-unwrap-images'
+import { transliterate } from '@/lib/transliterate'
 const shiki = require('shiki');
 
 const storage = getStorage();
@@ -73,6 +74,7 @@ const fetchCasesCollection = async (): Promise<CasesType[]> => {
                 header_image: doc.data()?.header_image && await getDownloadURL(ref(storage, doc.data().header_image)),
                 publish_date: new Date(doc.data().publish_date.seconds * 1000),
                 content: updateContent,
+                slug: transliterate(doc.data().name)
             }
         }))
         return result.sort((a, b) => b.publish_date.getTime() - a.publish_date.getTime());
@@ -91,6 +93,7 @@ export const getMainCases = async ():Promise<CasesType[] | undefined> => {
     return res.map((e) => ({
         id: e.id,
         name: e.name,
+        slug: e.slug,
         type: e.type,
         description: e.description,
         publish_date: e.publish_date,

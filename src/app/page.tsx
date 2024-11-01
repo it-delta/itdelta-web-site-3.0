@@ -139,11 +139,11 @@ function CaseStudies({ cases }: {
             <Container className="mt-16">
                 <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3 mb-5">
                     {cases?.map((caseEl:CasesType) => (
-                        <FadeIn key={caseEl.id} className="flex">
+                        <FadeIn key={caseEl.slug} className="flex">
                             <article
                                 className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
                                 <h3>
-                                    <Link href={`work/${caseEl.id}`}>
+                                    <Link href={`work/${caseEl.slug}`}>
                                         <span className="absolute inset-0 rounded-3xl"/>
                                         {caseEl.logo &&
                                             <div className="relative">

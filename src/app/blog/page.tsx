@@ -42,7 +42,7 @@ export default async function Blog() {
                   <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                     <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
                       <h2 className="font-display text-2xl font-semibold text-neutral-950">
-                        <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
+                        <Link href={`/blog/${blog.slug}`}>{blog.title}</Link>
                       </h2>
                       <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
                         <dt className="sr-only">Published</dt>

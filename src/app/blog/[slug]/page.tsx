@@ -8,8 +8,9 @@ import { BlogType } from "@/types/blogTypes"
 import { MDXComponents } from '@/components/MDXComponents'
 import { MdxContent } from '@/components/MdxContent'
 import { Img } from '@/components/Img'
-export default async function BlogDetail({ params: { blogId } }: { params: { blogId: string } }){
-  const blog:BlogType | undefined  = await getBlog(blogId);
+
+export default async function BlogDetail({ params: { slug } }: { params: { slug: string } }){
+  const blog:BlogType | undefined  = await getBlog(slug);
   return (
     <Suspense fallback={<div>Loading</div>}>
       <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">

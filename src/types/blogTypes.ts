@@ -8,6 +8,7 @@ export interface BlogType {
   active: boolean,
   publish_date:  string | undefined,
   title: string,
+  slug?: string,
   description: string,
   content: BlogContentType[],
   author: {

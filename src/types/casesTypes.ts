@@ -17,6 +17,7 @@ export interface CasesType {
     tags?: string[],
     type: string,
     name: string,
+    slug?: string,
     description: string,
     service?: string,
     testimonial?: {
