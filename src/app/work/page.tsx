@@ -63,14 +63,14 @@ function CaseStudies({
                 </div>
                 <div className="col-span-full lg:col-span-2 lg:max-w-2xl">
                   <p className="font-display text-4xl font-medium text-neutral-950">
-                    <Link href={`work/${caseEl.id}`}>{caseEl.name}</Link>
+                    <Link href={`work/${caseEl.slug}`}>{caseEl.name}</Link>
                   </p>
                   <div className="mt-6 space-y-6 text-base text-neutral-600">
                       <p>{caseEl?.description}</p>
                   </div>
                   <div className="mt-8 flex">
                     <Button
-                      href={`work/${caseEl.id}`}
+                      href={`work/${caseEl.slug}`}
                       aria-label={`Read case study: ${caseEl.client}`}
                     >
                       Подробнее...
@@ -147,7 +147,6 @@ export const metadata: Metadata = {
 
 export default async function Work() {
   let cases:Array<CasesType> | undefined = await getCases()
-
   return (
     <>
       <PageIntro

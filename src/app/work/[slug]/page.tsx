@@ -13,11 +13,11 @@ import { Suspense } from 'react'
 import { Img } from '@/components/Img'
 import { MdxContent } from '@/components/MdxContent'
 
-export default async function WorkDetail({ params: { workId } }: { params: { workId: string } }){
+export default async function WorkDetail({ params: { slug } }: { params: { slug: string } }){
   const cases: CasesType[] = await getCases();
-  const work = cases.find((work) => work.id === workId);
+  const work = cases.find((work) => work.slug === slug);
   let mdxSource = work?.contentText
-  const moreCases = cases?.filter((caseEl: CasesType) => caseEl.id !== workId).slice(0, 2).map((caseEl:CasesType) => {
+  const moreCases = cases?.filter((caseEl: CasesType) => caseEl.id !== work?.id).slice(0, 2).map((caseEl:CasesType) => {
     return {
       href: caseEl.id,
       date: caseEl.publish_date,

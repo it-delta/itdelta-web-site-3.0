@@ -12,6 +12,7 @@ import remarkUnwrapImages from 'remark-unwrap-images'
 import { BlogContentType, BlogType } from '@/types/blogTypes'
 import { CasesType } from '@/types/casesTypes'
 import { getCases } from '@/api/getCases'
+import { transliterate } from '@/lib/transliterate'
 const shiki = require('shiki');
 
 const storage = getStorage();
@@ -72,6 +73,7 @@ export  const fetchBlogCollection = async (): Promise<BlogType[]> => {
       return {
         id: doc.id,
         ...doc.data(),
+        slug: transliterate(doc.data().title),
         publish_date: new Date(doc.data().publish_date.seconds * 1000),
         content: updateContent
       }
@@ -86,9 +88,9 @@ export  const fetchBlogCollection = async (): Promise<BlogType[]> => {
   return [];
 }
 
-export const getBlog = async (id:string):Promise<BlogType | undefined> => {
+export const getBlog = async (slug:string):Promise<BlogType | undefined> => {
   const blogs: BlogType[] = await fetchBlogCollection();
-  return blogs.find((blog) => blog.id === id);
+  return blogs.find((blog) => blog.slug === slug);
 }
 export const getBlogs = cache(
   fetchBlogCollection,
