@@ -92,14 +92,14 @@ const team = [
         image: { src: imageTeam7 },
       },
       {
-        name: 'Раффи',
-        role: 'Front End',
-        image: { src: imageTeam8 },
-      },
-      {
         name: 'Рифат',
         role: 'Back End',
         image: { src: imageTeam9 },
+      },
+      {
+        name: 'Раффи',
+        role: 'Front End',
+        image: { src: imageTeam8 },
       },
     ],
   },
