@@ -10,19 +10,7 @@ import { PageIntro } from '@/components/PageIntro'
 import { PageLinks } from '@/components/PageLinks'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StatList, StatListItem } from '@/components/StatList'
-// import imageAngelaFisher from '@/images/team/angela-fisher.jpg'
-// import imageBenjaminRussel from '@/images/team/benjamin-ruseesel.jpg'
-import imageBlakeReid from '@/images/team/blake-reid.jpg'
-import imageChelseaHagon from '@/images/team/chelsea-hagon.jpg'
-// import imageDriesVincent from '@/images/team/dries-vincent.jpg'
-// import imageEmmaDorsey from '@/images/team/emma-dorsey.jpg'
-// import imageJeffreyWebb from '@/images/team/jeffrey-webb.jpg'
-import imageKathrynMurphy from '@/images/team/kathryn-murphy.jpg'
-import imageLeonardKrasner from '@/images/team/leonard-krasner.jpg'
-// import imageLeslieAlexander from '@/images/team/leslie-alexander.jpg'
-// import imageMichaelFoster from '@/images/team/michael-foster.jpg'
-// import imageWhitneyFrancis from '@/images/team/whitney-francis.jpg'
-import imageTeam1 from '@/images/team/max.jpeg'
+import imageTeam1 from '@/images/team/max.jpg'
 import imageTeam2 from '@/images/team/lev.jpg'
 import imageTeam3 from '@/images/team/arina.jpg'
 import imageTeam4 from '@/images/team/nik.jpg'
@@ -31,14 +19,16 @@ import imageTeam6 from '@/images/team/nastya.jpg'
 import imageTeam7 from '@/images/team/ruslan.png'
 import imageTeam8 from '@/images/team/raffi.png'
 import imageTeam9 from '@/images/team/rifat.jpg'
+import allTeam from '@/images/team/all-team.jpg'
 import { loadArticles } from '@/lib/mdx'
+import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 
 function Culture() {
   return (
     <div className="mt-24 rounded-4xl bg-neutral-950 py-24 sm:mt-32 lg:mt-40 lg:py-32">
       <SectionIntro
         eyebrow="Почему выбирают нас?"
-        title="Принципы, которым мы следуем."
+        title="Принципы, которым мы следуем"
         invert
       >
         <p>
@@ -63,26 +53,6 @@ function Culture() {
 }
 
 const team = [
-/*  {
-    title: 'Leadership',
-    people: [
-      {
-        name: 'Leslie Alexander',
-        role: 'Co-Founder / CEO',
-        image: { src: imageLeslieAlexander },
-      },
-      {
-        name: 'Michael Foster',
-        role: 'Co-Founder / CTO',
-        image: { src: imageMichaelFoster },
-      },
-      {
-        name: 'Dries Vincent',
-        role: 'Partner & Business Relations',
-        image: { src: imageDriesVincent },
-      },
-    ],
-  },*/
   {
     title: 'Команда',
     people: [
@@ -95,19 +65,16 @@ const team = [
         name: 'Лев',
         role: 'Account Manager',
         image: { src: imageTeam2 },
-        // image: { src: imageEmmaDorsey },
       },
       {
         name: 'Арина',
         role: 'Project Manager',
-        // image: { src: imageTeam3 },
         image: { src: imageTeam3 },
       },
       {
         name: 'Никита',
         role: 'Team Lead',
         image: { src: imageTeam4 },
-        // image: { src: imageBlakeReid },
       },
       {
         name: 'Владимир',
@@ -118,41 +85,22 @@ const team = [
         name: 'Анастасия',
         role: 'HR',
         image: { src: imageTeam6 },
-        // image: { src: imageKathrynMurphy },
       },
       {
         name: 'Руслан',
         role: 'Front End',
         image: { src: imageTeam7 },
-        // image: { src: imageKathrynMurphy },
       },
       {
         name: 'Раффи',
         role: 'Front End',
         image: { src: imageTeam8 },
-        // image: { src: imageKathrynMurphy },
       },
       {
         name: 'Рифат',
         role: 'Back End',
         image: { src: imageTeam9 },
-        // image: { src: imageKathrynMurphy },
       },
-/*      {
-        name: 'Jeffrey Webb',
-        role: 'Account Coordinator',
-        image: { src: imageJeffreyWebb },
-      },
-      {
-        name: 'Benjamin Russel',
-        role: 'Senior Developer',
-        image: { src: imageBenjaminRussel },
-      },
-      {
-        name: 'Angela Fisher',
-        role: 'Front-end Developer',
-        image: { src: imageAngelaFisher },
-      },*/
     ],
   },
 ]
@@ -202,6 +150,19 @@ function Team() {
           </FadeInStagger>
         ))}
       </div>
+      <div className="mt-36">
+        <FadeIn>
+          <GrayscaleTransitionImage
+            width={100}
+            height={100}
+            src={allTeam}
+            quality={100}
+            className="w-full rounded-3xl"
+            sizes="(min-width: 1030px) 76rem, 100vw"
+            priority
+          />
+        </FadeIn>
+        </div>
     </Container>
   )
 }
