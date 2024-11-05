@@ -19,7 +19,7 @@ export default async function WorkDetail({ params: { slug } }: { params: { slug:
   let mdxSource = work?.contentText
   const moreCases = cases?.filter((caseEl: CasesType) => caseEl.id !== work?.id).slice(0, 2).map((caseEl:CasesType) => {
     return {
-      href: caseEl.id,
+      href: caseEl.slug ?? '',
       date: caseEl.publish_date,
       title: caseEl.name,
       description: caseEl.description
