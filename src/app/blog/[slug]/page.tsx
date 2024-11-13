@@ -1,4 +1,3 @@
-import { Suspense } from 'react'
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
@@ -12,7 +11,6 @@ import { Img } from '@/components/Img'
 export default async function BlogDetail({ params: { slug } }: { params: { slug: string } }){
   const blog:BlogType | undefined  = await getBlog(slug);
   return (
-    <Suspense fallback={<div>Loading</div>}>
       <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
         <FadeIn>
           <header className="mx-auto flex max-w-5xl flex-col text-center">
@@ -52,6 +50,5 @@ export default async function BlogDetail({ params: { slug } }: { params: { slug:
           </MDXComponents.wrapper>
         </FadeIn>
       </Container>
-    </Suspense>
   )
 }

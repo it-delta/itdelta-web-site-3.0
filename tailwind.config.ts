@@ -28,6 +28,9 @@ export default {
       borderRadius: {
         '4xl': '2.5rem',
       },
+      animation: {
+        loading: 'loading-bar 5s ease-in-out infinite',
+      },
       fontFamily: {
         sans: ['Calibri Light', ...defaultTheme.fontFamily.sans],
         display: [
