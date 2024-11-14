@@ -9,7 +9,6 @@ import { StatListItem } from '@/components/StatList'
 import { getCases } from '@/api/getCases'
 import { CasesType } from '@/types/casesTypes'
 import { PageLinks } from '@/components/PageLinks'
-import { Suspense } from 'react'
 import { Img } from '@/components/Img'
 import { MdxContent } from '@/components/MdxContent'
 
@@ -27,7 +26,7 @@ export default async function WorkDetail({ params: { slug } }: { params: { slug:
   })
 
   return (
-    <Suspense fallback={<div>Loading ...</div>}>
+    <>
       <article className="mt-24 sm:mt-32 lg:mt-40">
         <header>
           <PageIntro eyebrow="Проект" title={work?.name} centered>
@@ -83,13 +82,13 @@ export default async function WorkDetail({ params: { slug } }: { params: { slug:
         <Container className="mt-24 sm:mt-32 lg:mt-40">
           <FadeIn>
             <MDXComponents.wrapper>
-              {work?.content?.map((obj: any, idx:number) => {
+              {work?.content?.map((obj: any, idx: number) => {
                 return (
                   <div key={`${obj.type}-idx`}>
                     <MdxContent mdxSource={obj.type === 'text' && obj?.value} />
-                      {obj.type === 'images' && obj?.value?.map((imgUrl: string) => {
-                        return <Img key={imgUrl} src={imgUrl} />
-                      })}
+                    {obj.type === 'images' && obj?.value?.map((imgUrl: string) => {
+                      return <Img key={imgUrl} src={imgUrl} />
+                    })}
                   </div>
                 )
               })}
@@ -135,6 +134,6 @@ export default async function WorkDetail({ params: { slug } }: { params: { slug:
       )}
 
       <ContactSection />
-    </Suspense>
+    </>
   )
 }
