@@ -99,7 +99,6 @@ export default async function config() {
         extension: /\.mdx$/,
         options: {
             recmaPlugins: [recmaImportImages],
-            remarkPlugins: [remarkGfm, remarkUnwrapImages],
             rehypePlugins: [
                 [rehypeShiki, {highlighter}],
                 [
@@ -109,6 +108,17 @@ export default async function config() {
                         start: ':root > :not(mdxJsxFlowElement)',
                         end: ':root > mdxJsxFlowElement',
                     },
+                ],
+            ],
+            remarkPlugins: [
+                remarkGfm,
+                remarkUnwrapImages,
+                [
+                    unifiedConditional,
+                    [
+                        new RegExp(`^${escapeStringRegexp(path.resolve('src/app/service'))}`),
+                        [[remarkMDXLayout, '@/app/service/wrapper', 'service']],
+                    ],
                 ],
             ],
         },
