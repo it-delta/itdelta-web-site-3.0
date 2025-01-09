@@ -59,42 +59,6 @@ export default async function config() {
         theme: 'css-variables',
     })
 
-    // let withMDX = nextMDX({
-    //   extension: /\.mdx$/,
-    //   options: {
-    //     recmaPlugins: [recmaImportImages],
-    //     rehypePlugins: [
-    //       [rehypeShiki, { highlighter }],
-    //       [
-    //         remarkRehypeWrap,
-    //         {
-    //           node: { type: 'mdxJsxFlowElement', name: 'Typography' },
-    //           start: ':root > :not(mdxJsxFlowElement)',
-    //           end: ':root > mdxJsxFlowElement',
-    //         },
-    //       ],
-    //     ],
-    //     remarkPlugins: [
-    //       remarkGfm,
-    //       remarkUnwrapImages,
-    //       [
-    //         unifiedConditional,
-    //         [
-    //           new RegExp(`^${escapeStringRegexp(path.resolve('src/app/blog'))}`),
-    //           [[remarkMDXLayout, '@/app/blog/wrapper', 'article']],
-    //         ],
-    //         [
-    //           new RegExp(`^${escapeStringRegexp(path.resolve('src/app/work'))}`),
-    //           [[remarkMDXLayout, '@/app/work/components/Content']],
-    //         ],
-    //         [
-    //           new RegExp(`^${escapeStringRegexp(path.resolve('src/app/service'))}`),
-    //           [[remarkMDXLayout, '@/app/service/wrapper', 'service']],
-    //         ],
-    //       ],
-    //     ],
-    //   },
-    // })
     let withMDX = nextMDX({
         extension: /\.mdx$/,
         options: {

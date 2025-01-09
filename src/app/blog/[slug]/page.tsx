@@ -19,7 +19,7 @@ export default async function BlogDetail({ params: { slug } }: { params: { slug:
             </h1>
             {blog?.publish_date ? (
               <time
-                dateTime={blog.publish_date}
+                dateTime={blog.publish_date as string}
                 className="order-first text-sm text-neutral-950"
               >
                 {new Date(blog.publish_date).toLocaleDateString('ru-RU', {

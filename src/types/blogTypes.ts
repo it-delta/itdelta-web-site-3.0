@@ -6,7 +6,7 @@ export interface BlogContentType {
 export interface BlogType {
   id: string,
   active: boolean,
-  publish_date:  string | undefined,
+  publish_date:  Date | string | undefined,
   title: string,
   slug?: string,
   description: string,

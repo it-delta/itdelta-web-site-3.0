@@ -78,7 +78,7 @@ export  const fetchBlogCollection = async (): Promise<BlogType[]> => {
         content: updateContent
       }
     }))
-    return result
+    return result.sort((a, b) => b.publish_date.getTime() - a.publish_date.getTime());
 
   } catch(error: any) {
     const errorCode = error.code;
