@@ -8,9 +8,9 @@ const navigation = [
     {
         title: 'Проекты',
         links: [
-            {title: 'Мониторинг', href: '/work/v-monitor'},
-            {title: 'CloudCollect', href: '/work/cloudcollect'},
-            {title: 'Cultbooking', href: '/work/cultbooking'},
+            {title: 'Мониторинг', href: '/work/onlain-servis-monitoringa-transporta'},
+            {title: 'CloudCollect', href: '/work/onlain-servis-dlya-vziskaniya-zadolzhennosti'},
+            {title: 'Cultbooking', href: '/work/agregator-bronirovaniya-otelei'},
             {
                 title: (
                     <>
