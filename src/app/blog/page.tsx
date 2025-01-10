@@ -8,7 +8,7 @@ import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
-import { fetchBlogCollection } from '@/api/getBlogs'
+import { fetchBlogCollection, getBlogs } from '@/api/getBlogs'
 import { BlogType } from '@/types/blogTypes'
 
 export const metadata: Metadata = {
@@ -18,8 +18,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Blog() {
-  let blogs = await fetchBlogCollection()
-
+  let blogs = await getBlogs();
   return (
     <>
       <PageIntro eyebrow="Блог" title="Последние новости и статьи">
@@ -48,7 +47,7 @@ export default async function Blog() {
                         <dt className="sr-only">Published</dt>
                         {blog.publish_date && (
                           <dd className="absolute left-0 top-0 text-sm text-neutral-950 lg:static">
-                            <time dateTime={blog.publish_date}>
+                            <time dateTime={blog.publish_date as string}>
                               {new Date(blog.publish_date).toLocaleDateString(
                                 'ru-RU',
                                 {
@@ -83,7 +82,7 @@ export default async function Blog() {
                         {blog.description}
                       </p>
                       <Button
-                        href={`/blog/${blog.id}`}
+                        href={`/blog/${blog?.slug}`}
                         aria-label={`Read more: ${blog.title}`}
                         className="mt-8"
                       >

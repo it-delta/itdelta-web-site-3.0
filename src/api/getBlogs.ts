@@ -78,7 +78,11 @@ export  const fetchBlogCollection = async (): Promise<BlogType[]> => {
         content: updateContent
       }
     }))
-    return result
+    return result.sort((a, b) => {
+      const dateA = a?.publish_date ? new Date(a.publish_date).getTime() : 0;
+      const dateB = b?.publish_date ? new Date(b.publish_date).getTime() : 0;
+      return dateB - dateA;
+    });
 
   } catch(error: any) {
     const errorCode = error.code;
