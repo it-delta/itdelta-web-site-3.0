@@ -8,7 +8,7 @@ import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
-import { fetchBlogCollection, getBlogs } from '@/api/getBlogs'
+import { getBlogs } from '@/api/getBlogs'
 import { BlogType } from '@/types/blogTypes'
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Blog() {
-  let blogs = await getBlogs();
+  const blogs:BlogType[] = await getBlogs();
   return (
     <>
       <PageIntro eyebrow="Блог" title="Последние новости и статьи">
