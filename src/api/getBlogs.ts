@@ -17,7 +17,7 @@ const shiki = require('shiki');
 
 const storage = getStorage();
 
-export  const fetchBlogCollection = async (): Promise<BlogType[]> => {
+const fetchBlogCollection = async (): Promise<BlogType[]> => {
   await onAuth();
   let highlighter = await shiki.getHighlighter({
     theme: 'css-variables',
@@ -93,7 +93,7 @@ export  const fetchBlogCollection = async (): Promise<BlogType[]> => {
 }
 
 export const getBlog = async (slug:string):Promise<BlogType | undefined> => {
-  const blogs: BlogType[] = await fetchBlogCollection();
+  const blogs: BlogType[] = await getBlogs();
   return blogs.find((blog) => blog.slug === slug);
 }
 export const getBlogs = cache(
