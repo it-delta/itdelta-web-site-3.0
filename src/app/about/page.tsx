@@ -22,6 +22,8 @@ import imageTeam9 from '@/images/team/rifat.jpg'
 import allTeam from '@/images/team/all-team.jpg'
 import { loadArticles } from '@/lib/mdx'
 import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
+import { getBlogs } from '@/api/getBlogs'
+import { BlogType } from '@/types/blogTypes'
 
 function Culture() {
   return (
@@ -178,8 +180,15 @@ export const metadata: Metadata = {
 }
 
 export default async function About() {
-  let blogArticles = (await loadArticles()).slice(0, 2)
-
+  let getData:BlogType[] = await getBlogs();
+  let blogArticles = getData.slice(0, 2).map((blog:BlogType) => (
+   {
+    href: blog.slug ? `blog/${blog.slug}` : '',
+    date: blog.publish_date,
+    title: blog.title,
+    description: blog.description
+  }
+  ));
   return (
     <>
       <PageIntro eyebrow="О нас" title="Глубокое погружение в бизнес клиента">
