@@ -139,6 +139,22 @@ export function Footer() {
                     <Link href="/" aria-label="Home">
                         <Logo className="h-8" fillOnHover/>
                     </Link>
+                    <div className="">
+                      <Link
+                        className="text-sm text-neutral-700 transition after:inline-block after:h-[14px] after:mt-1 after:mx-2 after:w-[1px] after:bg-neutral-700 after:content-[''] hover:text-neutral-950"
+                        href={'/policies/agreement.pdf'}
+                        target="_blank"
+                      >
+                      Политика конфиденциальности
+                      </Link>
+                      <Link
+                        className="text-sm text-neutral-700 transition hover:text-neutral-950"
+                        href={'/policies/agreement.pdf'}
+                        target="_blank"
+                      >
+                        Согласие на обработку персональных данных
+                      </Link>
+                    </div>
                     <p className="text-sm text-neutral-700">
                         © IT-DELTA Agency. {new Date().getFullYear()}
                     </p>
