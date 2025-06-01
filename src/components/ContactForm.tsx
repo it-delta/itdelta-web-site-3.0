@@ -211,16 +211,17 @@ export function ContactForm() {
                 {message}
             </div>}
 
-            <div className='mt-5'>
-          <span>{ `Нажимая кнопку "Отправить", вы даете`} </span>
-          <Link
-            className="text-md text-red-400 transition hover:text-red-500"
-            href={'/policies/agreement.pdf'}
-            target="_blank"
-          >
-            Согласие на обработку персональных данных
-          </Link>
-        </div>
+            <div className="mt-5 mb-3 text-sm">
+              <span>{ `Нажимая кнопку "Отправить", вы даете`} </span>
+              <Link
+                className="text-md text-red-400 transition hover:text-red-500"
+                href={'/policies/agreement.pdf'}
+                target="_blank"
+              >
+                Согласие на обработку персональных данных
+              </Link>
+            </div>
+
             <Button type="submit"
                 className="mt-2"
                 loading={loading}
