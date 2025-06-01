@@ -3,6 +3,7 @@ import {useCallback, useId, useState} from "react";
 import {Button} from '@/components/Button'
 import {FadeIn} from '@/components/FadeIn'
 import {useGoogleReCaptcha} from 'react-google-recaptcha-v3';
+import Link from 'next/link';
 
 function TextInput({
     label,
@@ -210,8 +211,19 @@ export function ContactForm() {
                 {message}
             </div>}
 
+            <div className="mt-5 mb-3 text-sm">
+              <span>{ `Нажимая кнопку "Отправить", вы даете`} </span>
+              <Link
+                className="text-md text-red-400 transition hover:text-red-500"
+                href={'/policies/agreement.pdf'}
+                target="_blank"
+              >
+                Согласие на обработку персональных данных
+              </Link>
+            </div>
+
             <Button type="submit"
-                className="mt-10"
+                className="mt-2"
                 loading={loading}
                 disabled={loading}
           >
