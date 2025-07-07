@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d240011-3954-4b89-a613-abca9192c6c8" name="Changes" comment="improvements">
-      <change afterPath="$PROJECT_DIR$/src/app/service/ai-development/ai.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/ai-development/page.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/ai-development/pilot.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/service/ai-development/pilot_1.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/getCases.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/getCases.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/getWork.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/getWork.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/clear-cache/api/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/clear-cache/api/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/service/booking-system-development/page.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/booking-system-development/page.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/[workId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/[workId]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/work/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/work/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PageLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageLinks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/casesTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/casesTypes.ts" afterDir="false" />
-    </list>
+    <list default="true" id="2d240011-3954-4b89-a613-abca9192c6c8" name="Changes" comment="logo added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +15,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
@@ -57,6 +43,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -121,6 +108,7 @@
       <workItem from="1723787997823" duration="24336000" />
       <workItem from="1724915692457" duration="1386000" />
       <workItem from="1726814517337" duration="10936000" />
+      <workItem from="1748768555879" duration="1005000" />
     </task>
     <task id="LOCAL-00001" summary="cases">
       <created>1704008424663</created>
@@ -389,7 +377,21 @@
       <option name="project" value="LOCAL" />
       <updated>1723530559102</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="text size improvements">
+      <created>1748768844606</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1748768844606</updated>
+    </task>
+    <task id="LOCAL-00040" summary="logo added">
+      <created>1748768960999</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1748768960999</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,8 +422,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Contact form fixed2" />
-    <MESSAGE value="SocialMedia" />
     <MESSAGE value="YM added" />
     <MESSAGE value="logo fixed" />
     <MESSAGE value="img fixed" />
@@ -445,7 +445,9 @@
     <MESSAGE value="FireCMS added" />
     <MESSAGE value="get image in firebase store" />
     <MESSAGE value="improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="improvements" />
+    <MESSAGE value="text size improvements" />
+    <MESSAGE value="logo added" />
+    <option name="LAST_COMMIT_MESSAGE" value="logo added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
