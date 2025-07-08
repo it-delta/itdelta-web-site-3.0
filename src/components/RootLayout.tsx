@@ -37,9 +37,18 @@ function XIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 function MenuIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path d="M2 6h20v2H2zM2 16h20v2H2z" />
-    </svg>
+      <>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"
+             className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+        </svg>
+{/*
+        <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+          <path d="M2 6h20v2H2zM2 16h20v2H2zM2"/>
+        </svg>
+*/}
+      </>
+
   )
 }
 
@@ -80,9 +89,12 @@ function Header({
             filled={logoHovered}
           />
         </Link>
-        <div className="flex items-center gap-x-8">
+        <div className="flex items-center gap-x-3">
+          <Button href="/work" invert={invert}>
+            Проекты
+          </Button>
           <Button href="/contact" invert={invert}>
-            Контакты
+            Заказать
           </Button>
           <button
             ref={toggleRef}
@@ -91,7 +103,7 @@ function Header({
             aria-expanded={expanded ? 'true' : 'false'}
             aria-controls={panelId}
             className={clsx(
-              'group -m-2.5 rounded-full p-2.5 transition',
+              'ml-5 group -m-2.5 rounded-full p-2.5 transition',
               invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
             )}
             aria-label="Toggle navigation"
