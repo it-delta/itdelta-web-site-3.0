@@ -8,7 +8,7 @@ export const Img = ({
   return (
     <div
       className={clsx(
-        'group isolate my-10 overflow-hidden rounded-4xl bg-neutral-100 max-sm:-mx-6',
+        'group isolate my-10 overflow-hidden rounded-2xl bg-neutral-100 max-sm:-mx-6',
         className,
       )}
     >
