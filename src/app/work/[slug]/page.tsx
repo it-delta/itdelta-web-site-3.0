@@ -11,6 +11,7 @@ import { CasesType } from '@/types/casesTypes'
 import { PageLinks } from '@/components/PageLinks'
 import { Img } from '@/components/Img'
 import { MdxContent } from '@/components/MdxContent'
+import { SliderImage } from '@/components/SliderImage'
 
 export default async function WorkDetail({ params: { slug } }: { params: { slug: string } }){
   const cases: CasesType[] = await getCases();
@@ -86,9 +87,15 @@ export default async function WorkDetail({ params: { slug } }: { params: { slug:
                 return (
                   <div key={`${obj.type}-idx`}>
                     <MdxContent mdxSource={obj.type === 'text' && obj?.value} />
-                    {obj.type === 'images' && obj?.value?.map((imgUrl: string) => {
-                      return <Img key={imgUrl} src={imgUrl} />
-                    })}
+                    {obj.type === 'images' ? (
+                      obj?.value?.length > 1 ? (
+                        <SliderImage images={obj.value} />
+                      ) : (
+                        obj.value.map((imgUrl: string) => {
+                          return <Img key={imgUrl} src={imgUrl} />
+                        })
+                      )
+                    ) : null}
                   </div>
                 )
               })}
