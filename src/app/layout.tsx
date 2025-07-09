@@ -1,5 +1,6 @@
 import {type Metadata} from 'next'
 import {Analytics} from '@/components/Analytics';
+import { Analytics as Analitics_Vercel } from "@vercel/analytics/next"
 import Script from 'next/script';
 import {RootLayout} from '@/components/RootLayout'
 
@@ -25,12 +26,15 @@ export default function Layout({children}: { children: React.ReactNode }) {
         <body className="flex min-h-full flex-col">
         <NextTopLoader showSpinner={false}/>
         {prod ?
-            <Analytics
-                tagID={process.env.NEXT_PUBLIC_YANDEX_METRICA_ID ?? ''}
-                initParameters={{clickmap: true, trackLinks: true, accurateTrackBounce: true}}
-            >
-                <RootLayout>{children}</RootLayout>
-            </Analytics>
+            <>
+                <Analitics_Vercel />
+                <Analytics
+                    tagID={process.env.NEXT_PUBLIC_YANDEX_METRICA_ID ?? ''}
+                    initParameters={{clickmap: true, trackLinks: true, accurateTrackBounce: true}}
+                >
+                    <RootLayout>{children}</RootLayout>                    
+                </Analytics>
+            </>
             :
             <RootLayout>{children}</RootLayout>
         }
