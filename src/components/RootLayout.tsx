@@ -89,7 +89,7 @@ function Header({
             filled={logoHovered}
           />
         </Link>
-        <div className="flex items-center gap-x-3">
+        <div className="flex items-center gap-x-0.5 xs:gap-x-3">
           <Button href="/work" invert={invert}>
             Проекты
           </Button>
@@ -103,7 +103,7 @@ function Header({
             aria-expanded={expanded ? 'true' : 'false'}
             aria-controls={panelId}
             className={clsx(
-              'ml-5 group -m-2.5 rounded-full p-2.5 transition',
+              'xs:ml-5 group -m-2.5 rounded-full p-2.5 transition',
               invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
             )}
             aria-label="Toggle navigation"
