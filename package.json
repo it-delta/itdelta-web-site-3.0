@@ -50,6 +50,7 @@
     "unified-conditional": "0.0.2"
   },
   "devDependencies": {
+    "@types/minimatch": "^5.1.0",
     "eslint": "9.24.0",
     "eslint-config-next": "15.3.1",
     "prettier": "^3.0.1",
