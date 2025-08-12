@@ -3,8 +3,8 @@ import {Analytics} from '@/components/Analytics';
 import { Analytics as Analitics_Vercel } from "@vercel/analytics/next"
 import Script from 'next/script';
 import {RootLayout} from '@/components/RootLayout'
-
-import '@/styles/tailwind.css'
+import './global.css'
+// import '../styles/tailwind.css'
 import NextTopLoader from 'nextjs-toploader'
 
 export const metadata: Metadata = {

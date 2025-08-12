@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import clsx from 'clsx'
-import { Ring } from 'react-spinners-css';
+// import { Ring } from 'react-spinners-css';
+import { ClipLoader } from "react-spinners";
 
 type ButtonProps = {
   invert?: boolean
@@ -36,7 +37,15 @@ export function Button({
           disabled={disabled}
           {...props}
       >
-        {inner} {loading && <Ring className="ml-2 top-px" color={'white'} size={20} /> }
+        {/*{inner} {loading && <Ring className="ml-2 top-px" color={'white'} size={20} /> }*/}
+        {inner} {loading && <ClipLoader
+          // color={color}
+          loading={loading}
+          // cssOverride={override}
+          size={150}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+      /> }
       </button>
     )
   }

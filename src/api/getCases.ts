@@ -5,21 +5,23 @@ import {getDownloadURL, getStorage, ref} from "firebase/storage";
 import {CasesType, CasesContentType} from "@/types/casesTypes";
 import { unstable_cache as cache } from "next/cache";
 import { serialize } from 'next-mdx-remote/serialize'
-import rehypeShiki from '@leafac/rehype-shiki'
+// import rehypeShiki from '@leafac/rehype-shiki'
+import rehypeShiki from '@shikijs/rehype'
 // @ts-ignore
 import { remarkRehypeWrap} from 'remark-rehype-wrap';
 import remarkGfm from 'remark-gfm'
-import remarkUnwrapImages from 'remark-unwrap-images'
+// import remarkUnwrapImages from 'remark-unwrap-images'
+import rehypeUnwrapImages from 'rehype-unwrap-images'
 import { transliterate } from '@/lib/transliterate'
-const shiki = require('shiki');
+// const shiki = require('shiki');
 
 const storage = getStorage();
 
 const fetchCasesCollection = async (): Promise<CasesType[]> => {
     await onAuth();
-    let highlighter = await shiki.getHighlighter({
-        theme: 'css-variables',
-    })
+    // let highlighter = await shiki.getHighlighter({
+    //     theme: 'css-variables',
+    // })
     try {
         const casesRef = collection(db, "cases", "");
         const casesQuery = query(casesRef, where('active', '==', true))
@@ -36,7 +38,8 @@ const fetchCasesCollection = async (): Promise<CasesType[]> => {
                           {
                               mdxOptions: {
                                   rehypePlugins: [
-                                      [rehypeShiki as unknown as any, { highlighter }],
+                                      // [rehypeShiki as unknown as any, { highlighter }],
+                                      [rehypeShiki as unknown as any, { theme: 'nord' }],
                                       [
                                           remarkRehypeWrap as unknown as any,
                                           {
@@ -46,7 +49,10 @@ const fetchCasesCollection = async (): Promise<CasesType[]> => {
                                           },
                                       ],
                                   ],
-                                  remarkPlugins: [remarkGfm  as unknown as any, remarkUnwrapImages],
+                                  remarkPlugins: [
+                                      remarkGfm  as unknown as any,
+                                      rehypeUnwrapImages
+                                  ],
                               },
                           },
                         ).then((res) => res).catch((e) => '')

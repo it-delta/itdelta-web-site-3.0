@@ -1,6 +1,17 @@
+@import "tailwindcss";
+
 @import './base.css';
 @import './components.css';
 @import './utilities.css';
+
+@theme {
+    /* семейство шрифта: раньше theme.fontFamily.display[0] */
+    --font-display: "Inter var", ui-sans-serif, system-ui, sans-serif;
+
+    /* настройки вариативности: раньше theme.fontFamily.display[1].fontVariationSettings */
+    --font-display-variation-settings: "opsz" 32, "wght" 600;
+}
+
 @keyframes loading-bar {
     0% {
         width: 0%;
