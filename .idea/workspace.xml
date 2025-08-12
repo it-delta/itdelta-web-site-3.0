@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d240011-3954-4b89-a613-abca9192c6c8" name="Changes" comment="minimatch fixed">
-      <change afterPath="$PROJECT_DIR$/src/app/global.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/getBlogs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/getBlogs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/getCases.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/getCases.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/tailwind.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tailwind.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/typography.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/typography.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/utilities.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/utilities.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RootLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RootLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts_" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

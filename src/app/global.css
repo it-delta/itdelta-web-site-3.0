@@ -1,23 +1,60 @@
 @import "tailwindcss";
 
 @theme {
-    /* семейство шрифта: раньше theme.fontFamily.display[0] */
-    --font-display: "Inter var", ui-sans-serif, system-ui, sans-serif;
+    /* breakpoints */
+    --breakpoint-xs: 475px;
 
-    /* настройки вариативности: раньше theme.fontFamily.display[1].fontVariationSettings */
-    --font-display-variation-settings: "opsz" 32, "wght" 600;
+    /* цвета */
+    --color-logo-red: #C3003A;
+
+    /* радиусы */
+    --radius-4xl: 2.5rem;
+
+    /* шрифты */
+    /* sans: Calibri Light + стандартный стек */
+    --font-sans: "Calibri Light", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji", sans-serif;
+
+    /* display: Roboto + стандартный стек */
+    --font-display: "Roboto", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji", sans-serif;
+
+    /* вариативные настройки для display */
+    --font-display-variation-settings: "wdth" 125;
+
+    /*!* настройки вариативности: раньше theme.fontFamily.display[1].fontVariationSettings *!*/
+    /*--font-display-variation-settings: "opsz" 32, "wght" 600;*/
 }
 
+.text-logoRed {
+    --tw-text-opacity: 1;
+    color: rgb(195 0 58/var(--tw-text-opacity,1))
+}
+
+/*@utility text-xs { font-size: 0.75rem; line-height: 1rem; }
+@utility text-sm { font-size: 0.875rem; line-height: 1.5rem; }
+@utility text-base { font-size: 1.125rem; line-height: 1.5rem; }
+@utility text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+@utility text-xl { font-size: 1.2rem; line-height: 1.75rem; }
+@utility text-2xl { font-size: 1.5rem; line-height: 2.25rem; }
+@utility text-3xl { font-size: 1.75rem; line-height: 2.25rem; }
+@utility text-4xl { font-size: 2rem; line-height: 2.5rem; }
+@utility text-5xl { font-size: 2.5rem; line-height: 3rem; }
+@utility text-6xl { font-size: 3rem; line-height: 3.5rem; }
+@utility text-7xl { font-size: 4rem; line-height: 4.5rem; }*/
+
 @keyframes loading-bar {
-    0% {
-        width: 0%;
-    }
-    50% {
-        width: 50%;
-    }
-    100% {
-        width: 100%;
-    }
+    0% { width: 0% }
+    50% { width: 50% }
+    100% { width: 100% }
+}
+
+@utility animate-loading {
+    animation: loading-bar 5s ease-in-out infinite;
 }
 
 /* @font-face {*/
@@ -58,188 +95,99 @@
  } */
 
 .typography {
-    color: theme(colors.neutral.950);
-    font-size: theme(fontSize.xl);
-    line-height: theme(fontSize.xl[1].lineHeight);
-
-    --shiki-color-text: theme(colors.white);
-    --shiki-color-background: theme(colors.neutral.950);
-    --shiki-token-constant: theme(colors.neutral.300);
-    --shiki-token-string: theme(colors.neutral.400);
-    --shiki-token-comment: theme(colors.neutral.500);
-    --shiki-token-keyword: theme(colors.neutral.400);
-    --shiki-token-parameter: theme(colors.neutral.400);
-    --shiki-token-function: theme(colors.neutral.300);
-    --shiki-token-string-expression: theme(colors.neutral.300);
-    --shiki-token-punctuation: theme(colors.neutral.400);
-
-:where(.typography > *) {
-    margin-top: theme(spacing.6);
-    margin-bottom: theme(spacing.6);
+    @apply text-neutral-950 text-xl; /* leading уже в text-xl */
+    --shiki-color-text: var(--color-white);
+    --shiki-color-background: var(--color-neutral-950);
+    --shiki-token-constant: var(--color-neutral-300);
+    --shiki-token-string: var(--color-neutral-400);
+    --shiki-token-comment: var(--color-neutral-500);
+    --shiki-token-keyword: var(--color-neutral-400);
+    --shiki-token-parameter: var(--color-neutral-400);
+    --shiki-token-function: var(--color-neutral-300);
+    --shiki-token-string-expression: var(--color-neutral-300);
+    --shiki-token-punctuation: var(--color-neutral-400);
 }
+:where(.typography > *) { @apply my-6; }
 
-/* Headings */
 :where(h2) {
-    font-weight: theme(fontWeight.semibold);
-    /*font-family: theme(fontFamily.display);*/
+    @apply font-semibold text-2xl mt-16;
     font-family: var(--font-display);
-    font-variation-settings: theme(fontFamily.display[1].fontVariationSettings);
-    font-size: theme(fontSize.2xl);
-    line-height: theme(fontSize.2xl[1].lineHeight);
-    margin-top: theme(spacing.16);
+    font-variation-settings: var(--font-display-variation-settings);
 }
-
 :where(h3) {
-    font-weight: theme(fontWeight.semibold);
-    /*font-family: theme(fontFamily.display);*/
+    @apply font-semibold text-xl mt-10;
     font-family: var(--font-display);
-    font-variation-settings: theme(fontFamily.display[1].fontVariationSettings);
-    font-size: theme(fontSize.xl);
-    line-height: theme(fontSize.xl[1].lineHeight);
-    margin-top: theme(spacing.10);
+    font-variation-settings: var(--font-display-variation-settings);
 }
 
-:where(h2 + h3) {
-    margin-top: 0;
-}
+:where(h2 + h3) { margin-top: 0; }
 
 /* Lists */
-:where(ul, ol) {
-    padding-left: 1.5rem;
-}
-
-:where(ul) {
-    list-style-type: disc;
-}
-
-:where(ol) {
-    list-style-type: decimal;
-}
-
-:where(li) {
-    padding-left: theme(spacing.3);
-    /*margin-top: theme(spacing.6);*/
-}
-
-:where(li)::marker {
-    color: theme(colors.neutral.500);
-}
-
+/*:where(ul, ol) { @apply pl-6; }
+:where(ul) { list-style-type: disc; }
+:where(ol) { list-style-type: decimal; }
+:where(li) { @apply pl-3; }
+!* ::marker утилитами не всегда удобно — зададим напрямую *!
+:where(li)::marker { color: var(--color-neutral-500); }
 :where(li > *),
-:where(li li) {
-    margin-top: theme(spacing.4);
-}
-
-:where(ol > li)::marker {
-    font-size: theme(fontSize.base);
-    font-weight: theme(fontWeight.semibold);
-}
+:where(li li) { @apply mt-4; }
+:where(ol > li)::marker { font-size: 1rem; font-weight: 600; } !* base + semibold *!*/
 
 /* Tables */
-:where(table) {
-    width: 100%;
-    text-align: left;
-    font-size: theme(fontSize.base);
-    line-height: theme(fontSize.base[1].lineHeight);
-}
-
-:where(th) {
-    font-weight: theme(fontWeight.semibold);
-}
-
-:where(thead th) {
-    padding-bottom: theme(spacing.6);
-    border-bottom: 1px solid theme(colors.neutral.950);
-}
-
-:where(td) {
-    vertical-align: top;
-    padding-top: theme(spacing.6);
-    padding-bottom: theme(spacing.6);
-    border-bottom: 1px solid theme(colors.neutral.950 / 0.1);
-}
-
-:where(:is(th, td):not(:last-child)) {
-    padding-right: theme(spacing.6);
-}
+:where(table) { width: 100%; @apply text-left text-base leading-6; }
+:where(th) { @apply font-semibold; }
+:where(thead th) { @apply pb-6 border-b border-neutral-950; }
+:where(td) { @apply align-top py-6 border-b border-neutral-950/10; }
+:where(:is(th, td):not(:last-child)) { @apply pr-6; }
 
 /* Code blocks */
 :where(pre) {
     display: flex;
-    background-color: theme(colors.neutral.950);
-    border-radius: theme(borderRadius.4xl);
-    overflow-x: auto;
-    margin-top: theme(spacing.10);
-    margin-bottom: theme(spacing.10);
-    margin-left: calc(-1 * theme(spacing.6));
-    margin-right: calc(-1 * theme(spacing.6));
-
-@screen sm {
-    margin-left: auto;
-    margin-right: auto;
+    background-color: var(--color-neutral-950);
+    /* в Tailwind по умолчанию нет rounded-4xl — используем токен или фолбэк */
+    border-radius: var(--radius-4xl, 1.5rem);
+    @apply overflow-x-auto my-10;
+    margin-left: calc(-1 * var(--spacing-6));
+    margin-right: calc(-1 * var(--spacing-6));
 }
+@media (min-width: 640px) {
+    :where(pre) { margin-left: auto; margin-right: auto; }
 }
 
 :where(pre code) {
-    flex: none;
-    padding: theme(padding.8) theme(padding.6);
-    font-size: theme(fontSize.base);
-    line-height: theme(lineHeight.8);
-    color: theme(colors.white);
-
-@screen sm {
-    padding: theme(spacing.10);
+    @apply flex-none text-base leading-8 text-white py-8 px-6;
 }
+@media (min-width: 640px) {
+    :where(pre code) { @apply p-10; }
 }
 
 /* <hr> */
-:where(hr) {
-    border-color: theme(colors.neutral.950 / 0.1);
-    margin-top: theme(spacing.24);
-    margin-bottom: theme(spacing.24);
-}
+:where(hr) { @apply border-neutral-950/10 my-24; }
 
 /* Inline text */
-:where(a) {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.15em;
-    text-decoration-skip-ink: none;
-    font-weight: theme(fontWeight.semibold);
-}
-
-:where(strong) {
-    font-weight: theme(fontWeight.semibold);
-}
+/*:where(a) {*/
+/*    text-decoration: underline;*/
+/*    text-decoration-thickness: 1px;*/
+/*    text-underline-offset: 0.15em;*/
+/*    text-decoration-skip-ink: none;*/
+/*    @apply font-semibold;*/
+/*}*/
+/*:where(strong) { @apply font-semibold; }*/
 
 :where(code:not(pre code)) {
     font-size: calc(18 / 20 * 1em);
-    font-weight: theme(fontWeight.semibold);
-
-&::before,
-&::after {
-     content: '`';
- }
+    @apply font-semibold;
 }
+:where(code:not(pre code))::before,
+:where(code:not(pre code))::after { content: '`'; }
 
-:where(h2 code, h3 code) {
-    font-weight: theme(fontWeight.bold);
-}
+:where(h2 code, h3 code) { @apply font-bold; }
 
 /* Figures */
-:where(figure) {
-    margin-top: theme(spacing.32);
-    margin-bottom: theme(spacing.32);
-}
+:where(figure) { @apply my-32; }
 
 /* Spacing overrides */
 :where(.typography:first-child > :first-child),
-:where(li > :first-child) {
-    margin-top: 0 !important;
-}
-
+:where(li > :first-child) { margin-top: 0 !important; }
 :where(.typography:last-child > :last-child),
-:where(li > :last-child) {
-    margin-bottom: 0 !important;
-}
-}
+:where(li > :last-child) { margin-bottom: 0 !important; }
