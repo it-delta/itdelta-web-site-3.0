@@ -40,6 +40,7 @@ import {
     StarIcon,
     UsersIcon
 } from '@heroicons/react/24/outline'
+import {MDXEntry, Service} from "../lib/mdx";
 
 const clients = [
     ['CloudCollect', LogoCCLight],
@@ -53,14 +54,14 @@ const clients = [
     // ['North Adventures', logoNorthAdventures],
 ]
 
-async function Features() {
-    let services = await loadServices()
-
+function Features({features}: {
+    features: MDXEntry<Service>[]
+}) {
     return (
         <>
             <Container className="mt-32">
                 <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-                    {services.map((feature) => (
+                    {features.map((feature) => (
                         <FadeIn key={feature.title} className="flex">
                             <div key={feature.title} className="flex flex-col">
                                 <dt className="text-base font-display font-semibold leading-7 text-gray-900">
@@ -106,7 +107,7 @@ function Clients() {
                         {clients.map(([client, logo]) => (
                             <li key={client}>
                                 <FadeIn>
-                                    <Image src={logo} alt={client} unoptimized/>
+                                    <Image src={logo} alt={client} unoptimized priority/>
                                 </FadeIn>
                             </li>
                         ))}
@@ -154,6 +155,7 @@ function CaseStudies({ cases }: {
                                                   alt={caseEl?.client ?? caseEl?.name}
                                                   className="h-16 w-16"
                                                   unoptimized
+                                                  priority
                                                 />
                                             </div>}
                                     </Link>
@@ -183,7 +185,7 @@ function CaseStudies({ cases }: {
     )
 }
 
-function Services() {
+function ServicesBlock() {
     return (
         <>
             <SectionIntro
@@ -206,6 +208,7 @@ function Services() {
                                 src={imageLaptop}
                                 sizes="(min-width: 1024px) 41rem, 31rem"
                                 className="justify-center lg:justify-end"
+                                priority
                             />
                         </FadeIn>
                     </div>
@@ -243,6 +246,8 @@ export const metadata: Metadata = {
 export default async function Home() {
     console.log('Get data...');
     const cases:CasesType[] | undefined = await getMainCases();
+    const features: MDXEntry<Service>[] = await loadServices()
+
     console.log('Rendering...');
     return (
         <>
@@ -250,7 +255,7 @@ export default async function Home() {
                 <FadeIn className="flex justify-between">
                     <div className="flex flex-col justify-center">
                         <h1 className="font-display text-4xl font-medium tracking-tight text-neutral-950 text-balance xs:text-5xl sm:text-7xl">
-                            Цифровизация Вашего бизнеса.
+                            Цифровизация Вашего бизнеса
                         </h1>
                         <div className="mt-6 text-lg text-neutral-600 text font-display text-pretty">
                             <p className='mt-1 flex items-center gap-4'>
@@ -272,11 +277,12 @@ export default async function Home() {
                         alt="Logo Inspire You"
                         className="shrink-0 hidden xl:flex"
                         unoptimized
+                        priority
                     />
                 </FadeIn>
             </Container>
 
-            <Features/>
+            <Features features={features}/>
 
             <Clients/>
 
@@ -294,7 +300,7 @@ export default async function Home() {
         those annoying permission dialogs. */}
             </Testimonial>
 
-            <Services/>
+            <ServicesBlock/>
 
             <ContactSection/>
         </>
