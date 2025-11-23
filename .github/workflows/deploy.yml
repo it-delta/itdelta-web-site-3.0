@@ -1,0 +1,45 @@
+name: Deploy ITDELTA.RU
+
+# Trigger the workflow on push and
+# pull request events on the production branch
+on:
+  push:
+    branches:
+      - production
+#  pull_request:
+#    branches:
+#      - production
+
+# Authenticate to the the server via ssh
+# and run our deployment script
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: itdelta.ru
+          username: itdelta
+          password: ${{ secrets.PASSWORD_ITDELTA.RU }}
+          port: 22
+          script: |
+            cd /home/itdelta/web/itdelta.ru/public_html
+            ./.scripts/deploy.sh
+
+      - name: send message to ITDELTA deploy telegram
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ vars.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ITDELTA.RU production branch has been pushed.
+
+            ${{ github.actor }} created commit:
+            Commit message: ${{ github.event.commits[0].message }}
+
+            Repository: ${{ github.repository }}
+
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
