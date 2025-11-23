@@ -23,7 +23,7 @@ jobs:
         with:
           host: itdelta.ru
           username: itdelta
-          password: ${{ secrets.PASSWORD_ITDELTA.RU }}
+          password: ${{ secrets.PASSWORD_ITDELTA_RU }}
           port: 22
           script: |
             cd /home/itdelta/web/itdelta.ru/public_html
