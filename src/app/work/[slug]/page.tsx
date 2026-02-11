@@ -1,3 +1,4 @@
+import { type Metadata } from 'next'
 import { PageIntro } from '@/components/PageIntro'
 import { FadeIn } from '@/components/FadeIn'
 import { Container } from '@/components/Container'
@@ -12,6 +13,27 @@ import { PageLinks } from '@/components/PageLinks'
 import { Img } from '@/components/Img'
 import { MdxContent } from '@/components/MdxContent'
 import { SliderImage } from '@/components/SliderImage'
+
+type Props = {
+  params: { slug: string }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const cases: CasesType[] = await getCases()
+  const theCase = cases.find((work) => work.slug === params.slug)
+  const meta = theCase?.meta;
+
+  return {
+    title: meta?.title,
+    description: meta?.description,
+    keywords: meta?.keywors,
+    openGraph: {
+      title: meta?.title,
+      description: meta?.description,
+      images: [meta?.ogImage],
+    },
+  }
+}
 
 export default async function WorkDetail({ params: { slug } }: { params: { slug: string } }){
   const cases: CasesType[] = await getCases();
