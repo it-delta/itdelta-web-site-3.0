@@ -1,8 +1,9 @@
 import {type Metadata} from 'next'
 import {Analytics} from '@/components/Analytics';
-import { Analytics as Analitics_Vercel } from "@vercel/analytics/next"
-import Script from 'next/script';
+// import { Analytics as Analitics_Vercel } from "@vercel/analytics/next"
+import Script from "next/script";
 import {RootLayout} from '@/components/RootLayout'
+import B24UScript from "@/components/B24UScript";
 
 import '@/styles/tailwind.css'
 import NextTopLoader from 'nextjs-toploader'
@@ -19,21 +20,23 @@ export const metadata: Metadata = {
 
 export default function Layout({children}: { children: React.ReactNode }) {
     const prod = process.env.NODE_ENV === 'production';
+    const jivo = process.env.NEXT_PUBLIC_CHAT === 'JIVO';
     console.log(`Start app... (${process.env.NODE_ENV} mode)`);
     return (
         <html lang="ru" className="h-full bg-neutral-950 text-base antialiased">
-        {prod && <Script src="https://code.jivo.ru/widget/PWVDc47MVr"/>}
+        {/* {prod && <Script src="https://code.jivo.ru/widget/PWVDc47MVr"/>} */}
         <body className="flex min-h-full flex-col">
         <NextTopLoader showSpinner={false}/>
         {prod ?
             <>
-                <Analitics_Vercel />
+                {/* <Analitics_Vercel /> */}
                 <Analytics
                     tagID={process.env.NEXT_PUBLIC_YANDEX_METRICA_ID ?? ''}
                     initParameters={{clickmap: true, trackLinks: true, accurateTrackBounce: true}}
                 >
                     <RootLayout>{children}</RootLayout>                    
                 </Analytics>
+                {jivo ? <Script src="https://code.jivo.ru/widget/PWVDc47MVr"/> : <B24UScript />}
             </>
             :
             <RootLayout>{children}</RootLayout>
