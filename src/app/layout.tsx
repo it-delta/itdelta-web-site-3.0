@@ -24,7 +24,6 @@ export default function Layout({children}: { children: React.ReactNode }) {
     console.log(`Start app... (${process.env.NODE_ENV} mode)`);
     return (
         <html lang="ru" className="h-full bg-neutral-950 text-base antialiased">
-        {/* {prod && <Script src="https://code.jivo.ru/widget/PWVDc47MVr"/>} */}
         <body className="flex min-h-full flex-col">
         <NextTopLoader showSpinner={false}/>
         {prod ?
@@ -36,7 +35,7 @@ export default function Layout({children}: { children: React.ReactNode }) {
                 >
                     <RootLayout>{children}</RootLayout>                    
                 </Analytics>
-                {jivo ? <Script src="https://code.jivo.ru/widget/PWVDc47MVr"/> : <B24UScript />}
+                {jivo ? <Script src="https://code.jivo.ru/widget/PWVDc47MVr"/> : <Script src="https://aibot.itdelta.dev/aibot/embed.js"/>}
             </>
             :
             <RootLayout>{children}</RootLayout>
