@@ -83,17 +83,21 @@ function Header({
             invert={invert}
             filled={logoHovered}
           /> */}
-          <Logo
-            className="h-8 sm:block"
-            invert={invert}
-            filled={logoHovered}
-          />
+          <Logo className="h-8 sm:block" invert={invert} filled={logoHovered} />
         </Link>
         <div className="flex items-center gap-x-0.5 xs:gap-x-3">
-          <Button href="/work" invert={invert}>
+          <Button
+            href="/work"
+            invert={invert}
+            className={'{px-4: false} px-1.5 text-xs xs:px-4 xs:text-sm'}
+          >
             Проекты
           </Button>
-          <Button href="/contact" invert={invert}>
+          <Button
+            href="/contact"
+            invert={invert}
+            className={'{px-4: false} px-1.5 text-xs xs:px-4 xs:text-sm'}
+          >
             Заказать
           </Button>
           <button
@@ -103,7 +107,7 @@ function Header({
             aria-expanded={expanded ? 'true' : 'false'}
             aria-controls={panelId}
             className={clsx(
-              'xs:ml-5 group -m-2.5 rounded-full p-2.5 transition',
+              'group -m-2.5 rounded-full p-2.5 transition xs:ml-5',
               invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
             )}
             aria-label="Toggle navigation"
