@@ -74,9 +74,9 @@ function Features({features}: {
                                 <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
                                     <p className="flex-auto">{feature.description}</p>
                                     <p className="my-6">
-                                        <a href={feature.href} className="text-sm leading-6">
+                                        <Link href={feature.href} className="text-sm leading-6">
                                             Подробнее <span aria-hidden="true" className="text-logoRed">→</span>
-                                        </a>
+                                        </Link>
                                     </p>
                                 </dd>
                             </div>
