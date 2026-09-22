@@ -12,6 +12,10 @@ yarn install --non-interactive
 echo "Compile npm assets..."
 yarn build
 pm2 delete itdelta.ru
-pm2 start yarn --name "itdelta.ru" -- start -p 3010
+pm2 start /usr/bin/yarn \
+  --name itdelta.ru \
+  --interpreter none \
+  -- start -p 3010
+pm2 save
 
 echo "Deployment finished!"
