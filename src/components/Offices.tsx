@@ -1,5 +1,7 @@
 import clsx from 'clsx'
 
+import { siteConfig } from '@/config/site'
+
 function Office({
   name,
   children,
@@ -29,27 +31,30 @@ export function Offices({
   invert = false,
   ...props
 }: React.ComponentPropsWithoutRef<'ul'> & { invert?: boolean }) {
+  const { phone, email, address } = siteConfig.contacts
+
   return (
     <ul role="list" {...props}>
       <li>
         <Office name="Телефон" invert={invert}>
-          <a className="cltrk" href="tel:+78005113470">
-            +7 800 5113470
+          <a className="cltrk" href={phone.href}>
+            {phone.label}
           </a>
         </Office>
       </li>
       <li>
         <Office name="Email" invert={invert}>
-          <a href="mailto:delta+101@it-delta.ru">
-            delta@it-delta.ru
-          </a>
+          <a href={email.href}>{email.label}</a>
         </Office>
       </li>
       <li>
-        <Office name="Ростов-на-Дону" invert={invert}>
-          ул. Варфоломеева, д.266
-          <br />
-          4 этаж
+        <Office name={address.label} invert={invert}>
+          {address.lines.map((line, index) => (
+            <span key={line}>
+              {index > 0 && <br />}
+              {line}
+            </span>
+          ))}
         </Office>
       </li>
     </ul>
