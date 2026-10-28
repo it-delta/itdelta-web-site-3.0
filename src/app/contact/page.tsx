@@ -19,13 +19,13 @@ function ContactDetails() {
         Контакты
       </h2>
       <p className="mt-6 text-base text-neutral-600">
-        Вы можете встретиться с нами с помощью телеконференции (Zoom, Yandex и пр.),
-        либо посетить наш офис, чтобы пообщаться лично с ответственным менеджером.
+        Напишите нам на e-mail, чтобы обсудить проект или договориться о
+        телеконференции (Zoom, Yandex и пр.).
       </p>
 
       <Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />
 
-      <Border className="mt-16 pt-16">
+      {/* <Border className="mt-16 pt-16">
         <h2 className="font-display text-base font-semibold text-neutral-950">
           Реквизиты
         </h2>
@@ -38,7 +38,7 @@ function ContactDetails() {
           <p>р/с 40702810615100016856,ОАО АКБ АВАНГАРД, г. МОСКВА к/с 30101810000000000201, БИК 044525201</p>
         </div>
         
-        {/* <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
+        <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
           {[
             ['Карьера', 'delta@it-delta.ru'],
             ['Прочее', 'delta@it-delta.ru'],
@@ -55,8 +55,8 @@ function ContactDetails() {
               </dd>
             </div>
           ))}
-        </dl> */}
-      </Border>
+        </dl>
+      </Border> */}
 
      {/* <Border className="mt-16 pt-16">
         <h2 className="font-display text-base font-semibold text-neutral-950">

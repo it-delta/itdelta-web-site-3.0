@@ -35,19 +35,19 @@ export function Offices({
 
   return (
     <ul role="list" {...props}>
-      <li>
+      {/* <li>
         <Office name="Телефон" invert={invert}>
           <a className="cltrk" href={phone.href}>
             {phone.label}
           </a>
         </Office>
-      </li>
+      </li> */}
       <li>
         <Office name="Email" invert={invert}>
           <a href={email.href}>{email.label}</a>
         </Office>
       </li>
-      <li>
+      {/* <li>
         <Office name={address.label} invert={invert}>
           {address.lines.map((line, index) => (
             <span key={line}>
@@ -56,7 +56,7 @@ export function Offices({
             </span>
           ))}
         </Office>
-      </li>
+      </li> */}
     </ul>
   )
 }

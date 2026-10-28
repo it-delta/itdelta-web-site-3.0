@@ -5,8 +5,8 @@ export const siteConfig = {
       href: 'tel:+78007070225',
     },
     email: {
-      label: 'delta@it-delta.ru',
-      href: 'mailto:delta+101@it-delta.ru',
+      label: 'delta@itdelta.dev',
+      href: 'mailto:delta+101@itdelta.dev',
     },
     address: {
       label: 'Ростов-на-Дону',
